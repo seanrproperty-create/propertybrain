@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy-to-Let Calculator UK — Rental Yield, Cashflow & Section 24 | PropertyBrain</title>
+<meta name="description" content="Free UK buy-to-let calculator. Calculate gross yield, net yield, monthly cashflow, Section 24 tax impact, 5-year projection and mortgage stress test instantly.">
+<link rel="canonical" href="https://propertybrain.uk/buy-to-let-calculator/">
+<meta property="og:title" content="Buy-to-Let Calculator UK | PropertyBrain">
+<meta property="og:description" content="Free UK BTL calculator — yield, cashflow, Section 24 tax and stress test.">
+<meta property="og:url" content="https://propertybrain.uk/buy-to-let-calculator/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good buy-to-let yield in the UK?","acceptedAnswer":{"@type":"Answer","text":"A gross yield of 6%+ is generally considered good for UK buy-to-let. Northern cities like Sunderland, Hull and Liverpool regularly achieve 7–10% gross. London averages 2–4%. After costs (mortgage, management, maintenance, voids), a net yield of 3–5% is typical in high-yield areas."}},{"@type":"Question","name":"How does Section 24 affect buy-to-let tax?","acceptedAnswer":{"@type":"Answer","text":"Section 24 (introduced 2017) prevents private landlords from deducting mortgage interest from rental income before tax. Instead you get a 20% tax credit on the interest. A higher-rate (40%) taxpayer can be taxed on income before interest is paid, significantly reducing cashflow. Using a limited company avoids Section 24 — companies can deduct full mortgage interest at 19% corporation tax."}},{"@type":"Question","name":"What deposit do I need for a buy-to-let mortgage?","acceptedAnswer":{"@type":"Answer","text":"Most UK buy-to-let mortgages require a minimum 20–25% deposit. With a 25% deposit you access better rates. Lenders typically require rental income to cover 125–145% of the monthly mortgage payment (interest coverage ratio). Use our BTL calculator to check if your property passes the stress test."}},{"@type":"Question","name":"Should I buy a rental property in my name or via a limited company?","acceptedAnswer":{"@type":"Answer","text":"Limited companies avoid Section 24 and pay 19% corporation tax on profits, which can result in significantly higher cashflow for higher-rate taxpayers. However, Ltd Co mortgages often have higher rates and there are setup/accountancy costs. If you plan to hold long-term and are a higher-rate taxpayer, Ltd Co is usually more tax-efficient. Use our Section 24 comparison tab to model both scenarios."}}]}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXX');</script>
+</head>
+<body>
+<div id="cookie-banner">
+  <p>We use cookies to improve your experience. <a href="/cookies/">Learn more</a>.</p>
+  <div class="cookie-btns"><button class="btn-cookie-accept" id="cookie-accept">Accept</button><button class="btn-cookie-decline" id="cookie-decline">Decline</button></div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__logo">Property<span>Brain</span></a>
+      <nav class="site-nav">
+        <a href="/buy-to-let-calculator/">BTL Calculator</a>
+        <a href="/stamp-duty-calculator/">Stamp Duty</a>
+        <a href="/mortgage-calculator/">Mortgage</a>
+        <a href="/rental-yield-calculator/">Yield</a>
+        <a href="/sa-airbnb-calculator/">SA/Airbnb</a>
+        <a href="/downloads/">Downloads</a>
+        <a href="/guide/">Guide</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> › Buy-to-Let Calculator</div>
+    <h1>Buy-to-Let Calculator UK</h1>
+    <p>Gross yield, net yield, monthly cashflow, Section 24 tax impact and 5-year projection — instantly.</p>
+  </div>
+</section>
+
+<main class="main-content">
+  <div class="container">
+    <div class="notice">
+      <strong>Not financial advice.</strong> This calculator is for illustrative purposes. Consult a qualified mortgage adviser and tax adviser before investing.
+    </div>
+
+    <div class="tab-group">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="tab-inputs">Calculator</button>
+        <button class="tab-btn" data-tab="tab-projection">5-Year Projection</button>
+        <button class="tab-btn" data-tab="tab-stress">Stress Test</button>
+        <button class="tab-btn" data-tab="tab-tax">Section 24 Tax</button>
+      </div>
+
+      <div id="tab-inputs" class="tab-panel active">
+        <div class="calc-layout">
+          <div>
+            <!-- Property & Finance -->
+            <div class="card">
+              <div class="card__header">Property &amp; Finance</div>
+              <div class="card__body">
+                <div class="form-group">
+                  <label>Property Price</label>
+                  <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="btl-price" value="200000" min="10000" max="10000000" oninput="runBTL()"></div>
+                </div>
+                <div class="form-group">
+                  <label>Deposit <span class="hint" id="btl-deposit-amt"></span></label>
+                  <div class="range-row">
+                    <input type="range" id="btl-deposit-pct" min="15" max="50" value="25" step="1" data-out="btl-deposit-display" data-suffix="%" oninput="runBTL()">
+                    <span class="range-display" id="btl-deposit-display">25%</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Mortgage Rate</label>
+                  <div class="input-wrap has-suffix"><input type="number" id="btl-rate" value="5.5" min="0.1" max="15" step="0.1" oninput="runBTL()"><span class="input-suffix">%</span></div>
+                </div>
+                <div class="form-group">
+                  <label>Mortgage Term <span class="hint">(years)</span></label>
+                  <div class="range-row">
+                    <input type="range" id="btl-term" min="5" max="30" value="25" step="1" data-out="btl-term-display" data-suffix=" yrs" oninput="runBTL()">
+                    <span class="range-display" id="btl-term-display">25 yrs</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Repayment Type</label>
+                  <div class="toggle-group" id="grp-repayment" data-calc="runBTL">
+                    <label class="toggle-pill active"><input type="radio" name="btl-io" value="0" checked> Repayment</label>
+                    <label class="toggle-pill"><input type="radio" name="btl-io" value="1"> Interest Only</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Purchase Type</label>
+                  <div class="toggle-group" id="grp-purchase" data-calc="runBTL">
+                    <label class="toggle-pill"><input type="radio" name="btl-purchase" value="standard"> Standard</label>
+                    <label class="toggle-pill active"><input type="radio" name="btl-purchase" value="additional" checked> Additional Property</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Country</label>
+                  <select id="btl-country" onchange="runBTL()">
+                    <option value="england" selected>England / N.Ireland</option>
+                    <option value="scotland">Scotland (LBTT)</option>
+                    <option value="wales">Wales (LTT)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <!-- Rental Income -->
+            <div class="card">
+              <div class="card__header">Rental Income &amp; Costs</div>
+              <div class="card__body">
+                <div class="form-group">
+                  <label>Monthly Rent</label>
+                  <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="btl-rent" value="950" min="100" oninput="runBTL()"></div>
+                </div>
+                <div class="form-group">
+                  <label>Letting Agent Fee <span class="hint">(% of rent)</span></label>
+                  <div class="range-row">
+                    <input type="range" id="btl-mgmt" min="0" max="20" value="10" step="0.5" data-out="btl-mgmt-display" data-suffix="%" oninput="runBTL()">
+                    <span class="range-display" id="btl-mgmt-display">10%</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Maintenance &amp; Repairs <span class="hint">(% of rent)</span></label>
+                  <div class="range-row">
+                    <input type="range" id="btl-maint" min="0" max="15" value="5" step="0.5" data-out="btl-maint-display" data-suffix="%" oninput="runBTL()">
+                    <span class="range-display" id="btl-maint-display">5%</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Buildings Insurance <span class="hint">(£/year)</span></label>
+                  <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="btl-insurance" value="600" min="0" oninput="runBTL()"></div>
+                </div>
+                <div class="form-group">
+                  <label>Void Allowance <span class="hint">(weeks/year)</span></label>
+                  <div class="range-row">
+                    <input type="range" id="btl-void" min="0" max="8" value="2" step="0.5" data-out="btl-void-display" data-suffix=" wks" oninput="runBTL()">
+                    <span class="range-display" id="btl-void-display">2 wks</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Tax -->
+            <div class="card">
+              <div class="card__header">Tax</div>
+              <div class="card__body">
+                <div class="form-group">
+                  <label>Ownership Structure</label>
+                  <div class="toggle-group" id="grp-struct" data-calc="runBTL">
+                    <label class="toggle-pill active"><input type="radio" name="btl-struct" value="personal" checked> Personal</label>
+                    <label class="toggle-pill"><input type="radio" name="btl-struct" value="ltdco"> Limited Company</label>
+                  </div>
+                </div>
+                <div id="personal-tax-row" class="form-group">
+                  <label>Income Tax Band</label>
+                  <div class="toggle-group" id="grp-tax" data-calc="runBTL">
+                    <label class="toggle-pill"><input type="radio" name="btl-tax" value="20"> Basic 20%</label>
+                    <label class="toggle-pill active"><input type="radio" name="btl-tax" value="40" checked> Higher 40%</label>
+                    <label class="toggle-pill"><input type="radio" name="btl-tax" value="45"> Additional 45%</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Results Panel -->
+          <div>
+            <div class="results-panel">
+              <div class="results-panel__header">📊 Results</div>
+              <div class="results-panel__body">
+                <div class="result-hero">
+                  <div class="result-hero__label">Net Monthly Cashflow</div>
+                  <div class="result-hero__value" id="r-monthly-cf">£0</div>
+                  <div class="result-hero__sub" id="r-monthly-cf-sub">after mortgage &amp; tax</div>
+                </div>
+                <div class="result-grid">
+                  <div class="result-mini">
+                    <div class="result-mini__label">Gross Yield</div>
+                    <div class="result-mini__value" id="r-gross-yield">0.0%</div>
+                  </div>
+                  <div class="result-mini">
+                    <div class="result-mini__label">Net Yield</div>
+                    <div class="result-mini__value" id="r-net-yield">0.0%</div>
+                  </div>
+                  <div class="result-mini">
+                    <div class="result-mini__label">Cash-on-Cash</div>
+                    <div class="result-mini__value" id="r-coc">0.0%</div>
+                  </div>
+                  <div class="result-mini">
+                    <div class="result-mini__label">Annual Net</div>
+                    <div class="result-mini__value" id="r-annual-cf">£0</div>
+                  </div>
+                </div>
+                <div class="result-row"><span class="result-row__label">Property Price</span><span class="result-row__value" id="r-price">—</span></div>
+                <div class="result-row"><span class="result-row__label">Deposit Required</span><span class="result-row__value" id="r-deposit">—</span></div>
+                <div class="result-row"><span class="result-row__label">Stamp Duty</span><span class="result-row__value" id="r-sdlt">—</span></div>
+                <div class="result-row"><span class="result-row__label">Legal &amp; Survey</span><span class="result-row__value">£2,800</span></div>
+                <div class="result-row"><span class="result-row__label">Total Purchase Cost</span><span class="result-row__value accent" id="r-total-cost">—</span></div>
+                <div class="result-divider"></div>
+                <div class="result-row"><span class="result-row__label">Monthly Mortgage</span><span class="result-row__value" id="r-mortgage">—</span></div>
+                <div class="result-row"><span class="result-row__label">Effective Monthly Rent</span><span class="result-row__value" id="r-eff-rent">—</span></div>
+                <div class="result-row"><span class="result-row__label">Annual Operating Costs</span><span class="result-row__value" id="r-opex">—</span></div>
+                <div class="result-row"><span class="result-row__label">Annual Tax</span><span class="result-row__value" id="r-tax">—</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- /tab-inputs -->
+
+      <div id="tab-projection" class="tab-panel">
+        <div class="card">
+          <div class="card__header">5-Year Projection (assumes 4% HPI, 3% rent inflation)</div>
+          <div class="card__body">
+            <div class="table-wrap">
+              <table class="data-table" id="projection-table">
+                <thead><tr><th>Year</th><th>Property Value</th><th>Equity</th><th>Monthly Rent</th><th>Monthly Cashflow</th></tr></thead>
+                <tbody id="projection-body"><tr><td colspan="5" class="text-center text-muted">Enter values on the Calculator tab first.</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-stress" class="tab-panel">
+        <div class="card">
+          <div class="card__header">Mortgage Rate Stress Test</div>
+          <div class="card__body">
+            <p class="text-sm text-muted">Shows monthly mortgage payment and interest coverage ratio (ICR) at each rate. Lenders typically require ICR ≥ 1.25× (rent covers 125% of mortgage). Green = passes, red = fails.</p>
+            <div id="stress-container" style="margin-top:1rem">
+              <p class="text-muted">Enter values on the Calculator tab first.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-tax" class="tab-panel">
+        <div class="card">
+          <div class="card__header">Section 24 Tax Comparison — Personal vs Limited Company</div>
+          <div class="card__body">
+            <p class="text-sm text-muted" style="margin-bottom:1.25rem">Section 24 restricts personal landlords to a 20% tax credit on mortgage interest. Higher-rate taxpayers are often better off in a limited company (19% corp tax with full interest deduction). These figures are illustrative — consult a tax adviser.</p>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th></th><th>Personal (Basic 20%)</th><th>Personal (Higher 40%)</th><th>Ltd Co (19%)</th></tr></thead>
+                <tbody id="tax-compare-body"><tr><td colspan="4" class="text-center text-muted">Enter values on the Calculator tab first.</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /tab-group -->
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h2>Buy-to-Let FAQs</h2>
+      <details class="faq-item">
+        <summary>What is a good buy-to-let yield in the UK?</summary>
+        <div class="faq-body"><p>A gross yield of 6%+ is generally considered good for UK buy-to-let. Northern cities like Sunderland, Hull and Liverpool regularly achieve 7–10% gross. London averages 2–4%. After costs (mortgage, management, maintenance, voids), a net yield of 3–5% is typical in high-yield areas.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>How does Section 24 affect buy-to-let tax?</summary>
+        <div class="faq-body"><p>Section 24 (introduced 2017, fully phased in from 2020) prevents private landlords from deducting mortgage interest from rental income before calculating tax. Instead you receive a 20% basic rate tax credit on the interest paid. A higher-rate (40%) taxpayer can end up paying tax on income that doesn't exist as cashflow — significantly reducing or eliminating returns. Using a limited company avoids Section 24 entirely.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What deposit do I need for a buy-to-let mortgage?</summary>
+        <div class="faq-body"><p>Most UK buy-to-let mortgages require a minimum 20–25% deposit. With a 25% deposit you access a wider range of rates. Lenders typically require rental income to cover 125–145% of the monthly interest payment (ICR). First-time buyers and those purchasing through limited companies may face additional criteria.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Should I buy a rental property personally or via a limited company?</summary>
+        <div class="faq-body"><p>Limited companies avoid Section 24 and pay 19% corporation tax on profits, which can result in significantly higher post-tax cashflow for higher-rate taxpayers. However, Ltd Co buy-to-let mortgages typically carry higher rates (+0.5–1%) and there are setup and ongoing accountancy costs (£500–£1,500/year). If you plan to hold long-term and are a 40% taxpayer, a limited company is usually more tax-efficient. Use the Section 24 tab above to compare.</p></div>
+      </details>
+    </section>
+
+    <div class="cta-box">
+      <h2>Find real high-yield properties</h2>
+      <p>PropertyAlert.uk analyses 46,000+ live UK listings with yield, BTL cashflow and SA projections already calculated. Filter by yield, location and investment score.</p>
+      <a href="https://propertyalert.uk" class="btn btn--green" target="_blank" rel="noopener">Find Investment Properties Free →</a>
+    </div>
+    <div class="ad-slot">Advertisement</div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-brand__name">Property<span>Brain</span></div><p>Free UK property investment calculators. Not financial advice.</p></div>
+      <div class="footer-links"><h4>Calculators</h4><ul><li><a href="/buy-to-let-calculator/">Buy-to-Let</a></li><li><a href="/stamp-duty-calculator/">Stamp Duty</a></li><li><a href="/mortgage-calculator/">Mortgage</a></li><li><a href="/rental-yield-calculator/">Rental Yield</a></li><li><a href="/sa-airbnb-calculator/">SA / Airbnb</a></li><li><a href="/hmo-yield-calculator/">HMO Yield</a></li></ul></div>
+      <div class="footer-links"><h4>Info</h4><ul><li><a href="/guide/">Guide</a></li><li><a href="/downloads/">Downloads</a></li><li><a href="/about/">About</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2025 PropertyBrain.uk — Not financial advice.</span><span><a href="https://propertyalert.uk">PropertyAlert.uk</a></span></div>
+  </div>
+</footer>
+
+<script src="/assets/js/calculators.js"></script>
+<script>
+var _btlResult = null;
+
+function runBTL() {
+  var price = parseFloat(document.getElementById('btl-price').value)||0;
+  var depositPct = parseFloat(document.getElementById('btl-deposit-pct').value)||25;
+  var rate = parseFloat(document.getElementById('btl-rate').value)||5.5;
+  var term = parseFloat(document.getElementById('btl-term').value)||25;
+  var ioEl = document.querySelector('input[name="btl-io"]:checked');
+  var interestOnly = ioEl ? ioEl.value === '1' : false;
+  var purchaseEl = document.querySelector('input[name="btl-purchase"]:checked');
+  var isAdditional = purchaseEl ? purchaseEl.value === 'additional' : true;
+  var country = document.getElementById('btl-country').value;
+  var rent = parseFloat(document.getElementById('btl-rent').value)||0;
+  var mgmtPct = parseFloat(document.getElementById('btl-mgmt').value)||10;
+  var maintPct = parseFloat(document.getElementById('btl-maint').value)||5;
+  var insurance = parseFloat(document.getElementById('btl-insurance').value)||600;
+  var voidWks = parseFloat(document.getElementById('btl-void').value)||2;
+  var structEl = document.querySelector('input[name="btl-struct"]:checked');
+  var isLtdCo = structEl ? structEl.value === 'ltdco' : false;
+  var taxEl = document.querySelector('input[name="btl-tax"]:checked');
+  var taxBand = taxEl ? parseInt(taxEl.value) : 40;
+
+  // Show/hide personal tax row
+  var personalRow = document.getElementById('personal-tax-row');
+  if (personalRow) personalRow.style.display = isLtdCo ? 'none' : '';
+
+  var r = calcBTL({
+    price: price, depositPct: depositPct, rate: rate, term: term, interestOnly: interestOnly,
+    isAdditional: isAdditional, country: country,
+    monthlyRent: rent, managementPct: mgmtPct, maintenancePct: maintPct,
+    insurance: insurance, voidWeeks: voidWks,
+    isLtdCo: isLtdCo, taxBand: taxBand,
+    legalFees: 2000, surveyFees: 800
+  });
+  _btlResult = r;
+
+  // Update deposit display
+  var depAmt = document.getElementById('btl-deposit-amt');
+  if (depAmt) depAmt.textContent = '— ' + fmt(r.deposit);
+
+  setEl('r-monthly-cf', fmtSigned(r.netMonthly), colorClass(r.netMonthly));
+  document.getElementById('r-monthly-cf').className = 'result-hero__value ' + colorClass(r.netMonthly);
+  setEl('r-gross-yield', fmtPct(r.grossYield));
+  setEl('r-net-yield', fmtPct(r.netYield));
+  var cocEl = document.getElementById('r-coc');
+  if (cocEl) { cocEl.textContent = fmtPct(r.cashOnCash); cocEl.className = 'result-mini__value ' + colorClass(r.cashOnCash); }
+  var annEl = document.getElementById('r-annual-cf');
+  if (annEl) { annEl.textContent = fmtSigned(r.netAnnual); annEl.className = 'result-mini__value ' + colorClass(r.netAnnual); }
+  setEl('r-price', fmt(price));
+  setEl('r-deposit', fmt(r.deposit));
+  setEl('r-sdlt', fmt(r.sdlt));
+  var tcEl = document.getElementById('r-total-cost');
+  if (tcEl) { tcEl.textContent = fmt(r.purchaseCosts); tcEl.className = 'result-row__value accent'; }
+  setEl('r-mortgage', fmt(r.mortMonthly) + '/mo');
+  setEl('r-eff-rent', fmt(r.effectiveRent) + '/mo');
+  setEl('r-opex', fmt(r.totalOpex) + '/yr');
+  setEl('r-tax', fmt(r.taxPayable) + '/yr');
+
+  // 5-year projection
+  var projRows = buildBTLProjection(price, r.loan, rent, r.mortMonthly, voidWks, mgmtPct, maintPct, insurance);
+  var tbody = document.getElementById('projection-body');
+  if (tbody) {
+    tbody.innerHTML = projRows.map(function(row) {
+      var cfClass = row.cashflow >= 0 ? 'positive' : 'negative';
+      return '<tr><td>Year ' + row.year + '</td><td>' + fmt(row.value) + '</td><td>' + fmt(row.equity) + '</td><td>' + fmt(row.rent) + '/mo</td><td class="'+cfClass+'">' + fmtSigned(row.cashflow) + '/mo</td></tr>';
+    }).join('');
+  }
+
+  // Stress test
+  var stress = buildStressTest(r.loan, rate, rent, term, interestOnly);
+  var sc = document.getElementById('stress-container');
+  if (sc) {
+    sc.innerHTML = stress.map(function(row) {
+      var barClass = row.ok ? 'ok' : (row.icr >= 1 ? 'warn' : 'bad');
+      var barPct = Math.min(100, (row.icr / 2) * 100);
+      var icrLabel = row.icr >= 99 ? '∞' : row.icr.toFixed(2) + 'x';
+      var statusPill = row.ok ? '<span class="pill pill--green">Pass</span>' : '<span class="pill pill--red">Fail</span>';
+      return '<div class="stress-row"><span class="stress-label">' + row.rate.toFixed(1) + '%</span><div class="stress-bar-wrap"><div class="stress-bar '+barClass+'" style="width:'+barPct+'%"></div></div><span class="stress-value">' + fmt(row.monthly) + '/mo</span><span>ICR '+icrLabel+'</span>' + statusPill + '</div>';
+    }).join('');
+  }
+
+  // Tax comparison
+  var tbody2 = document.getElementById('tax-compare-body');
+  if (tbody2) {
+    function taxCalc(band, ltd) {
+      var res = calcBTL({
+        price: price, depositPct: depositPct, rate: rate, term: term, interestOnly: interestOnly,
+        isAdditional: isAdditional, country: country,
+        monthlyRent: rent, managementPct: mgmtPct, maintenancePct: maintPct,
+        insurance: insurance, voidWeeks: voidWks,
+        isLtdCo: ltd, taxBand: band, legalFees: 2000, surveyFees: 800
+      });
+      return res;
+    }
+    var r20 = taxCalc(20, false);
+    var r40 = taxCalc(40, false);
+    var rLtd = taxCalc(40, true);
+    tbody2.innerHTML = [
+      '<tr><td>Annual Rental Income</td><td>' + fmt(r20.annualRent) + '</td><td>' + fmt(r40.annualRent) + '</td><td>' + fmt(rLtd.annualRent) + '</td></tr>',
+      '<tr><td>Operating Costs</td><td>' + fmt(r20.totalOpex) + '</td><td>' + fmt(r40.totalOpex) + '</td><td>' + fmt(rLtd.totalOpex) + '</td></tr>',
+      '<tr><td>Mortgage Payments</td><td>' + fmt(r20.mortMonthly*12) + '</td><td>' + fmt(r40.mortMonthly*12) + '</td><td>' + fmt(rLtd.mortMonthly*12) + '</td></tr>',
+      '<tr><td>Tax Payable</td><td>' + fmt(r20.taxPayable) + '</td><td>' + fmt(r40.taxPayable) + '</td><td>' + fmt(rLtd.taxPayable) + ' (corp)</td></tr>',
+      '<tr class="total-row"><td><strong>Net Annual Cashflow</strong></td><td class="'+colorClass(r20.netAnnual)+'">'+fmtSigned(r20.netAnnual)+'</td><td class="'+colorClass(r40.netAnnual)+'">'+fmtSigned(r40.netAnnual)+'</td><td class="'+colorClass(rLtd.netAnnual)+'">'+fmtSigned(rLtd.netAnnual)+'</td></tr>',
+      '<tr class="total-row"><td><strong>Net Monthly Cashflow</strong></td><td class="'+colorClass(r20.netMonthly)+'">'+fmtSigned(r20.netMonthly)+'</td><td class="'+colorClass(r40.netMonthly)+'">'+fmtSigned(r40.netMonthly)+'</td><td class="'+colorClass(rLtd.netMonthly)+'">'+fmtSigned(rLtd.netMonthly)+'</td></tr>'
+    ].join('');
+  }
+
+  gtag('event','calculator_used',{calc:'btl',price:price,yield:r.grossYield.toFixed(1)});
+}
+
+document.addEventListener('DOMContentLoaded', function() { runBTL(); });
+</script>
+</body>
+</html>
