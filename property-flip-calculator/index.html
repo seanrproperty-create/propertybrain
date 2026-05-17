@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Property Flip Calculator UK — Refurb & Resale Profit | PropertyBrain</title>
+<meta name="description" content="Calculate profit on a UK property flip. Enter purchase price, refurb costs and sale price — get net profit after stamp duty, agent fees, bridging interest and CGT. Free, instant.">
+<link rel="canonical" href="https://propertybrain.uk/property-flip-calculator/">
+<meta property="og:title" content="Property Flip Calculator UK | PropertyBrain">
+<meta property="og:description" content="Calculate your net profit on a buy-refurbish-sell in the UK. Includes stamp duty, bridging finance, CGT and all selling costs.">
+<meta property="og:url" content="https://propertybrain.uk/property-flip-calculator/">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Property Flip Calculator UK","url":"https://propertybrain.uk/property-flip-calculator/","description":"Calculate net profit on a UK property flip including refurb, bridging finance, stamp duty and CGT.","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate profit on a property flip in the UK?","acceptedAnswer":{"@type":"Answer","text":"Net flip profit = sale price − purchase price − stamp duty − refurbishment costs − bridging or mortgage finance costs − estate agent fees − solicitor fees (purchase and sale) − CGT on the gain. Many flippers underestimate finance holding costs and CGT, which can significantly erode headline margins."}},{"@type":"Question","name":"Do I pay CGT or income tax on a property flip?","acceptedAnswer":{"@type":"Answer","text":"If you flip properties regularly as a trade, HMRC may treat the profit as trading income subject to income tax and National Insurance rather than CGT. Occasional flips are typically treated as capital gains at 18% or 24%. If in doubt, consult a tax adviser before starting a flip."}},{"@type":"Question","name":"What is a good profit margin for a UK property flip?","acceptedAnswer":{"@type":"Answer","text":"Most UK property flippers target a minimum net profit of £20,000–£30,000 per deal or 15–20% of the purchase price after all costs. Below this, the risk-to-reward ratio is unattractive compared to buy-to-let. Use this calculator to model your numbers before committing to a purchase."}},{"@type":"Question","name":"How long does a property flip take in the UK?","acceptedAnswer":{"@type":"Answer","text":"A typical UK property flip takes 4–9 months from purchase to resale completion. Light refurbs (cosmetic only) can complete in 3–4 months; heavy structural works or planning permissions extend this to 12+ months. Bridging finance costs compound monthly, so timeline accuracy is critical to profitability."}}]}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VGJC6YVK43"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VGJC6YVK43');</script>
+</head>
+<body>
+<div id="cookie-banner">
+  <p>We use cookies to improve your experience. <a href="/cookies/">Learn more</a>.</p>
+  <div class="cookie-btns"><button class="btn-cookie-accept" id="cookie-accept">Accept</button><button class="btn-cookie-decline" id="cookie-decline">Decline</button></div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__logo">Property<span>Brain</span></a>
+      <nav class="site-nav">
+        <a href="/buy-to-let-calculator/">BTL Calculator</a>
+        <a href="/stamp-duty-calculator/">Stamp Duty</a>
+        <a href="/mortgage-calculator/">Mortgage</a>
+        <a href="/rental-yield-calculator/">Yield</a>
+        <a href="/sa-airbnb-calculator/">SA/Airbnb</a>
+        <a href="/downloads/">Downloads</a>
+        <a href="/guide/">Guide</a>
+        <a href="/capital-gains-tax-calculator/">CGT</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> › Property Flip Calculator</div>
+    <h1>Property Flip Calculator UK</h1>
+    <p>Model your net profit on a buy-refurb-sell — stamp duty, bridging finance, CGT and all selling costs included. Instant results.</p>
+  </div>
+</section>
+
+<main class="main-content">
+  <div class="container">
+    <div class="notice"><strong>Not financial advice.</strong> This calculator is for illustrative purposes. Tax treatment depends on your circumstances — consult a qualified adviser before proceeding.</div>
+
+    <div class="calc-layout">
+      <div>
+        <div class="card">
+          <div class="card__header">Purchase &amp; Acquisition</div>
+          <div class="card__body">
+            <div class="form-group">
+              <label>Purchase Price</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="flip-purchase" value="120000" min="0" oninput="runFlip()"></div>
+            </div>
+            <div class="form-group">
+              <label>Stamp Duty <span class="hint">(auto-calculated — additional property rates)</span></label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="flip-sdlt" value="6000" min="0" readonly style="background:#f8fafc;color:var(--grey-600)"></div>
+            </div>
+            <div class="form-group">
+              <label>Legal Fees — Purchase</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="flip-legal-purchase" value="1500" min="0" oninput="runFlip()"></div>
+            </div>
+            <div class="form-group">
+              <label>Survey</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="flip-survey" value="500" min="0" oninput="runFlip()"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">Refurbishment &amp; Bridging Finance</div>
+          <div class="card__body">
+            <div class="form-group">
+              <label>Refurbishment Costs</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="flip-refurb" value="25000" min="0" oninput="runFlip()"></div>
+            </div>
+            <div class="form-group">
+              <label>Bridging Finance Rate <span class="hint">(% per month)</span></label>
+              <div class="range-row">
+                <input type="range" id="flip-bridge-rate" min="0.3" max="2.0" value="0.75" step="0.05" data-out="flip-bridge-rate-disp" data-suffix="%" oninput="runFlip()">
+                <span class="range-display" id="flip-bridge-rate-disp">0.75%</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Bridging Term <span class="hint">(months)</span></label>
+              <div class="range-row">
+                <input type="range" id="flip-bridge-months" min="1" max="18" value="6" step="1" data-out="flip-bridge-months-disp" data-suffix=" mo" oninput="runFlip()">
+                <span class="range-display" id="flip-bridge-months-disp">6 mo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">Sale &amp; Tax</div>
+          <div class="card__body">
+            <div class="form-group">
+              <label>Sale Price</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="flip-sale" value="185000" min="0" oninput="runFlip()"></div>
+            </div>
+            <div class="form-group">
+              <label>Estate Agent Fee <span class="hint">(% of sale price)</span></label>
+              <div class="range-row">
+                <input type="range" id="flip-agent" min="0.5" max="3.5" value="1.5" step="0.1" data-out="flip-agent-disp" data-suffix="%" oninput="runFlip()">
+                <span class="range-display" id="flip-agent-disp">1.5%</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Legal Fees — Sale</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="flip-legal-sale" value="1200" min="0" oninput="runFlip()"></div>
+            </div>
+            <div class="form-group">
+              <label>Tax Treatment</label>
+              <div class="toggle-group" id="grp-flip-tax" data-calc="runFlip">
+                <label class="toggle-pill active"><input type="radio" name="flip-tax" value="cgt24" checked> CGT 24%</label>
+                <label class="toggle-pill"><input type="radio" name="flip-tax" value="cgt18"> CGT 18%</label>
+                <label class="toggle-pill"><input type="radio" name="flip-tax" value="income"> Income Tax</label>
+              </div>
+            </div>
+            <div class="form-group" id="income-tax-row" style="display:none">
+              <label>Income Tax Rate <span class="hint">(%)</span></label>
+              <div class="range-row">
+                <input type="range" id="flip-income-rate" min="20" max="45" value="40" step="5" data-out="flip-income-rate-disp" data-suffix="%" oninput="runFlip()">
+                <span class="range-display" id="flip-income-rate-disp">40%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div>
+        <div class="results-panel">
+          <div class="results-panel__header">🔨 Flip Results</div>
+          <div class="results-panel__body">
+            <div class="result-hero">
+              <div class="result-hero__label">Net Profit</div>
+              <div class="result-hero__value" id="r-flip-hero">£0</div>
+            </div>
+            <div class="result-grid">
+              <div class="result-mini"><div class="result-mini__label">ROI</div><div class="result-mini__value" id="r-flip-roi">—</div></div>
+              <div class="result-mini"><div class="result-mini__label">Annualised ROI</div><div class="result-mini__value" id="r-flip-ann-roi">—</div></div>
+            </div>
+            <div class="result-row"><span class="result-row__label">Sale Price</span><span class="result-row__value" id="r-flip-sale">—</span></div>
+            <div class="result-divider"></div>
+            <div class="result-row"><span class="result-row__label">Total purchase costs</span><span class="result-row__value" id="r-flip-purchase-costs">—</span></div>
+            <div class="result-row"><span class="result-row__label">Refurb &amp; bridging costs</span><span class="result-row__value" id="r-flip-refurb-finance">—</span></div>
+            <div class="result-row"><span class="result-row__label">Total selling costs</span><span class="result-row__value" id="r-flip-selling-costs">—</span></div>
+            <div class="result-row"><span class="result-row__label">Tax (CGT / income tax)</span><span class="result-row__value negative" id="r-flip-tax">—</span></div>
+            <div class="result-divider"></div>
+            <div class="result-row"><span class="result-row__label">Bridging interest total</span><span class="result-row__value" id="r-flip-bridge-int">—</span></div>
+            <div class="result-row"><span class="result-row__label">Stamp duty</span><span class="result-row__value" id="r-flip-sdlt-shown">—</span></div>
+            <div style="margin-top:1rem;font-size:0.78rem;color:var(--grey-600)">SDLT at additional property rates (England). CGT assumes £3,000 annual exempt amount available.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content section -->
+    <section class="content-section" style="margin-top:2.5rem">
+      <div class="card">
+        <div class="card__body">
+          <h2 style="margin-bottom:1rem">How to Calculate UK Property Flip Profit</h2>
+
+          <p>A property flip is a buy-refurb-sell strategy: you purchase a property — often at auction or off-market — refurbish it to add value, and resell at a profit. The concept is straightforward, but the numbers need to be modelled thoroughly before you commit to a purchase. Missing one cost line can turn a profitable deal into a breakeven or a loss.</p>
+
+          <h3 style="margin:1.25rem 0 0.5rem">The true cost of a UK flip</h3>
+          <p>Most flippers focus on the purchase price and refurb cost, but the full picture includes stamp duty (5% on the first £250,000 at additional property rates — £6,000 on a £120,000 purchase), legal fees on both purchase and sale, bridging finance interest, estate agent fees and tax on the gain. On a £120,000 purchase with a £25,000 refurb targeting a £185,000 sale, these costs can easily exceed £20,000 before any profit is taken. This calculator models every line so you see your real net profit upfront.</p>
+
+          <h3 style="margin:1.25rem 0 0.5rem">Bridging finance and holding costs</h3>
+          <p>Bridging loans are typically charged at a monthly rate on the outstanding balance — 0.75% per month is common in 2024–25. On a £120,000 bridge, that's £900/month. Six months of holding costs therefore adds £5,400 before you've sold. Refurb delays, planning complications or slow sale progression all extend the bridge term and erode margins. Build in at least a 10–15% contingency on your refurb estimate and model the worst-case bridge term in the calculator above.</p>
+
+          <h3 style="margin:1.25rem 0 0.5rem">CGT vs income tax on property flips</h3>
+          <p>If you buy and sell properties occasionally, HMRC will typically treat the profit as a <strong>capital gain</strong>, taxed at 18% (basic rate) or 24% (higher rate) after the £3,000 annual exempt amount. However, if you regularly flip properties as a business activity, HMRC may classify the profits as <strong>trading income</strong> — subject to income tax at up to 45% plus Class 4 National Insurance. The difference is substantial: a 45% income tax rate on a £30,000 profit costs £13,500, versus £6,480 at 24% CGT. If you plan to flip more than once or twice, take qualified tax advice early.</p>
+
+          <h3 style="margin:1.25rem 0 0.5rem">What makes a good UK flip deal?</h3>
+          <p>Most experienced UK flippers target a minimum net profit of £20,000–£30,000 per deal, or at least 15% ROI on all cash invested. The "70% rule" is a common acquisition heuristic: don't pay more than 70% of the after-repair value (ARV) minus refurb costs. Always source comparable sold prices before committing — use Land Registry data to verify realistic resale values in the area.</p>
+
+          <p style="margin-top:1.25rem"><strong>Related calculators:</strong> Calculate stamp duty at <a href="/stamp-duty-calculator/">Stamp Duty Calculator</a>. Model your mortgage finance with the <a href="/mortgage-calculator/">Mortgage Calculator</a>. Understand your CGT position at our <a href="/capital-gains-tax-calculator/">Capital Gains Tax Calculator</a>.</p>
+          <p style="font-size:0.85rem;color:var(--grey-600)"><strong>External references:</strong> <a href="https://www.zoopla.co.uk/house-prices/" target="_blank" rel="noopener">Zoopla sold prices</a> | <a href="https://www.gov.uk/hmrc-internal-manuals/business-income-manual/bim60000" target="_blank" rel="noopener">HMRC: Trading vs investment property</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>Property Flip FAQs</h2>
+      <details class="faq-item">
+        <summary>How do I calculate profit on a UK property flip?</summary>
+        <div class="faq-body"><p>Net profit = sale price minus all costs: purchase price, stamp duty, legal fees (purchase and sale), survey, refurb, bridging interest, estate agent fees, and CGT or income tax on the gain. Use this calculator to model every line before bidding.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Do I pay CGT or income tax on a flip?</summary>
+        <div class="faq-body"><p>Occasional flips are typically taxed as capital gains (18% or 24%). Regular property flipping as a trade may be taxed as income at up to 45% plus National Insurance. HMRC looks at frequency, intention at purchase, and how quickly you sell when deciding. Get advice if you're planning multiple flips.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What is a good return on a property flip?</summary>
+        <div class="faq-body"><p>Most UK flippers target at least 15–20% ROI on total cash invested and a minimum net profit of £20,000–£30,000 per deal. Below this, the risk — refurb cost overruns, voids, market movement — doesn't justify the capital deployed compared to buy-to-let.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I use a buy-to-let mortgage to flip a property?</summary>
+        <div class="faq-body"><p>No — BTL mortgages are not suitable for flipping. They require a minimum tenancy and typically prohibit resale within 6–12 months. Most flippers use bridging finance, which is specifically designed for short-term acquisitions and allows rapid purchase and exit without occupancy requirements.</p></div>
+      </details>
+    </section>
+
+    <div class="cta-box">
+      <h2>Find flip-ready properties</h2>
+      <p>PropertyAlert.uk identifies properties below market value, analyses comparable sold prices and scores flip viability for 46,000+ live UK listings.</p>
+      <a href="https://propertyalert.uk" class="btn btn--green" target="_blank" rel="noopener">Find Flip Properties on PropertyAlert.uk →</a>
+    </div>
+    <div class="ad-slot">Advertisement</div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-brand__name">Property<span>Brain</span></div><p>Free UK property investment calculators. Not financial advice.</p></div>
+      <div class="footer-links"><h4>Calculators</h4><ul>
+        <li><a href="/buy-to-let-calculator/">Buy-to-Let</a></li>
+        <li><a href="/stamp-duty-calculator/">Stamp Duty</a></li>
+        <li><a href="/mortgage-calculator/">Mortgage</a></li>
+        <li><a href="/rental-yield-calculator/">Rental Yield</a></li>
+        <li><a href="/sa-airbnb-calculator/">SA / Airbnb</a></li>
+        <li><a href="/hmo-yield-calculator/">HMO Yield</a></li>
+      </ul></div>
+      <div class="footer-links"><h4>Exit Strategies</h4><ul>
+        <li><a href="/capital-gains-tax-calculator/">CGT Calculator</a></li>
+        <li><a href="/property-flip-calculator/">Flip Calculator</a></li>
+        <li><a href="/refinance-vs-sell-calculator/">Refinance vs Sell</a></li>
+        <li><a href="/portfolio-disposal-calculator/">Portfolio Disposal</a></li>
+      </ul></div>
+      <div class="footer-links"><h4>Info</h4><ul>
+        <li><a href="/guide/">Guide</a></li>
+        <li><a href="/downloads/">Downloads</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2025 PropertyBrain.uk — Not financial advice.</span><span><a href="https://propertyalert.uk">PropertyAlert.uk</a></span></div>
+  </div>
+</footer>
+
+<script src="/assets/js/calculators.js"></script>
+<script>
+function runFlip() {
+  var purchase   = parseFloat(document.getElementById('flip-purchase').value) || 0;
+  var sdlt       = calcSDLT(purchase, 'additional', 'england').total;
+  document.getElementById('flip-sdlt').value = Math.round(sdlt);
+
+  var legalBuy    = parseFloat(document.getElementById('flip-legal-purchase').value) || 0;
+  var survey      = parseFloat(document.getElementById('flip-survey').value) || 0;
+  var refurb      = parseFloat(document.getElementById('flip-refurb').value) || 0;
+  var bridgeRate  = parseFloat(document.getElementById('flip-bridge-rate').value) || 0.75;
+  var bridgeMo    = parseFloat(document.getElementById('flip-bridge-months').value) || 6;
+  var salePrice   = parseFloat(document.getElementById('flip-sale').value) || 0;
+  var agentPct    = parseFloat(document.getElementById('flip-agent').value) || 1.5;
+  var legalSale   = parseFloat(document.getElementById('flip-legal-sale').value) || 0;
+  var taxEl       = document.querySelector('input[name="flip-tax"]:checked');
+  var taxType     = taxEl ? taxEl.value : 'cgt24';
+  var incomeRate  = parseFloat(document.getElementById('flip-income-rate').value) || 40;
+
+  // Toggle income rate row
+  var itRow = document.getElementById('income-tax-row');
+  if (itRow) itRow.style.display = taxType === 'income' ? '' : 'none';
+
+  var bridgeInterest  = purchase * (bridgeRate / 100) * bridgeMo;
+  var agentFee        = salePrice * agentPct / 100;
+  var totalPurchase   = purchase + sdlt + legalBuy + survey;
+  var totalRefurbFin  = refurb + bridgeInterest;
+  var totalSelling    = agentFee + legalSale;
+
+  // CGT gain = sale - all allowable costs
+  var gain = salePrice - purchase - sdlt - legalBuy - survey - agentFee - legalSale;
+  var tax  = 0;
+  if (taxType === 'cgt24') {
+    tax = Math.max(0, gain - 3000) * 0.24;
+  } else if (taxType === 'cgt18') {
+    tax = Math.max(0, gain - 3000) * 0.18;
+  } else {
+    tax = Math.max(0, gain) * (incomeRate / 100);
+  }
+
+  var netProfit    = salePrice - totalPurchase - totalRefurbFin - totalSelling - tax;
+  var totalInvested= purchase + sdlt + legalBuy + survey + refurb;
+  var roi          = totalInvested > 0 ? netProfit / totalInvested * 100 : 0;
+  var annROI       = bridgeMo > 0 ? (Math.pow(1 + roi / 100, 12 / bridgeMo) - 1) * 100 : 0;
+
+  var heroEl = document.getElementById('r-flip-hero');
+  heroEl.textContent = fmtSigned(netProfit);
+  heroEl.className   = 'result-hero__value ' + colorClass(netProfit);
+
+  setEl('r-flip-sale', fmt(salePrice));
+  setEl('r-flip-purchase-costs', fmt(totalPurchase));
+  setEl('r-flip-refurb-finance', fmt(totalRefurbFin));
+  setEl('r-flip-selling-costs', fmt(totalSelling));
+  setEl('r-flip-tax', fmt(tax));
+  setEl('r-flip-bridge-int', fmt(bridgeInterest));
+  setEl('r-flip-sdlt-shown', fmt(sdlt));
+
+  var roiEl = document.getElementById('r-flip-roi');
+  roiEl.textContent = fmtPct(roi);
+  roiEl.className   = 'result-row__value ' + colorClass(roi);
+  var annEl = document.getElementById('r-flip-ann-roi');
+  annEl.textContent = fmtPct(annROI) + '/yr';
+  annEl.className   = 'result-row__value ' + colorClass(annROI);
+
+  gtag('event','calculator_used',{calc:'flip',purchase:purchase,sale:salePrice,profit:Math.round(netProfit)});
+}
+document.addEventListener('DOMContentLoaded', function(){ runFlip(); });
+</script>
+</body>
+</html>

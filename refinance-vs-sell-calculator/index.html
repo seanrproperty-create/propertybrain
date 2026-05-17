@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refinance vs Sell Calculator UK — Should I Remortgage or Sell My Property? | PropertyBrain</title>
+<meta name="description" content="Compare remortgaging to release equity against selling your UK investment property. See net cash from each option after CGT, fees and mortgage costs. Free, instant calculator.">
+<link rel="canonical" href="https://propertybrain.uk/refinance-vs-sell-calculator/">
+<meta property="og:title" content="Refinance vs Sell Property Calculator UK | PropertyBrain">
+<meta property="og:description" content="Should you remortgage or sell your UK investment property? Compare net cash proceeds from both options side by side.">
+<meta property="og:url" content="https://propertybrain.uk/refinance-vs-sell-calculator/">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Refinance vs Sell Calculator UK","url":"https://propertybrain.uk/refinance-vs-sell-calculator/","description":"Compare releasing equity via remortgage against selling your UK investment property outright. Net cash comparison after all costs.","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I remortgage or sell my investment property?","acceptedAnswer":{"@type":"Answer","text":"Remortgaging releases equity without triggering CGT and keeps the property generating rental income. Selling crystallises a CGT liability but gives you full liquidity with no ongoing mortgage commitment. The right choice depends on your CGT position, the property's yield vs new mortgage costs, and whether you need cash for another purchase."}},{"@type":"Question","name":"How much equity can I release by remortgaging a UK investment property?","acceptedAnswer":{"@type":"Answer","text":"Most BTL lenders allow remortgaging to a maximum of 75% LTV. So on a property worth £200,000 with a £100,000 mortgage, you could refinance to £150,000 and release £50,000 equity tax-free. The new monthly payment will be higher, so model the impact on cashflow before proceeding."}},{"@type":"Question","name":"Do I pay tax when I remortgage a property?","acceptedAnswer":{"@type":"Answer","text":"No — releasing equity via a remortgage is not a taxable event. You only pay CGT when you sell the property. This makes refinancing an attractive way to access capital while retaining the asset and deferring the CGT liability."}},{"@type":"Question","name":"What are the costs of remortgaging a UK buy-to-let property?","acceptedAnswer":{"@type":"Answer","text":"Typical BTL remortgage costs include a product/arrangement fee (£0–£2,000), valuation fee (£150–£500), legal fees (£500–£1,000), and any early repayment charge on the existing mortgage (0–5% of the outstanding balance). A broker fee may also apply if you use a mortgage broker."}}]}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VGJC6YVK43"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VGJC6YVK43');</script>
+</head>
+<body>
+<div id="cookie-banner">
+  <p>We use cookies to improve your experience. <a href="/cookies/">Learn more</a>.</p>
+  <div class="cookie-btns"><button class="btn-cookie-accept" id="cookie-accept">Accept</button><button class="btn-cookie-decline" id="cookie-decline">Decline</button></div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__logo">Property<span>Brain</span></a>
+      <nav class="site-nav">
+        <a href="/buy-to-let-calculator/">BTL Calculator</a>
+        <a href="/stamp-duty-calculator/">Stamp Duty</a>
+        <a href="/mortgage-calculator/">Mortgage</a>
+        <a href="/rental-yield-calculator/">Yield</a>
+        <a href="/sa-airbnb-calculator/">SA/Airbnb</a>
+        <a href="/downloads/">Downloads</a>
+        <a href="/guide/">Guide</a>
+        <a href="/capital-gains-tax-calculator/">CGT</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> › Refinance vs Sell Calculator</div>
+    <h1>Refinance vs Sell Calculator UK</h1>
+    <p>Compare net cash from remortgaging to release equity against selling your investment property — including CGT, costs and cashflow impact.</p>
+  </div>
+</section>
+
+<main class="main-content">
+  <div class="container">
+    <div class="notice"><strong>Not financial advice.</strong> This calculator is for illustrative purposes. Consult a qualified mortgage adviser and tax adviser before making any property decision.</div>
+
+    <div class="calc-layout">
+      <div>
+        <div class="card">
+          <div class="card__header">Property Details</div>
+          <div class="card__body">
+            <div class="form-group">
+              <label>Current Property Value</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="rvs-value" value="200000" min="0" oninput="runRVS()"></div>
+            </div>
+            <div class="form-group">
+              <label>Current Mortgage Outstanding</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="rvs-current-mortgage" value="80000" min="0" oninput="runRVS()"></div>
+            </div>
+            <div class="form-group">
+              <label>Original Purchase Price <span class="hint">(for CGT calculation)</span></label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="rvs-original-purchase" value="120000" min="0" oninput="runRVS()"></div>
+            </div>
+            <div class="form-group">
+              <label>Monthly Rental Income</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="rvs-rent" value="900" min="0" oninput="runRVS()"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">🔄 Refinance Options</div>
+          <div class="card__body">
+            <div class="form-group">
+              <label>New LTV <span class="hint">(max 75% for most BTL lenders)</span></label>
+              <div class="range-row">
+                <input type="range" id="rvs-ltv" min="50" max="80" value="75" step="5" data-out="rvs-ltv-disp" data-suffix="%" oninput="runRVS()">
+                <span class="range-display" id="rvs-ltv-disp">75%</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>New Mortgage Rate <span class="hint">(interest-only)</span></label>
+              <div class="range-row">
+                <input type="range" id="rvs-rate" min="2.0" max="9.0" value="5.5" step="0.1" data-out="rvs-rate-disp" data-suffix="%" oninput="runRVS()">
+                <span class="range-display" id="rvs-rate-disp">5.5%</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Arrangement Fee</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="rvs-arrangement" value="999" min="0" oninput="runRVS()"></div>
+            </div>
+            <div class="form-group">
+              <label>Legal Fees — Remortgage</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="rvs-legal-refi" value="750" min="0" oninput="runRVS()"></div>
+            </div>
+            <div class="form-group">
+              <label>Early Repayment Charge</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="rvs-erc" value="0" min="0" oninput="runRVS()"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__header">🏷️ Sell Options</div>
+          <div class="card__body">
+            <div class="form-group">
+              <label>Estate Agent Fee</label>
+              <div class="range-row">
+                <input type="range" id="rvs-agent" min="0.5" max="3.5" value="1.5" step="0.1" data-out="rvs-agent-disp" data-suffix="%" oninput="runRVS()">
+                <span class="range-display" id="rvs-agent-disp">1.5%</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Legal Fees — Sale</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="rvs-legal-sale" value="1500" min="0" oninput="runRVS()"></div>
+            </div>
+            <div class="form-group">
+              <label>CGT Rate</label>
+              <div class="toggle-group" id="grp-rvs-cgt" data-calc="runRVS">
+                <label class="toggle-pill active"><input type="radio" name="rvs-cgt" value="0.24" checked> 24% higher rate</label>
+                <label class="toggle-pill"><input type="radio" name="rvs-cgt" value="0.18"> 18% basic rate</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results comparison -->
+      <div>
+        <div class="results-panel">
+          <div class="results-panel__header">⚖️ Side-by-Side Comparison</div>
+          <div class="results-panel__body">
+
+            <!-- Comparison table -->
+            <div class="table-wrap" style="margin-bottom:1rem">
+              <table class="data-table">
+                <thead><tr><th>Metric</th><th>🔄 Refinance</th><th>🏷️ Sell</th></tr></thead>
+                <tbody>
+                  <tr><td>Net cash in hand</td><td id="r-rvs-net-refi" style="font-weight:700">—</td><td id="r-rvs-net-sell" style="font-weight:700">—</td></tr>
+                  <tr><td>New mortgage amount</td><td id="r-rvs-new-mortgage">—</td><td style="color:var(--grey-600)">—</td></tr>
+                  <tr><td>Monthly IO payment</td><td id="r-rvs-monthly-payment">—</td><td style="color:var(--grey-600)">—</td></tr>
+                  <tr><td>Monthly cashflow</td><td id="r-rvs-cashflow">—</td><td id="r-rvs-sell-cashflow" style="color:var(--grey-600)">£0 (sold)</td></tr>
+                  <tr><td>Annual cashflow</td><td id="r-rvs-annual-cashflow">—</td><td style="color:var(--grey-600)">—</td></tr>
+                  <tr><td>CGT due</td><td style="color:var(--green)">£0 (deferred)</td><td id="r-rvs-cgt-due" style="color:var(--red)">—</td></tr>
+                  <tr><td>Total costs</td><td id="r-rvs-refi-costs">—</td><td id="r-rvs-sell-costs">—</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Refinance breakdown -->
+            <div style="background:var(--grey-50);border-radius:var(--radius);padding:0.75rem;margin-bottom:0.75rem;border:1px solid var(--grey-200)">
+              <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--grey-600);margin-bottom:0.5rem">🔄 Refinance Details</div>
+              <div class="result-row"><span class="result-row__label">Equity released</span><span class="result-row__value" id="r-rvs-equity-released">—</span></div>
+              <div class="result-row"><span class="result-row__label">Less refinance costs</span><span class="result-row__value negative" id="r-rvs-refi-costs-detail">—</span></div>
+              <div class="result-row"><span class="result-row__label">Net cash released</span><span class="result-row__value accent" id="r-rvs-net-refi-detail">—</span></div>
+            </div>
+
+            <!-- Sell breakdown -->
+            <div style="background:var(--grey-50);border-radius:var(--radius);padding:0.75rem;margin-bottom:1rem;border:1px solid var(--grey-200)">
+              <div style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--grey-600);margin-bottom:0.5rem">🏷️ Sale Details</div>
+              <div class="result-row"><span class="result-row__label">Gross sale proceeds</span><span class="result-row__value" id="r-rvs-sale-proceeds">—</span></div>
+              <div class="result-row"><span class="result-row__label">Less mortgage repayment</span><span class="result-row__value negative" id="r-rvs-mortgage-repaid">—</span></div>
+              <div class="result-row"><span class="result-row__label">Less selling costs</span><span class="result-row__value negative" id="r-rvs-sell-costs-detail">—</span></div>
+              <div class="result-row"><span class="result-row__label">Less CGT due</span><span class="result-row__value negative" id="r-rvs-cgt-detail">—</span></div>
+              <div class="result-row"><span class="result-row__label">Net cash in hand</span><span class="result-row__value accent" id="r-rvs-net-sell-detail">—</span></div>
+            </div>
+
+            <!-- Recommendation -->
+            <div id="recommendation" class="notice" style="display:none;background:#eff6ff;border-left:4px solid #2563eb">
+              <span id="r-rec-text"></span>
+            </div>
+
+            <div style="margin-top:0.75rem;font-size:0.78rem;color:var(--grey-600)">Refinance monthly payment calculated as interest-only. CGT assumes £3,000 annual exempt amount available.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content section -->
+    <section class="content-section" style="margin-top:2.5rem">
+      <div class="card">
+        <div class="card__body">
+          <h2 style="margin-bottom:1rem">Refinance vs Sell — Making the Right Decision</h2>
+
+          <p>When your investment property has grown in value, you face a choice: remortgage to release equity tax-free while keeping the asset, or sell and take full liquidity — triggering a capital gains tax liability in the process. Both paths have fundamentally different tax, cashflow and reinvestment implications.</p>
+
+          <h3 style="margin:1.25rem 0 0.5rem">When remortgaging makes sense</h3>
+          <p>Refinancing releases equity without triggering CGT. On a property worth £200,000 with an £80,000 mortgage, refinancing to 75% LTV releases £70,000 in equity — completely tax-free, today. You retain the rental income, defer CGT to a future date and can reinvest the released equity as a deposit on another purchase. If your property is generating positive cashflow at the new rate, it is almost always more tax-efficient to refinance than sell.</p>
+
+          <h3 style="margin:1.25rem 0 0.5rem">LTV limits on buy-to-let remortgages</h3>
+          <p>Most BTL lenders cap remortgages at <strong>75% LTV</strong>, though some specialist lenders offer 80% at higher rates. Lenders also apply an interest coverage ratio (ICR) stress test — monthly rent must typically cover 125–145% of the new monthly interest payment at a stressed rate of around 5.5–6%. Run the numbers in the calculator above to check your rental income supports the new borrowing at your target LTV.</p>
+
+          <h3 style="margin:1.25rem 0 0.5rem">The CGT deferral advantage</h3>
+          <p>Selling crystallises your CGT liability now and permanently. On a property purchased for £120,000 and sold for £200,000, CGT at 24% on the £77,000 taxable gain (after £3,000 exempt) equals £18,480 — money you lose immediately. By refinancing instead, that £18,480 stays invested, generating returns, until you eventually sell. Over a 5-year reinvestment horizon, the deferred tax alone could compound meaningfully at reasonable property returns.</p>
+
+          <h3 style="margin:1.25rem 0 0.5rem">When selling makes more sense</h3>
+          <p>Selling becomes the better option when: the property generates negative or very low cashflow after refinancing at current rates; you want complete liquidity with no ongoing obligations; you are consolidating a portfolio ahead of retirement; or CGT rates are expected to rise significantly (making further deferral less attractive). If the monthly cashflow after the new mortgage payment is negative, the long-term argument for refinancing weakens considerably.</p>
+
+          <h3 style="margin:1.25rem 0 0.5rem">Cashflow is the deciding factor</h3>
+          <p>Ultimately, cashflow determines whether refinancing is sustainable. A new IO payment of £688/month at 5.5% on a £150,000 mortgage leaves you with £212/month cashflow from £900 rent — tight, but positive. Tighten the rent by a void period or increase the rate to 6% and it turns negative. Always model the worst-case cashflow scenario before committing to a remortgage, and ensure you have a reserve to cover voids and repairs.</p>
+
+          <p style="margin-top:1.25rem"><strong>Related calculators:</strong> Model CGT on a sale with our <a href="/capital-gains-tax-calculator/">Capital Gains Tax Calculator</a>. Check rental yield after refinancing with our <a href="/buy-to-let-calculator/">Buy-to-Let Calculator</a>. Test monthly cashflow with our <a href="/cashflow-calculator/">Cashflow Calculator</a>.</p>
+          <p style="font-size:0.85rem;color:var(--grey-600)"><strong>External references:</strong> <a href="https://www.gov.uk/capital-gains-tax" target="_blank" rel="noopener">HMRC: Capital Gains Tax</a> | <a href="https://www.moneysavingexpert.com/mortgages/remortgaging-guide/" target="_blank" rel="noopener">MoneySavingExpert: Remortgage guide</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <h2>Refinance vs Sell FAQs</h2>
+      <details class="faq-item">
+        <summary>Should I remortgage or sell my investment property?</summary>
+        <div class="faq-body"><p>Remortgaging keeps the asset, avoids CGT and preserves rental income. Selling gives full liquidity but triggers CGT. The key question is whether cashflow remains positive after a new, higher mortgage — and whether you need the full sale proceeds or would be satisfied with the equity released via remortgage.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>How much equity can I release by remortgaging?</summary>
+        <div class="faq-body"><p>Most BTL lenders allow up to 75% LTV. On a £200,000 property with an £80,000 outstanding mortgage, a 75% LTV remortgage to £150,000 releases £70,000 of equity tax-free. The lender will also check that rent covers 125–145% of the new interest payment.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>Do I pay tax when I remortgage?</summary>
+        <div class="faq-body"><p>No. Remortgaging is not a disposal for CGT purposes. You only pay CGT when you sell the property. This makes refinancing a powerful way to access capital without an immediate tax charge — you simply defer CGT to whenever you eventually sell.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What are the typical costs of a BTL remortgage?</summary>
+        <div class="faq-body"><p>Expect to pay an arrangement/product fee (£0–£2,000), legal fees (£500–£1,000), a valuation fee (£150–£500), and any early repayment charge on the existing deal (0–5% of the outstanding balance). A broker may also charge a fee. Use the calculator above to see how these costs affect your net equity release.</p></div>
+      </details>
+    </section>
+
+    <div class="cta-box">
+      <h2>See what your property is really worth</h2>
+      <p>PropertyAlert.uk shows yield, cashflow and estimated valuations for 46,000+ live UK listings. Find comparable properties to benchmark your equity position.</p>
+      <a href="https://propertyalert.uk" class="btn btn--green" target="_blank" rel="noopener">Search UK Properties on PropertyAlert.uk →</a>
+    </div>
+    <div class="ad-slot">Advertisement</div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-brand__name">Property<span>Brain</span></div><p>Free UK property investment calculators. Not financial advice.</p></div>
+      <div class="footer-links"><h4>Calculators</h4><ul>
+        <li><a href="/buy-to-let-calculator/">Buy-to-Let</a></li>
+        <li><a href="/stamp-duty-calculator/">Stamp Duty</a></li>
+        <li><a href="/mortgage-calculator/">Mortgage</a></li>
+        <li><a href="/rental-yield-calculator/">Rental Yield</a></li>
+        <li><a href="/sa-airbnb-calculator/">SA / Airbnb</a></li>
+        <li><a href="/hmo-yield-calculator/">HMO Yield</a></li>
+      </ul></div>
+      <div class="footer-links"><h4>Exit Strategies</h4><ul>
+        <li><a href="/capital-gains-tax-calculator/">CGT Calculator</a></li>
+        <li><a href="/property-flip-calculator/">Flip Calculator</a></li>
+        <li><a href="/refinance-vs-sell-calculator/">Refinance vs Sell</a></li>
+        <li><a href="/portfolio-disposal-calculator/">Portfolio Disposal</a></li>
+      </ul></div>
+      <div class="footer-links"><h4>Info</h4><ul>
+        <li><a href="/guide/">Guide</a></li>
+        <li><a href="/downloads/">Downloads</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2025 PropertyBrain.uk — Not financial advice.</span><span><a href="https://propertyalert.uk">PropertyAlert.uk</a></span></div>
+  </div>
+</footer>
+
+<script src="/assets/js/calculators.js"></script>
+<script>
+function runRVS() {
+  var propValue      = parseFloat(document.getElementById('rvs-value').value) || 0;
+  var curMortgage    = parseFloat(document.getElementById('rvs-current-mortgage').value) || 0;
+  var origPurchase   = parseFloat(document.getElementById('rvs-original-purchase').value) || 0;
+  var rent           = parseFloat(document.getElementById('rvs-rent').value) || 0;
+  var ltv            = parseFloat(document.getElementById('rvs-ltv').value) || 75;
+  var newRate        = parseFloat(document.getElementById('rvs-rate').value) || 5.5;
+  var arrangeFee     = parseFloat(document.getElementById('rvs-arrangement').value) || 0;
+  var legalRefi      = parseFloat(document.getElementById('rvs-legal-refi').value) || 0;
+  var erc            = parseFloat(document.getElementById('rvs-erc').value) || 0;
+  var agentPct       = parseFloat(document.getElementById('rvs-agent').value) || 1.5;
+  var legalSale      = parseFloat(document.getElementById('rvs-legal-sale').value) || 0;
+  var cgtEl          = document.querySelector('input[name="rvs-cgt"]:checked');
+  var cgtRate        = cgtEl ? parseFloat(cgtEl.value) : 0.24;
+
+  // REFINANCE
+  var newMortgage    = propValue * ltv / 100;
+  var equityReleased = newMortgage - curMortgage;
+  var refiCosts      = arrangeFee + legalRefi + erc;
+  var netCashRefi    = equityReleased - refiCosts;
+  var newMonthlyIO   = newMortgage * (newRate / 100) / 12;
+  var monthlyCF      = rent - newMonthlyIO;
+  var annualCF       = monthlyCF * 12;
+
+  // SELL
+  var agentFee       = propValue * agentPct / 100;
+  var totalSellCosts = agentFee + legalSale;
+  var cgtGain        = propValue - origPurchase;
+  var taxable        = Math.max(0, cgtGain - 3000);
+  var cgtDue         = taxable * cgtRate;
+  var netCashSell    = propValue - curMortgage - totalSellCosts - cgtDue;
+
+  // Update comparison table
+  var nrEl = document.getElementById('r-rvs-net-refi');
+  nrEl.textContent = fmt(netCashRefi);
+  nrEl.style.color = netCashRefi >= 0 ? 'var(--green)' : 'var(--red)';
+  var nsEl = document.getElementById('r-rvs-net-sell');
+  nsEl.textContent = fmt(netCashSell);
+  nsEl.style.color = netCashSell >= 0 ? 'var(--green)' : 'var(--red)';
+
+  setEl('r-rvs-new-mortgage', fmt(newMortgage));
+  setEl('r-rvs-monthly-payment', fmt(newMonthlyIO) + '/mo');
+  var cfEl = document.getElementById('r-rvs-cashflow');
+  cfEl.textContent = fmtSigned(monthlyCF) + '/mo';
+  cfEl.style.color = monthlyCF >= 0 ? 'var(--green)' : 'var(--red)';
+  setEl('r-rvs-annual-cashflow', fmtSigned(annualCF) + '/yr');
+  setEl('r-rvs-cgt-due', fmt(cgtDue));
+  setEl('r-rvs-refi-costs', fmt(refiCosts));
+  setEl('r-rvs-sell-costs', fmt(totalSellCosts));
+
+  // Refinance breakdown
+  setEl('r-rvs-equity-released', fmt(equityReleased));
+  setEl('r-rvs-refi-costs-detail', fmt(refiCosts));
+  setEl('r-rvs-net-refi-detail', fmt(netCashRefi));
+
+  // Sell breakdown
+  setEl('r-rvs-sale-proceeds', fmt(propValue));
+  setEl('r-rvs-mortgage-repaid', fmt(curMortgage));
+  setEl('r-rvs-sell-costs-detail', fmt(totalSellCosts));
+  setEl('r-rvs-cgt-detail', fmt(cgtDue));
+  setEl('r-rvs-net-sell-detail', fmt(netCashSell));
+
+  // Recommendation
+  var recEl   = document.getElementById('recommendation');
+  var recText = document.getElementById('r-rec-text');
+  if (recEl && recText) {
+    recEl.style.display = '';
+    var diff = Math.abs(netCashSell - netCashRefi);
+    if (netCashSell > netCashRefi) {
+      var moRecover = monthlyCF > 0 ? Math.ceil(diff / monthlyCF) : null;
+      var recStr = '<strong>Selling releases ' + fmt(diff) + ' more cash</strong> than refinancing, but triggers ' + fmt(cgtDue) + ' in CGT.';
+      if (moRecover) recStr += ' At your monthly cashflow of ' + fmtSigned(monthlyCF) + ', refinancing recovers the difference in approximately ' + moRecover + ' months.';
+      recText.innerHTML = recStr;
+    } else if (netCashRefi > netCashSell) {
+      recText.innerHTML = '<strong>Refinancing releases ' + fmt(diff) + ' more cash</strong> than selling and avoids ' + fmt(cgtDue) + ' in CGT — a clear advantage in this scenario.';
+    } else {
+      recText.textContent = 'Both options produce similar net proceeds in this scenario.';
+    }
+  }
+
+  gtag('event','calculator_used',{calc:'refinance_vs_sell',value:propValue,refi:Math.round(netCashRefi),sell:Math.round(netCashSell)});
+}
+document.addEventListener('DOMContentLoaded', function(){ runRVS(); });
+</script>
+</body>
+</html>

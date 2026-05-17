@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HMO Yield Calculator UK — House in Multiple Occupation | PropertyBrain</title>
-<meta name="description" content="Free UK HMO yield calculator. Calculate gross and net yield for a house in multiple occupation — rooms, bills, management and monthly cashflow instant results.">
+<title>HMO Yield Calculator UK â€” House in Multiple Occupation | PropertyBrain</title>
+<meta name="description" content="Free UK HMO yield calculator. Calculate gross and net yield for a house in multiple occupation â€” rooms, bills, management and monthly cashflow instant results.">
 <link rel="canonical" href="https://propertybrain.uk/hmo-yield-calculator/">
 <link rel="stylesheet" href="/assets/css/style.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXX');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VGJC6YVK43"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VGJC6YVK43');</script>
 </head>
 <body>
 <div id="cookie-banner"><p>We use cookies. <a href="/cookies/">Learn more</a>.</p><div class="cookie-btns"><button class="btn-cookie-accept" id="cookie-accept">Accept</button><button class="btn-cookie-decline" id="cookie-decline">Decline</button></div></div>
-<header class="site-header"><div class="container"><div class="site-header__inner"><a href="/" class="site-header__logo">Property<span>Brain</span></a><nav class="site-nav"><a href="/buy-to-let-calculator/">BTL Calculator</a><a href="/stamp-duty-calculator/">Stamp Duty</a><a href="/mortgage-calculator/">Mortgage</a><a href="/rental-yield-calculator/">Yield</a><a href="/sa-airbnb-calculator/">SA/Airbnb</a><a href="/downloads/">Downloads</a><a href="/guide/">Guide</a></nav></div></div></header>
+<header class="site-header"><div class="container"><div class="site-header__inner"><a href="/" class="site-header__logo">Property<span>Brain</span></a><nav class="site-nav"><a href="/buy-to-let-calculator/">BTL Calculator</a><a href="/stamp-duty-calculator/">Stamp Duty</a><a href="/mortgage-calculator/">Mortgage</a><a href="/rental-yield-calculator/">Yield</a><a href="/sa-airbnb-calculator/">SA/Airbnb</a><a href="/downloads/">Downloads</a><a href="/guide/">Guide</a><a href="/capital-gains-tax-calculator/">CGT</a></nav></div></div></header>
 <section class="page-hero"><div class="container">
-  <div class="breadcrumb"><a href="/">Home</a> › HMO Yield Calculator</div>
+  <div class="breadcrumb"><a href="/">Home</a> â€º HMO Yield Calculator</div>
   <h1>HMO Yield Calculator UK</h1>
   <p>Calculate gross yield, net yield and monthly cashflow for a House in Multiple Occupation.</p>
 </div></section>
@@ -23,16 +23,16 @@
       <div class="card">
         <div class="card__header">Property Details</div>
         <div class="card__body">
-          <div class="form-group"><label>Property Purchase Price</label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="hmo-price" value="250000" min="50000" oninput="runHMO()"></div></div>
+          <div class="form-group"><label>Property Purchase Price</label><div class="input-wrap has-prefix"><span class="input-prefix">Â£</span><input type="number" id="hmo-price" value="250000" min="50000" oninput="runHMO()"></div></div>
           <div class="form-group"><label>Number of Rooms</label><div class="range-row"><input type="range" id="hmo-rooms" min="3" max="12" value="5" step="1" data-out="hmo-rooms-disp" data-suffix=" rooms" oninput="runHMO()"><span class="range-display" id="hmo-rooms-disp">5 rooms</span></div></div>
-          <div class="form-group"><label>Average Room Rent <span class="hint">(per room/month)</span></label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="hmo-room-rent" value="450" min="100" oninput="runHMO()"></div></div>
-          <div class="form-group"><label>Monthly Mortgage Payment</label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="hmo-mortgage" value="900" min="0" oninput="runHMO()"></div></div>
+          <div class="form-group"><label>Average Room Rent <span class="hint">(per room/month)</span></label><div class="input-wrap has-prefix"><span class="input-prefix">Â£</span><input type="number" id="hmo-room-rent" value="450" min="100" oninput="runHMO()"></div></div>
+          <div class="form-group"><label>Monthly Mortgage Payment</label><div class="input-wrap has-prefix"><span class="input-prefix">Â£</span><input type="number" id="hmo-mortgage" value="900" min="0" oninput="runHMO()"></div></div>
         </div>
       </div>
       <div class="card">
         <div class="card__header">Running Costs</div>
         <div class="card__body">
-          <div class="form-group"><label>Monthly Bills <span class="hint">(utilities, broadband, TV licence)</span></label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="hmo-bills" value="300" min="0" oninput="runHMO()"></div></div>
+          <div class="form-group"><label>Monthly Bills <span class="hint">(utilities, broadband, TV licence)</span></label><div class="input-wrap has-prefix"><span class="input-prefix">Â£</span><input type="number" id="hmo-bills" value="300" min="0" oninput="runHMO()"></div></div>
           <div class="form-group"><label>Management Fee <span class="hint">(% of rent)</span></label><div class="range-row"><input type="range" id="hmo-mgmt" min="0" max="20" value="12" step="0.5" data-out="hmo-mgmt-disp" data-suffix="%" oninput="runHMO()"><span class="range-display" id="hmo-mgmt-disp">12%</span></div></div>
           <div class="form-group"><label>Maintenance <span class="hint">(% of rent)</span></label><div class="range-row"><input type="range" id="hmo-maint" min="0" max="15" value="5" step="0.5" data-out="hmo-maint-disp" data-suffix="%" oninput="runHMO()"><span class="range-display" id="hmo-maint-disp">5%</span></div></div>
         </div>
@@ -52,25 +52,25 @@
     </div>
     <div>
       <div class="results-panel">
-        <div class="results-panel__header">🏘️ HMO Results</div>
+        <div class="results-panel__header">ðŸ˜ï¸ HMO Results</div>
         <div class="results-panel__body">
           <div class="result-hero">
             <div class="result-hero__label">Net Monthly Cashflow</div>
-            <div class="result-hero__value" id="r-hmo-net">£0</div>
+            <div class="result-hero__value" id="r-hmo-net">Â£0</div>
           </div>
           <div class="result-grid">
             <div class="result-mini"><div class="result-mini__label">Gross Yield</div><div class="result-mini__value" id="r-hmo-gross-y">0.0%</div></div>
             <div class="result-mini"><div class="result-mini__label">Net Yield</div><div class="result-mini__value" id="r-hmo-net-y">0.0%</div></div>
           </div>
-          <div class="result-row"><span class="result-row__label">Total Monthly Rent</span><span class="result-row__value" id="r-hmo-total-rent">—</span></div>
-          <div class="result-row"><span class="result-row__label">Annual Rental Income</span><span class="result-row__value" id="r-hmo-annual">—</span></div>
+          <div class="result-row"><span class="result-row__label">Total Monthly Rent</span><span class="result-row__value" id="r-hmo-total-rent">â€”</span></div>
+          <div class="result-row"><span class="result-row__label">Annual Rental Income</span><span class="result-row__value" id="r-hmo-annual">â€”</span></div>
           <div class="result-divider"></div>
-          <div class="result-row"><span class="result-row__label">Management</span><span class="result-row__value" id="r-hmo-mgmt-cost">—</span></div>
-          <div class="result-row"><span class="result-row__label">Maintenance</span><span class="result-row__value" id="r-hmo-maint-cost">—</span></div>
-          <div class="result-row"><span class="result-row__label">Bills</span><span class="result-row__value" id="r-hmo-bills">—</span></div>
-          <div class="result-row"><span class="result-row__label">Total Monthly Costs</span><span class="result-row__value" id="r-hmo-opex">—</span></div>
-          <div class="result-row"><span class="result-row__label">Gross Monthly (pre-mortgage)</span><span class="result-row__value" id="r-hmo-gross-mo">—</span></div>
-          <div class="result-row"><span class="result-row__label">Monthly Mortgage</span><span class="result-row__value" id="r-hmo-mortgage">—</span></div>
+          <div class="result-row"><span class="result-row__label">Management</span><span class="result-row__value" id="r-hmo-mgmt-cost">â€”</span></div>
+          <div class="result-row"><span class="result-row__label">Maintenance</span><span class="result-row__value" id="r-hmo-maint-cost">â€”</span></div>
+          <div class="result-row"><span class="result-row__label">Bills</span><span class="result-row__value" id="r-hmo-bills">â€”</span></div>
+          <div class="result-row"><span class="result-row__label">Total Monthly Costs</span><span class="result-row__value" id="r-hmo-opex">â€”</span></div>
+          <div class="result-row"><span class="result-row__label">Gross Monthly (pre-mortgage)</span><span class="result-row__value" id="r-hmo-gross-mo">â€”</span></div>
+          <div class="result-row"><span class="result-row__label">Monthly Mortgage</span><span class="result-row__value" id="r-hmo-mortgage">â€”</span></div>
         </div>
       </div>
     </div>
@@ -79,7 +79,7 @@
   <div class="cta-box">
     <h2>Find HMO investment properties</h2>
     <p>PropertyAlert.uk tracks 46,000+ UK listings including HMO opportunities, with investment scores and cashflow analysis pre-calculated.</p>
-    <a href="https://propertyalert.uk" class="btn btn--green" target="_blank" rel="noopener">Search HMO Properties →</a>
+    <a href="https://propertyalert.uk" class="btn btn--green" target="_blank" rel="noopener">Search HMO Properties â†’</a>
   </div>
   <div class="ad-slot">Advertisement</div>
 </div></main>
@@ -89,7 +89,7 @@
     <div class="footer-links"><h4>Calculators</h4><ul><li><a href="/buy-to-let-calculator/">Buy-to-Let</a></li><li><a href="/stamp-duty-calculator/">Stamp Duty</a></li><li><a href="/mortgage-calculator/">Mortgage</a></li><li><a href="/rental-yield-calculator/">Rental Yield</a></li><li><a href="/sa-airbnb-calculator/">SA / Airbnb</a></li><li><a href="/hmo-yield-calculator/">HMO Yield</a></li></ul></div>
     <div class="footer-links"><h4>Info</h4><ul><li><a href="/guide/">Guide</a></li><li><a href="/downloads/">Downloads</a></li><li><a href="/about/">About</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><span>&copy; 2025 PropertyBrain.uk — Not financial advice.</span><span><a href="https://propertyalert.uk">PropertyAlert.uk</a></span></div>
+  <div class="footer-bottom"><span>&copy; 2025 PropertyBrain.uk â€” Not financial advice.</span><span><a href="https://propertyalert.uk">PropertyAlert.uk</a></span></div>
 </div></footer>
 <script src="/assets/js/calculators.js"></script>
 <script>
