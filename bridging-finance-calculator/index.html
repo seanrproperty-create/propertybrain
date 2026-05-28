@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bridging Finance Calculator UK — Total Loan Cost | PropertyBrain</title>
+<meta name="description" content="Free bridging loan cost calculator. Calculate arrangement fee, monthly interest, exit fee, total cost, and effective APR for any UK bridging loan. Instant results.">
+<link rel="canonical" href="https://propertybrain.uk/bridging-finance-calculator/">
+<meta property="og:title" content="Bridging Finance Calculator UK | PropertyBrain">
+<meta property="og:description" content="Free bridging loan cost calculator — arrangement fee, interest, exit fee, total cost and APR instantly.">
+<meta property="og:url" content="https://propertybrain.uk/bridging-finance-calculator/">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Bridging Finance Calculator UK","url":"https://propertybrain.uk/bridging-finance-calculator/","description":"Free bridging loan cost calculator for UK property investors","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are typical bridging loan rates in the UK?","acceptedAnswer":{"@type":"Answer","text":"Bridging loan rates in the UK typically range from 0.75% to 1.2% per month, which equates to an effective APR of approximately 9% to 15%. Rates depend on the loan-to-value ratio, the lender, and the strength of the exit strategy. Short-term bridge loans for auction purchases or refurbishment projects tend to sit at the higher end, while lower-LTV loans with clear refinance exit strategies attract better rates."}},{"@type":"Question","name":"What is the total cost of a bridging loan?","acceptedAnswer":{"@type":"Answer","text":"The total cost of a bridging loan includes four components: the arrangement fee (typically 1–2% of the loan), monthly rolled interest (accruing for the full term), an exit fee (often 1% of the loan amount), and legal and valuation costs (typically £2,500–£5,000). On a £140,000 loan at 0.95% per month over 6 months, total costs are typically in the range of £14,000–£18,000."}},{"@type":"Question","name":"What is the difference between a bridging loan and a mortgage?","acceptedAnswer":{"@type":"Answer","text":"A bridging loan is a short-term, interest-only loan secured against property, typically repaid within 3–24 months. Unlike a mortgage, bridging loans are underwritten primarily on the exit strategy (how the loan will be repaid) rather than borrower income. They are faster to arrange (days rather than weeks) but significantly more expensive, making them suitable for time-critical purchases, auction wins, or properties unmortgageable in their current condition."}}]}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VGJC6YVK43"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VGJC6YVK43');</script>
+</head>
+<body>
+<div id="cookie-banner">
+  <p>We use cookies to improve your experience. <a href="/cookies/">Learn more</a>.</p>
+  <div class="cookie-btns"><button class="btn-cookie-accept" id="cookie-accept">Accept</button><button class="btn-cookie-decline" id="cookie-decline">Decline</button></div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__logo">Property<span>Brain</span></a>
+      <nav class="site-nav">
+        <a href="/buy-to-let-calculator/">BTL Calculator</a>
+        <a href="/stamp-duty-calculator/">Stamp Duty</a>
+        <a href="/mortgage-calculator/">Mortgage</a>
+        <a href="/rental-yield-calculator/">Yield</a>
+        <a href="/sa-airbnb-calculator/">SA/Airbnb</a>
+        <a href="/bridging-finance-calculator/">Bridging</a>
+        <a href="/section-24-calculator/">Section 24</a>
+        <a href="/free-tools/">Free Tools</a>
+        <a href="/guide/">Guide</a>
+        <a href="/capital-gains-tax-calculator/">CGT</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> › Bridging Finance Calculator</div>
+    <h1>Bridging Finance Calculator UK</h1>
+    <p>Calculate arrangement fee, monthly interest, exit fee, total cost, and effective APR for any UK bridging loan — instantly.</p>
+  </div>
+</section>
+
+<main class="main-content">
+  <div class="container">
+    <div class="notice">
+      <strong>Not financial advice.</strong> This calculator is for illustrative purposes only. Consult a qualified bridging finance broker before proceeding.
+    </div>
+
+    <div class="calc-layout">
+      <div>
+        <div class="card">
+          <div class="card__header">Loan Details</div>
+          <div class="card__body">
+            <div class="form-group">
+              <label>Purchase / Property Value</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="purchase" value="200000" min="10000" max="10000000"></div>
+            </div>
+            <div class="form-group">
+              <label>LTV %</label>
+              <div class="input-wrap has-suffix"><input type="number" id="ltv" value="70" min="1" max="85" step="0.5"><span class="input-suffix">%</span></div>
+            </div>
+            <div class="form-group">
+              <label>Arrangement Fee %</label>
+              <div class="input-wrap has-suffix"><input type="number" id="arr_fee_pct" value="2.0" min="0" max="5" step="0.1"><span class="input-suffix">%</span></div>
+            </div>
+            <div class="form-group">
+              <label>Monthly Interest Rate %</label>
+              <div class="input-wrap has-suffix"><input type="number" id="monthly_rate" value="0.95" min="0.1" max="3" step="0.05"><span class="input-suffix">%</span></div>
+            </div>
+            <div class="form-group">
+              <label>Loan Term (months)</label>
+              <div class="input-wrap"><input type="number" id="term" value="6" min="1" max="36"></div>
+            </div>
+            <div class="form-group">
+              <label>Exit Fee %</label>
+              <div class="input-wrap has-suffix"><input type="number" id="exit_fee_pct" value="1.0" min="0" max="3" step="0.1"><span class="input-suffix">%</span></div>
+            </div>
+            <div class="form-group">
+              <label>Legal + Valuation Fees</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="other_fees" value="3000" min="0" max="50000"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="results-panel">
+          <div class="results-panel__header">Results</div>
+          <div class="results-panel__body">
+            <div class="result-hero">
+              <div class="result-hero__label">Total Cost of Bridging</div>
+              <div class="result-hero__value" id="r_total_cost">£0</div>
+              <div class="result-hero__sub">all fees + interest</div>
+            </div>
+            <div class="result-row"><span class="result-row__label">Loan Amount</span><span class="result-row__value" id="r_loan">—</span></div>
+            <div class="result-row"><span class="result-row__label">Arrangement Fee</span><span class="result-row__value" id="r_arr_fee">—</span></div>
+            <div class="result-row"><span class="result-row__label">Total Interest (rolled)</span><span class="result-row__value" id="r_interest">—</span></div>
+            <div class="result-row"><span class="result-row__label">Exit Fee</span><span class="result-row__value" id="r_exit">—</span></div>
+            <div class="result-divider"></div>
+            <div class="result-row"><span class="result-row__label">Net Funds Received</span><span class="result-row__value" id="r_net_funds">—</span></div>
+            <div class="result-row"><span class="result-row__label">Total Cash Needed</span><span class="result-row__value accent" id="r_cash_needed">—</span></div>
+            <div class="result-row"><span class="result-row__label">Effective APR</span><span class="result-row__value" id="r_apr">—</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content sections -->
+    <section class="faq-section">
+      <h2>What is bridging finance?</h2>
+      <div class="card" style="margin-bottom:2rem">
+        <div class="card__body">
+          <p>Bridging finance is a short-term, secured loan used to "bridge" a funding gap until longer-term finance can be arranged or a property is sold. In the UK property investment context, bridging loans are most commonly used to purchase properties at auction (where completion must happen within 28 days), to fund a refurbishment on a property that cannot yet be mortgaged, or to break a chain where a buyer needs to complete before their current property sells.</p>
+          <p>Unlike a standard buy-to-let mortgage, a bridging loan is underwritten primarily on the strength of the exit strategy — the plan for how the loan will be repaid. This might be refinancing onto a long-term mortgage once the property is tenanted, selling the property after refurbishment, or the completion of another property sale. Because lenders are taking a short-term, higher-risk position, bridging rates are significantly higher than mortgage rates.</p>
+          <p>Bridging finance is offered by specialist lenders and arranged through commercial finance brokers. It is not available on the high street. Regulated bridging loans (for owner-occupied properties) fall under FCA regulation, while unregulated bridging (for investment properties) does not — although lenders must still follow responsible lending principles.</p>
+        </div>
+      </div>
+
+      <h2>What does a bridging loan cost?</h2>
+      <div class="card" style="margin-bottom:2rem">
+        <div class="card__body">
+          <p>The total cost of a bridging loan has four distinct components, all of which this calculator models:</p>
+          <ul>
+            <li><strong>Arrangement fee</strong> — typically 1–2% of the gross loan amount, charged upfront or deducted from the loan drawdown. This is the lender's fee for setting up the facility and is non-refundable once committed.</li>
+            <li><strong>Monthly interest</strong> — charged on the full loan amount each month, typically between 0.75% and 1.2% per month. Interest is usually rolled up (added to the loan balance) and repaid at the end of the term along with the principal, meaning you are not making monthly payments during the loan term. The total rolled interest is the monthly rate multiplied by the loan amount multiplied by the number of months.</li>
+            <li><strong>Exit fee</strong> — charged by some lenders on redemption, typically 1% of the loan amount. Not all lenders charge an exit fee — it is worth negotiating this out where possible, particularly on larger loans.</li>
+            <li><strong>Legal and valuation fees</strong> — the borrower pays the lender's legal fees (typically £1,000–£2,000) and a RICS valuation (typically £500–£1,500 depending on property size and type). You will also have your own legal fees. Total legal and valuation costs are commonly in the range of £2,500–£5,000.</li>
+          </ul>
+          <p>When comparing bridging offers, always compare the total cost of the facility rather than just the headline monthly rate — a lower rate with a higher arrangement fee can result in a higher total cost over a short term.</p>
+        </div>
+      </div>
+
+      <h2>What is a typical bridging loan rate in the UK?</h2>
+      <div class="card" style="margin-bottom:2rem">
+        <div class="card__body">
+          <p>As of 2025–2026, typical UK bridging loan rates range from 0.75% to 1.2% per month. At the lower end (0.75–0.85%/month), you will typically find loans at 65–70% LTV with a clear, well-evidenced exit strategy such as refinancing a completed residential property. At the higher end (1.0–1.2%/month), you will find higher-LTV loans, heavier refurbishment projects, or borrowers with a less straightforward exit.</p>
+          <p>In effective APR terms, 0.95% per month equates to approximately 12% APR (compounding), making bridging finance roughly 2–3x more expensive than a standard buy-to-let mortgage rate. This is why bridging finance is only suitable for short-term scenarios where the return on the project — or the cost of not moving quickly — outweighs the finance cost.</p>
+          <p>Rates are currently under downward pressure as more specialist lenders have entered the market. A good commercial finance broker with access to the whole of market will typically be able to improve on the first indicative terms offered by any single lender.</p>
+        </div>
+      </div>
+
+      <h2>Download the full bridging finance cost calculator (Excel)</h2>
+      <div class="cta-box" style="margin-bottom:2rem">
+        <h3 style="margin-top:0">Free Excel bridging finance calculator</h3>
+        <p>Download the full Excel version of this bridging finance calculator — models multiple scenarios side by side, with BRRR exit analysis, refurbishment cost tracker, and refinance feasibility check built in.</p>
+        <p>Free with a PropertyAlert.uk 7-day trial — no card required.</p>
+        <a href="https://propertyalert.uk/shop/bridging-finance-calculator" class="btn btn--green" target="_blank" rel="noopener">Download Excel bridging calculator →</a>
+        <p style="margin-top:0.75rem;font-size:0.85rem;opacity:0.8">Free trial · No card required · Instant download</p>
+      </div>
+
+      <h2>When should you use bridging finance?</h2>
+      <div class="card" style="margin-bottom:2rem">
+        <div class="card__body">
+          <p>Bridging finance is the right tool in three main scenarios:</p>
+          <ul>
+            <li><strong>Auction purchase</strong> — auction completions are typically required within 28 days of the hammer falling. A standard mortgage cannot be arranged in this timeframe, making bridging finance the only viable option for most auction buyers. The bridge is then repaid either by selling the property or refinancing onto a long-term mortgage once any required works are complete.</li>
+            <li><strong>Refurbishment then refinance (BRRR)</strong> — properties in poor condition are often unmortgageable in their current state. A bridging loan funds both the purchase and the refurbishment, after which the improved property is valued and refinanced onto a buy-to-let mortgage. If the uplift in value is sufficient, the investor can often pull out most or all of their initial capital — the BRRR (Buy, Refurbish, Refinance, Rent) strategy.</li>
+            <li><strong>Chain break</strong> — where a buyer needs to complete on a new purchase before their existing property has sold, a bridging loan can fund the gap. This is a regulated bridging product if the property being purchased is to be owner-occupied.</li>
+          </ul>
+          <p>In all cases, the exit strategy must be clearly defined and credible before committing to a bridging loan. A property that takes longer to sell or refinance than expected can result in significant additional interest costs — or, in the worst case, a lender enforcing their security.</p>
+        </div>
+      </div>
+
+      <h2>Related calculators</h2>
+      <div class="card" style="margin-bottom:2rem">
+        <div class="card__body">
+          <ul>
+            <li><a href="/buy-to-let-calculator/">Buy-to-Let Calculator</a> — model the long-term BTL returns after the bridge is repaid</li>
+            <li><a href="/mortgage-calculator/">Mortgage Calculator</a> — compare exit mortgage payments against your bridging term cost</li>
+            <li><a href="/property-flip-calculator/">Property Flip Calculator</a> — model a flip project funded by bridging finance from purchase to sale</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <details class="faq-item">
+      <summary>What are typical bridging loan rates in the UK?</summary>
+      <div class="faq-body"><p>Bridging loan rates in the UK typically range from 0.75% to 1.2% per month, which equates to an effective APR of approximately 9% to 15%. Rates depend on the loan-to-value ratio, the lender, and the strength of the exit strategy. Short-term bridge loans for auction purchases or refurbishment projects tend to sit at the higher end, while lower-LTV loans with clear refinance exit strategies attract better rates.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>What is the total cost of a bridging loan?</summary>
+      <div class="faq-body"><p>The total cost of a bridging loan includes four components: the arrangement fee (typically 1–2% of the loan), monthly rolled interest (accruing for the full term), an exit fee (often 1% of the loan amount), and legal and valuation costs (typically £2,500–£5,000). On a £140,000 loan at 0.95% per month over 6 months, total costs are typically in the range of £14,000–£18,000.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>What is the difference between a bridging loan and a mortgage?</summary>
+      <div class="faq-body"><p>A bridging loan is a short-term, interest-only loan secured against property, typically repaid within 3–24 months. Unlike a mortgage, bridging loans are underwritten primarily on the exit strategy (how the loan will be repaid) rather than borrower income. They are faster to arrange (days rather than weeks) but significantly more expensive, making them suitable for time-critical purchases, auction wins, or properties unmortgageable in their current condition.</p></div>
+    </details>
+
+    <div class="cta-box" style="margin-bottom:1rem;">
+      <h2>Download the Excel bridging finance calculator</h2>
+      <p>Model BRRR scenarios, compare multiple bridging offers, and check refinance feasibility in a single spreadsheet.</p>
+      <a href="https://propertyalert.uk/shop/bridging-finance-calculator" class="btn btn--green" target="_blank" rel="noopener">Download Excel bridging calculator →</a>
+    </div>
+    <div class="cta-box">
+      <h2>Prefer live property analysis?</h2>
+      <p>PropertyAlert.uk analyses any Rightmove or Zoopla listing instantly — yield, cashflow, SA projection and investment score. Plus get all free tools with your trial.</p>
+      <a href="https://propertyalert.uk/register?plan=investor&source=pb_bridging_finance_calculator_cta" class="btn btn--green" target="_blank" rel="noopener">Start free trial →</a>
+    </div>
+
+    <div class="ad-slot">Advertisement</div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-brand__name">Property<span>Brain</span></div><p>Free UK property investment calculators. Not financial advice.</p></div>
+      <div class="footer-links"><h4>Calculators</h4><ul><li><a href="/buy-to-let-calculator/">Buy-to-Let</a></li><li><a href="/stamp-duty-calculator/">Stamp Duty</a></li><li><a href="/mortgage-calculator/">Mortgage</a></li><li><a href="/rental-yield-calculator/">Rental Yield</a></li><li><a href="/sa-airbnb-calculator/">SA / Airbnb</a></li><li><a href="/hmo-yield-calculator/">HMO Yield</a></li><li><a href="/bridging-finance-calculator/">Bridging Finance</a></li><li><a href="/section-24-calculator/">Section 24</a></li></ul></div>
+      <div class="footer-links"><h4>Info</h4><ul><li><a href="/guide/">Guide</a></li><li><a href="/free-tools/">Free Tools</a></li><li><a href="/about/">About</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+      <div class="footer-links"><h4>Free Resources</h4><ul><li><a href="/free-tools/">All Free Tools</a></li><li><a href="/sa-operator-agreement/">SA Operator Agreement</a></li><li><a href="/r2r-hmo-agreement/">R2R HMO Agreement</a></li><li><a href="/deal-packaging-agreement/">Deal Packaging Agreement</a></li><li><a href="/refurbishment-cost-estimator/">Refurbishment Cost Estimator</a></li><li><a href="/joint-venture-agreement/">JV Agreement</a></li><li><a href="/sa-compliance-checklist/">SA Compliance Checklist</a></li><li><a href="/bridging-finance-calculator/">Bridging Loan Calculator</a></li><li><a href="/section-24-calculator/">Section 24 Calculator</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2025 PropertyBrain.uk — Not financial advice.</span><span><a href="https://propertyalert.uk">PropertyAlert.uk</a></span></div>
+  </div>
+</footer>
+
+<script src="/assets/js/calculators.js"></script>
+<script>
+function calc() {
+  const purchase = parseFloat(document.getElementById('purchase').value) || 0;
+  const ltv = parseFloat(document.getElementById('ltv').value) / 100 || 0;
+  const loan = purchase * ltv;
+  const arr_fee = loan * (parseFloat(document.getElementById('arr_fee_pct').value) / 100);
+  const monthly_rate = parseFloat(document.getElementById('monthly_rate').value) / 100;
+  const term = parseInt(document.getElementById('term').value) || 0;
+  const exit_fee = loan * (parseFloat(document.getElementById('exit_fee_pct').value) / 100);
+  const other = parseFloat(document.getElementById('other_fees').value) || 0;
+  const total_interest = loan * monthly_rate * term;
+  const total_cost = arr_fee + total_interest + exit_fee + other;
+  const net_funds = loan - arr_fee;
+  const cash_needed = (purchase - loan) + arr_fee + exit_fee + other;
+  const apr = loan > 0 ? ((total_cost / loan) / (term / 12)) : 0;
+  document.getElementById('r_loan').textContent = fmt(loan);
+  document.getElementById('r_arr_fee').textContent = fmt(arr_fee);
+  document.getElementById('r_interest').textContent = fmt(total_interest);
+  document.getElementById('r_exit').textContent = fmt(exit_fee);
+  document.getElementById('r_total_cost').textContent = fmt(total_cost);
+  document.getElementById('r_net_funds').textContent = fmt(net_funds);
+  document.getElementById('r_cash_needed').textContent = fmt(cash_needed);
+  document.getElementById('r_apr').textContent = (apr * 100).toFixed(1) + '%';
+}
+function fmt(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
+document.querySelectorAll('input').forEach(el => el.addEventListener('input', calc));
+calc();
+</script>
+</body>
+</html>

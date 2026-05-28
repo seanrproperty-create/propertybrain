@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 24 Calculator UK — Landlord Tax Impact | PropertyBrain</title>
+<meta name="description" content="Free Section 24 tax calculator for UK landlords. See how Section 24 affects your rental income tax bill — compare pre and post-Section 24 tax instantly.">
+<link rel="canonical" href="https://propertybrain.uk/section-24-calculator/">
+<meta property="og:title" content="Section 24 Calculator UK | PropertyBrain">
+<meta property="og:description" content="Free Section 24 tax calculator — see exactly how the mortgage interest relief restriction affects your landlord tax bill.">
+<meta property="og:url" content="https://propertybrain.uk/section-24-calculator/">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Section 24 Calculator UK","url":"https://propertybrain.uk/section-24-calculator/","description":"Free Section 24 tax calculator for UK landlords","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Section 24 and how does it affect landlords?","acceptedAnswer":{"@type":"Answer","text":"Section 24 of the Finance Act 2015 removed the right of UK landlords to deduct mortgage interest as a business expense from their rental income. Instead, landlords receive a basic rate (20%) tax credit on their finance costs. For basic rate taxpayers the impact is minimal, but for higher and additional rate taxpayers — who previously deducted interest at 40% or 45% — the change significantly increases the tax bill on rental income, sometimes pushing landlords into a higher band or creating a tax liability even on a loss-making property."}},{"@type":"Question","name":"Can I deduct mortgage interest from my rental income?","acceptedAnswer":{"@type":"Answer","text":"No — since 2020, UK landlords can no longer deduct mortgage interest from rental income when calculating their tax liability. Instead, you receive a 20% tax credit on the finance costs paid. This means that if you are a basic rate taxpayer, the impact is roughly neutral (the credit offsets what you would have deducted). If you pay tax at 40% or 45%, you will pay more tax than under the old rules."}},{"@type":"Question","name":"Should I put my rental properties in a limited company?","acceptedAnswer":{"@type":"Answer","text":"For many higher-rate taxpayer landlords with multiple properties, operating via a limited company can reduce the Section 24 tax hit, because companies pay corporation tax (currently 25% for profits over £50,000) rather than income tax, and can still deduct mortgage interest as a business expense. However, there are significant costs to consider: SDLT on transfer, capital gains tax, ongoing accountancy fees, and complexity. You should model your specific position with a qualified accountant before deciding."}}]}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VGJC6YVK43"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VGJC6YVK43');</script>
+</head>
+<body>
+<div id="cookie-banner">
+  <p>We use cookies to improve your experience. <a href="/cookies/">Learn more</a>.</p>
+  <div class="cookie-btns"><button class="btn-cookie-accept" id="cookie-accept">Accept</button><button class="btn-cookie-decline" id="cookie-decline">Decline</button></div>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <div class="site-header__inner">
+      <a href="/" class="site-header__logo">Property<span>Brain</span></a>
+      <nav class="site-nav">
+        <a href="/buy-to-let-calculator/">BTL Calculator</a>
+        <a href="/stamp-duty-calculator/">Stamp Duty</a>
+        <a href="/mortgage-calculator/">Mortgage</a>
+        <a href="/rental-yield-calculator/">Yield</a>
+        <a href="/sa-airbnb-calculator/">SA/Airbnb</a>
+        <a href="/bridging-finance-calculator/">Bridging</a>
+        <a href="/section-24-calculator/">Section 24</a>
+        <a href="/free-tools/">Free Tools</a>
+        <a href="/guide/">Guide</a>
+        <a href="/capital-gains-tax-calculator/">CGT</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> › Section 24 Calculator</div>
+    <h1>Section 24 Calculator UK — How Much More Tax Do You Pay?</h1>
+    <p>Compare your landlord tax bill before and after Section 24 — instantly, for any tax band.</p>
+  </div>
+</section>
+
+<main class="main-content">
+  <div class="container">
+    <div class="notice">
+      <strong>Not tax advice.</strong> This calculator provides illustrative figures only. Consult a qualified accountant or tax adviser for your personal position.
+    </div>
+
+    <div class="calc-layout">
+      <div>
+        <div class="card">
+          <div class="card__header">Your Rental Income &amp; Costs</div>
+          <div class="card__body">
+            <div class="form-group">
+              <label>Annual Rental Income</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="rent" value="18000" min="0"></div>
+            </div>
+            <div class="form-group">
+              <label>Annual Mortgage Interest</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="mortgage_interest" value="8400" min="0"></div>
+            </div>
+            <div class="form-group">
+              <label>Other Allowable Expenses</label>
+              <div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="other_expenses" value="2400" min="0"></div>
+            </div>
+            <div class="form-group">
+              <label>Income Tax Band</label>
+              <select id="tax_band">
+                <option value="20">Basic rate (20%)</option>
+                <option value="40" selected>Higher rate (40%)</option>
+                <option value="45">Additional rate (45%)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="results-panel">
+          <div class="results-panel__header">Tax Comparison</div>
+          <div class="results-panel__body">
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th></th><th>Pre-S24 (old rules)</th><th>Post-S24 (now)</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Taxable profit</td><td id="r_profit_pre">—</td><td id="r_profit_post">—</td></tr>
+                  <tr><td>Tax payable</td><td id="r_tax_pre">—</td><td id="r_tax_post">—</td></tr>
+                  <tr><td>Net income</td><td id="r_net_pre">—</td><td id="r_net_post">—</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="result-hero" style="margin-top:1.25rem;background:#fef2f2;border-radius:0.5rem;padding:1rem">
+              <div class="result-hero__label" style="color:#dc2626">Extra Tax Due to Section 24</div>
+              <div class="result-hero__value" id="r_extra_tax" style="color:#dc2626">£0</div>
+              <div class="result-hero__sub">additional tax paid per year</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content sections -->
+    <section class="faq-section">
+      <h2>What is Section 24?</h2>
+      <div class="card" style="margin-bottom:2rem">
+        <div class="card__body">
+          <p>Section 24 of the Finance (No. 2) Act 2015 — often called the "landlord tax" or "mortgage interest relief restriction" — fundamentally changed how UK landlords calculate their income tax liability on rental income. Before 2017, individual landlords could deduct the full amount of mortgage interest paid from their rental income before calculating their taxable profit. A landlord paying £8,400 per year in mortgage interest could simply subtract that from their rent to arrive at a lower taxable figure.</p>
+          <p>From April 2017, the restriction was phased in over four years, becoming fully effective from April 2020. Since then, individual landlords cannot deduct any mortgage interest from their rental income. Instead, they receive a tax credit worth 20% of the finance costs paid — regardless of their personal tax rate.</p>
+          <p>The effect is that the taxable profit for a landlord is now calculated on gross rent minus other expenses (but not mortgage interest). A landlord in the higher rate (40%) or additional rate (45%) band now pays far more tax than they did under the old system. In some cases, landlords find themselves paying tax on profits that are lower than the tax bill itself — effectively losing money on a property that appears to be generating a positive cashflow.</p>
+        </div>
+      </div>
+
+      <h2>How does Section 24 affect landlords?</h2>
+      <div class="card" style="margin-bottom:2rem">
+        <div class="card__body">
+          <p>Under the old rules, a higher-rate taxpayer paying £8,400 per year in mortgage interest on a property earning £18,000 rent could deduct the interest before tax, reducing their taxable profit. Under Section 24, they must pay 40% tax on the full profit (rent minus non-finance expenses), then claim back a 20% credit on the interest. The net effect is that they pay tax on £20 of interest for every £100 they pay to the bank — a real additional cost that reduces cashflow.</p>
+          <p>This has made highly leveraged properties — those with large mortgage balances relative to rent — particularly hard hit. A property with a loan at 75% LTV and a rate of 5.5% may generate very little net cashflow for a 40% taxpayer even before factoring in maintenance, voids, and management costs. Use the calculator above to see the specific impact for your tax band and interest level.</p>
+        </div>
+      </div>
+
+      <h2>Who is most affected by Section 24?</h2>
+      <div class="card" style="margin-bottom:2rem">
+        <div class="card__body">
+          <ul>
+            <li><strong>Higher and additional rate taxpayers</strong> — the credit is worth 20% of interest paid regardless of your tax rate. If you are a 40% taxpayer, you lose 20p per £1 of interest compared to the old system. At 45%, you lose 25p per £1.</li>
+            <li><strong>Highly leveraged landlords</strong> — the higher the mortgage balance relative to rent, the greater the impact. A property with a 75%+ LTV will typically see a much more significant S24 effect than a property with a 40% LTV or no mortgage at all.</li>
+            <li><strong>Landlords whose rental income pushes them into a higher tax band</strong> — because S24 taxes you on a higher declared profit, it can push some basic rate taxpayers into the higher rate band, creating a double penalty.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Section 24 example — basic rate vs higher rate</h2>
+      <div class="card" style="margin-bottom:2rem">
+        <div class="card__body">
+          <p>Consider a landlord with annual rental income of £18,000, mortgage interest of £8,400, and other expenses of £2,400.</p>
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead><tr><th>Item</th><th>Basic rate (20%)</th><th>Higher rate (40%)</th></tr></thead>
+              <tbody>
+                <tr><td>Old taxable profit (rent − interest − expenses)</td><td>£7,200</td><td>£7,200</td></tr>
+                <tr><td>Old tax bill</td><td>£1,440</td><td>£2,880</td></tr>
+                <tr><td>New taxable profit (rent − expenses only)</td><td>£15,600</td><td>£15,600</td></tr>
+                <tr><td>Tax at band rate</td><td>£3,120</td><td>£6,240</td></tr>
+                <tr><td>Less: 20% finance cost credit</td><td>−£1,680</td><td>−£1,680</td></tr>
+                <tr><td>New tax bill</td><td>£1,440</td><td>£4,560</td></tr>
+                <tr><td><strong>Extra tax due to Section 24</strong></td><td>£0</td><td><strong>£1,680</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top:1rem">As this example shows, a basic rate taxpayer is broadly unaffected. A higher rate taxpayer pays an extra £1,680 per year on a single property. For a landlord with ten properties, that is £16,800 per year in additional tax — a significant erosion of returns.</p>
+        </div>
+      </div>
+
+      <h2>Download the full Section 24 calculator with limited company comparison</h2>
+      <div class="cta-box" style="margin-bottom:2rem">
+        <h3 style="margin-top:0">Free Excel Section 24 calculator</h3>
+        <p>Download the full Excel Section 24 calculator — models personal vs limited company tax side by side across multiple properties, with portfolio-level totals and cashflow impact.</p>
+        <p>Free with a PropertyAlert.uk 7-day trial — no card required.</p>
+        <a href="https://propertyalert.uk/shop/section-24-calculator" class="btn btn--green" target="_blank" rel="noopener">Download Excel Section 24 calculator →</a>
+        <p style="margin-top:0.75rem;font-size:0.85rem;opacity:0.8">Free trial · No card required · Instant download</p>
+      </div>
+
+      <h2>Should I move my properties into a limited company?</h2>
+      <div class="card" style="margin-bottom:2rem">
+        <div class="card__body">
+          <p>This is one of the most common questions for higher-rate taxpayer landlords post-Section 24. A limited company is not subject to Section 24 — it pays corporation tax (currently 19% for profits up to £50,000; 25% for profits above £250,000) and can still deduct mortgage interest as a business expense before calculating its tax liability. For a heavily leveraged portfolio owned by a 40% taxpayer, this can represent a very significant tax saving.</p>
+          <p>However, the decision is not straightforward:</p>
+          <ul>
+            <li><strong>SDLT on transfer</strong> — transferring personally-owned properties into a company triggers stamp duty land tax at the additional dwelling rates, even between spouses or into a company you own. On a £200,000 property, this is typically £6,000–£9,000 per property.</li>
+            <li><strong>Capital gains tax</strong> — the transfer also triggers a disposal for CGT purposes. Any gains accrued since acquisition will be taxable.</li>
+            <li><strong>Higher mortgage rates</strong> — limited company buy-to-let mortgages are typically 0.5–1% more expensive than personal mortgages, and there are fewer lenders to choose from.</li>
+            <li><strong>Ongoing costs</strong> — accountancy fees for a property investment company are typically £1,000–£2,500 per year depending on complexity.</li>
+          </ul>
+          <p>For landlords purchasing new properties, doing so within a limited company from the outset avoids the transfer costs and is increasingly common. For existing portfolios, the analysis is highly individual and requires professional advice. Use the calculator above to quantify your personal Section 24 exposure, then discuss the limited company question with a specialist property accountant.</p>
+        </div>
+      </div>
+
+      <h2>Related tools</h2>
+      <div class="card" style="margin-bottom:2rem">
+        <div class="card__body">
+          <ul>
+            <li><a href="/buy-to-let-calculator/">Buy-to-Let Calculator</a> — full BTL analysis including cashflow and Section 24 comparison tab</li>
+            <li><a href="/rental-yield-calculator/">Rental Yield Calculator</a> — gross and net yield for any property</li>
+            <li><a href="/cashflow-calculator/">Cashflow Calculator</a> — detailed monthly cashflow including all costs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <details class="faq-item">
+      <summary>What is Section 24 and how does it affect landlords?</summary>
+      <div class="faq-body"><p>Section 24 of the Finance Act 2015 removed the right of UK landlords to deduct mortgage interest as a business expense from their rental income. Instead, landlords receive a basic rate (20%) tax credit on their finance costs. For basic rate taxpayers the impact is minimal, but for higher and additional rate taxpayers — who previously deducted interest at 40% or 45% — the change significantly increases the tax bill on rental income.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Can I deduct mortgage interest from my rental income?</summary>
+      <div class="faq-body"><p>No — since 2020, UK landlords can no longer deduct mortgage interest from rental income when calculating their tax liability. Instead, you receive a 20% tax credit on the finance costs paid. This means that if you are a basic rate taxpayer, the impact is roughly neutral. If you pay tax at 40% or 45%, you will pay more tax than under the old rules.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary>Should I put my rental properties in a limited company?</summary>
+      <div class="faq-body"><p>For many higher-rate taxpayer landlords with multiple properties, operating via a limited company can reduce the Section 24 tax hit, because companies pay corporation tax and can still deduct mortgage interest as a business expense. However, there are significant costs to consider: SDLT on transfer, capital gains tax, ongoing accountancy fees, and complexity. You should model your specific position with a qualified accountant before deciding.</p></div>
+    </details>
+
+    <div class="cta-box" style="margin-bottom:1rem;">
+      <h2>Download the full Section 24 calculator (Excel)</h2>
+      <p>Personal vs limited company modelling, multi-property totals, and cashflow impact — all in one spreadsheet.</p>
+      <a href="https://propertyalert.uk/shop/section-24-calculator" class="btn btn--green" target="_blank" rel="noopener">Download Excel Section 24 calculator →</a>
+    </div>
+    <div class="cta-box">
+      <h2>Prefer live property analysis?</h2>
+      <p>PropertyAlert.uk analyses any Rightmove or Zoopla listing instantly — yield, cashflow, SA projection and investment score.</p>
+      <a href="https://propertyalert.uk/register?plan=investor&source=pb_section_24_calculator_cta" class="btn btn--green" target="_blank" rel="noopener">Start free trial →</a>
+    </div>
+
+    <div class="ad-slot">Advertisement</div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-brand__name">Property<span>Brain</span></div><p>Free UK property investment calculators. Not financial advice.</p></div>
+      <div class="footer-links"><h4>Calculators</h4><ul><li><a href="/buy-to-let-calculator/">Buy-to-Let</a></li><li><a href="/stamp-duty-calculator/">Stamp Duty</a></li><li><a href="/mortgage-calculator/">Mortgage</a></li><li><a href="/rental-yield-calculator/">Rental Yield</a></li><li><a href="/sa-airbnb-calculator/">SA / Airbnb</a></li><li><a href="/hmo-yield-calculator/">HMO Yield</a></li><li><a href="/bridging-finance-calculator/">Bridging Finance</a></li><li><a href="/section-24-calculator/">Section 24</a></li></ul></div>
+      <div class="footer-links"><h4>Info</h4><ul><li><a href="/guide/">Guide</a></li><li><a href="/free-tools/">Free Tools</a></li><li><a href="/about/">About</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/terms/">Terms</a></li></ul></div>
+      <div class="footer-links"><h4>Free Resources</h4><ul><li><a href="/free-tools/">All Free Tools</a></li><li><a href="/sa-operator-agreement/">SA Operator Agreement</a></li><li><a href="/r2r-hmo-agreement/">R2R HMO Agreement</a></li><li><a href="/deal-packaging-agreement/">Deal Packaging Agreement</a></li><li><a href="/refurbishment-cost-estimator/">Refurbishment Cost Estimator</a></li><li><a href="/joint-venture-agreement/">JV Agreement</a></li><li><a href="/sa-compliance-checklist/">SA Compliance Checklist</a></li><li><a href="/bridging-finance-calculator/">Bridging Loan Calculator</a></li><li><a href="/section-24-calculator/">Section 24 Calculator</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2025 PropertyBrain.uk — Not financial advice.</span><span><a href="https://propertyalert.uk">PropertyAlert.uk</a></span></div>
+  </div>
+</footer>
+
+<script src="/assets/js/calculators.js"></script>
+<script>
+function calc() {
+  const rent = parseFloat(document.getElementById('rent').value) || 0;
+  const interest = parseFloat(document.getElementById('mortgage_interest').value) || 0;
+  const expenses = parseFloat(document.getElementById('other_expenses').value) || 0;
+  const band = document.getElementById('tax_band').value;
+  const rate = band === '20' ? 0.20 : band === '40' ? 0.40 : 0.45;
+  const profit_pre = rent - interest - expenses;
+  const tax_pre = Math.max(profit_pre, 0) * rate;
+  const net_pre = rent - interest - expenses - tax_pre;
+  const profit_post = rent - expenses;
+  const tax_credit = interest * 0.20;
+  const tax_post = Math.max(profit_post * rate - tax_credit, 0);
+  const net_post = rent - interest - expenses - tax_post;
+  const extra_tax = tax_post - tax_pre;
+  document.getElementById('r_profit_pre').textContent = fmtM(profit_pre);
+  document.getElementById('r_tax_pre').textContent = fmtM(tax_pre);
+  document.getElementById('r_net_pre').textContent = fmtM(net_pre);
+  document.getElementById('r_profit_post').textContent = fmtM(profit_post);
+  document.getElementById('r_tax_post').textContent = fmtM(tax_post);
+  document.getElementById('r_net_post').textContent = fmtM(net_post);
+  document.getElementById('r_extra_tax').textContent = fmtM(extra_tax);
+}
+function fmtM(n) { return '£' + Math.round(n).toLocaleString('en-GB'); }
+document.querySelectorAll('input,select').forEach(el => el.addEventListener('change', calc));
+document.querySelectorAll('input').forEach(el => el.addEventListener('input', calc));
+calc();
+</script>
+</body>
+</html>
