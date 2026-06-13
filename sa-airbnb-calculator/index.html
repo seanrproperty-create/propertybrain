@@ -6,7 +6,8 @@
 <meta name="description" content="Free UK serviced accommodation (SA) and Airbnb cashflow calculator. Model nightly income, occupancy, management costs and compare SA returns vs buy-to-let.">
 <link rel="canonical" href="https://propertybrain.uk/sa-airbnb-calculator/">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="preload" href="/assets/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.min.css"></noscript>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is serviced accommodation more profitable than buy-to-let?","acceptedAnswer":{"@type":"Answer","text":"SA typically generates 1.5–3× more monthly income than BTL when well-managed. A property producing £800/month on a standard AST might yield £1,800–£2,500/month as SA. However SA has higher costs (20–30% management, cleaning, platform fees) and more management involvement. Profitability depends heavily on location, nightly rate and occupancy rate."}},{"@type":"Question","name":"What occupancy rate should I assume for Airbnb?","acceptedAnswer":{"@type":"Answer","text":"A realistic average UK Airbnb occupancy is 55–70% for well-positioned properties in good locations. Prime city-centre properties can achieve 75–85%. Rural or seasonal locations may be 40–55%. Use 60–65% as a conservative baseline for cashflow modelling."}},{"@type":"Question","name":"What are typical SA management fees?","acceptedAnswer":{"@type":"Answer","text":"Full-service SA management typically costs 20–30% of revenue, covering platform management, check-in/out, cleaning and maintenance. Airbnb platform fee is typically 3% (host) or 14–16% (service-only). Our calculator uses a configurable all-in management rate."}}]}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VGJC6YVK43"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VGJC6YVK43');</script>
@@ -116,7 +117,7 @@
     <div class="footer-links"><h4>Free Resources</h4><ul><li><a href="/free-tools/">All Free Tools</a></li><li><a href="/sa-operator-agreement/">SA Operator Agreement</a></li><li><a href="/r2r-hmo-agreement/">R2R HMO Agreement</a></li><li><a href="/deal-packaging-agreement/">Deal Packaging Agreement</a></li><li><a href="/refurbishment-cost-estimator/">Refurbishment Cost Estimator</a></li><li><a href="/joint-venture-agreement/">JV Agreement</a></li><li><a href="/sa-compliance-checklist/">SA Compliance Checklist</a></li><li><a href="/bridging-finance-calculator/">Bridging Loan Calculator</a></li><li><a href="/section-24-calculator/">Section 24 Calculator</a></li></ul></div>
   </div>
 </footer>
-<script src="/assets/js/calculators.js"></script>
+<script src="/assets/js/calculators.min.js" defer></script>
 <script>
 function runSA() {
   var nightly = parseFloat(document.getElementById('sa-nightly').value)||0;

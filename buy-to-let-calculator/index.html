@@ -10,7 +10,8 @@
 <meta property="og:description" content="Free UK BTL calculator — yield, cashflow, Section 24 tax and stress test.">
 <meta property="og:url" content="https://propertybrain.uk/buy-to-let-calculator/">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="preload" href="/assets/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.min.css"></noscript>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a good buy-to-let yield in the UK?","acceptedAnswer":{"@type":"Answer","text":"A gross yield of 6%+ is generally considered good for UK buy-to-let. Northern cities like Sunderland, Hull and Liverpool regularly achieve 7–10% gross. London averages 2–4%. After costs (mortgage, management, maintenance, voids), a net yield of 3–5% is typical in high-yield areas."}},{"@type":"Question","name":"How does Section 24 affect buy-to-let tax?","acceptedAnswer":{"@type":"Answer","text":"Section 24 (introduced 2017) prevents private landlords from deducting mortgage interest from rental income before tax. Instead you get a 20% tax credit on the interest. A higher-rate (40%) taxpayer can be taxed on income before interest is paid, significantly reducing cashflow. Using a limited company avoids Section 24 — companies can deduct full mortgage interest at 19% corporation tax."}},{"@type":"Question","name":"What deposit do I need for a buy-to-let mortgage?","acceptedAnswer":{"@type":"Answer","text":"Most UK buy-to-let mortgages require a minimum 20–25% deposit. With a 25% deposit you access better rates. Lenders typically require rental income to cover 125–145% of the monthly mortgage payment (interest coverage ratio). Use our BTL calculator to check if your property passes the stress test."}},{"@type":"Question","name":"Should I buy a rental property in my name or via a limited company?","acceptedAnswer":{"@type":"Answer","text":"Limited companies avoid Section 24 and pay 19% corporation tax on profits, which can result in significantly higher cashflow for higher-rate taxpayers. However, Ltd Co mortgages often have higher rates and there are setup/accountancy costs. If you plan to hold long-term and are a higher-rate taxpayer, Ltd Co is usually more tax-efficient. Use our Section 24 comparison tab to model both scenarios."}}]}
 </script>
@@ -325,7 +326,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/calculators.js"></script>
+<script src="/assets/js/calculators.min.js" defer></script>
 <script>
 var _btlResult = null;
 

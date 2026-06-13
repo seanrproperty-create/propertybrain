@@ -11,7 +11,8 @@
 <meta property="og:url" content="https://propertybrain.uk/property-flip-calculator/">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="preload" href="/assets/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.min.css"></noscript>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Property Flip Calculator UK","url":"https://propertybrain.uk/property-flip-calculator/","description":"Calculate net profit on a UK property flip including refurb, bridging finance, stamp duty and CGT.","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
 </script>
@@ -265,7 +266,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/calculators.js"></script>
+<script src="/assets/js/calculators.min.js" defer></script>
 <script>
 function runFlip() {
   var purchase   = parseFloat(document.getElementById('flip-purchase').value) || 0;

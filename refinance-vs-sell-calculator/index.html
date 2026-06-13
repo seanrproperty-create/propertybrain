@@ -11,7 +11,8 @@
 <meta property="og:url" content="https://propertybrain.uk/refinance-vs-sell-calculator/">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="preload" href="/assets/css/style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.min.css"></noscript>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Refinance vs Sell Calculator UK","url":"https://propertybrain.uk/refinance-vs-sell-calculator/","description":"Compare releasing equity via remortgage against selling your UK investment property outright. Net cash comparison after all costs.","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
 </script>
@@ -287,7 +288,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/calculators.js"></script>
+<script src="/assets/js/calculators.min.js" defer></script>
 <script>
 function runRVS() {
   var propValue      = parseFloat(document.getElementById('rvs-value').value) || 0;
