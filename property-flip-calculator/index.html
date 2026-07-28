@@ -11,7 +11,8 @@
 <meta property="og:url" content="https://propertybrain.uk/property-flip-calculator/">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="preload" href="/assets/css/style.min.css?v=2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=2"></noscript>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Property Flip Calculator UK","url":"https://propertybrain.uk/property-flip-calculator/","description":"Calculate net profit on a UK property flip including refurb, bridging finance, stamp duty and CGT.","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
 </script>
@@ -37,7 +38,9 @@
         <a href="/mortgage-calculator/">Mortgage</a>
         <a href="/rental-yield-calculator/">Yield</a>
         <a href="/sa-airbnb-calculator/">SA/Airbnb</a>
-        <a href="/downloads/">Downloads</a>
+        <a href="/bridging-finance-calculator/">Bridging</a>
+        <a href="/section-24-calculator/">Section 24</a>
+        <a href="/free-tools/">Free Tools</a>
         <a href="/guide/">Guide</a>
         <a href="/capital-gains-tax-calculator/">CGT</a>
       </nav>
@@ -216,10 +219,17 @@
       </details>
     </section>
 
+    <div class="cta-box" style="margin-bottom:1rem;">
+      <h2>Free deal analysis spreadsheet</h2>
+      <p>Model any flip deal with automatic SDLT, yield, and cash-on-cash return.</p>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:0.75rem">
+        <a href="https://propertyalert.uk/shop/property-deal-analyser" class="btn btn--green" target="_blank" rel="noopener">🏠 Deal Analyser →</a>
+      </div>
+    </div>
     <div class="cta-box">
-      <h2>Find flip-ready properties</h2>
-      <p>PropertyAlert.uk identifies properties below market value, analyses comparable sold prices and scores flip viability for 46,000+ live UK listings.</p>
-      <a href="https://propertyalert.uk" class="btn btn--green" target="_blank" rel="noopener">Find Flip Properties on PropertyAlert.uk →</a>
+      <h2>Prefer live analysis?</h2>
+      <p>PropertyAlert.uk analyses any Rightmove or Zoopla listing instantly — yield, cashflow, SA projection and investment score. Plus get all 7 free property tools with your trial.</p>
+      <a href="https://propertyalert.uk/register?plan=investor&source=pb_property_flip_calculator_cta" class="btn btn--green" target="_blank" rel="noopener">Start free trial — get all 7 tools →</a>
     </div>
       <!-- AFFILIATE TODO: Muve Conveyancing CTA -->
 <div class="ad-slot">Advertisement</div>
@@ -229,48 +239,34 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-brand__name">Property<span>Brain</span></div>
-        <p>Free UK property investment calculators. For informational purposes only — not financial advice.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Calculators</h4>
-        <ul>
-          <li><a href="/buy-to-let-calculator/">Buy-to-Let</a></li>
-          <li><a href="/stamp-duty-calculator/">Stamp Duty</a></li>
-          <li><a href="/mortgage-calculator/">Mortgage</a></li>
-          <li><a href="/rental-yield-calculator/">Rental Yield</a></li>
-          <li><a href="/sa-airbnb-calculator/">SA / Airbnb</a></li>
-          <li><a href="/hmo-yield-calculator/">HMO Yield</a></li>
-          <li><a href="/cashflow-calculator/">Cashflow</a></li>
-          <li><a href="/property-roi-calculator/">Property ROI</a></li>
-          <li><a href="/capital-gains-tax-calculator/">CGT Calculator</a></li>
-          <li><a href="/property-flip-calculator/">Property Flip</a></li>
-          <li><a href="/refinance-vs-sell-calculator/">Refinance vs Sell</a></li>
-          <li><a href="/portfolio-disposal-calculator/">Portfolio Disposal</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="/guide/">Investment Guide</a></li>
-          <li><a href="/downloads/">Free Downloads</a></li>
-          <li><a href="/about/">About</a></li>
-          <li><a href="/contact/">Contact</a></li>
-          <li><a href="/privacy/">Privacy Policy</a></li>
-          <li><a href="/terms/">Terms of Use</a></li>
-          <li><a href="/cookies/">Cookie Policy</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 PropertyBrain.uk &#8212; For informational purposes only. Not financial advice.</span>
-      <span>Data powered by <a href="https://propertyalert.uk">PropertyAlert.uk</a></span>
+      <div class="footer-brand"><div class="footer-brand__name">Property<span>Brain</span></div><p>Free UK property investment calculators. Not financial advice.</p></div>
+      <div class="footer-links"><h4>Calculators</h4><ul>
+        <li><a href="/buy-to-let-calculator/">Buy-to-Let</a></li>
+        <li><a href="/stamp-duty-calculator/">Stamp Duty</a></li>
+        <li><a href="/mortgage-calculator/">Mortgage</a></li>
+        <li><a href="/rental-yield-calculator/">Rental Yield</a></li>
+        <li><a href="/sa-airbnb-calculator/">SA / Airbnb</a></li>
+        <li><a href="/hmo-yield-calculator/">HMO Yield</a></li>
+      </ul></div>
+      <div class="footer-links"><h4>Exit Strategies</h4><ul>
+        <li><a href="/capital-gains-tax-calculator/">CGT Calculator</a></li>
+        <li><a href="/property-flip-calculator/">Flip Calculator</a></li>
+        <li><a href="/refinance-vs-sell-calculator/">Refinance vs Sell</a></li>
+        <li><a href="/portfolio-disposal-calculator/">Portfolio Disposal</a></li>
+      </ul></div>
+      <div class="footer-links"><h4>Info</h4><ul>
+        <li><a href="/guide/">Guide</a></li>
+        <li><a href="/free-tools/">Free Tools</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul></div>
+      <div class="footer-links"><h4>Free Resources</h4><ul><li><a href="/free-tools/">All Free Tools</a></li><li><a href="/sa-operator-agreement/">SA Operator Agreement</a></li><li><a href="/r2r-hmo-agreement/">R2R HMO Agreement</a></li><li><a href="/deal-packaging-agreement/">Deal Packaging Agreement</a></li><li><a href="/refurbishment-cost-estimator/">Refurbishment Cost Estimator</a></li><li><a href="/joint-venture-agreement/">JV Agreement</a></li><li><a href="/sa-compliance-checklist/">SA Compliance Checklist</a></li><li><a href="/bridging-finance-calculator/">Bridging Loan Calculator</a></li><li><a href="/section-24-calculator/">Section 24 Calculator</a></li></ul></div>
     </div>
   </div>
 </footer>
 
-<script src="/assets/js/calculators.js"></script>
+<script src="/assets/js/calculators.min.js" defer></script>
 <script>
 function runFlip() {
   var purchase   = parseFloat(document.getElementById('flip-purchase').value) || 0;
