@@ -8,6 +8,12 @@
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="preload" href="/assets/css/style.min.css?v=2" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=2"></noscript>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"UK Property Cashflow Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any (web browser)","url":"https://propertybrain.uk/cashflow-calculator/","description":"Free calculator for UK rental property monthly cashflow — rent, voids, mortgage, letting agent fees, maintenance, insurance, ground rent and service charge.","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's a realistic void allowance to use?","acceptedAnswer":{"@type":"Answer","text":"4-8% is typical for a standard AST let, depending on area and tenant demand. Short-term/SA lets usually carry higher effective void allowances because of turnover between bookings — model those separately with our SA/Airbnb Calculator."}},{"@type":"Question","name":"Should I use my mortgage's interest-only or repayment figure?","acceptedAnswer":{"@type":"Answer","text":"Enter whatever your actual monthly mortgage payment is, whether interest-only or capital repayment — the calculator just takes the figure you pay each month. Use the Mortgage Calculator first if you need to work that payment out."}},{"@type":"Question","name":"What's the difference between cashflow and rental yield?","acceptedAnswer":{"@type":"Answer","text":"Yield measures rental income against the purchase price as a percentage. Cashflow is the actual pounds left in your pocket each month after every cost, mortgage included — a property can show a strong yield on paper but still have negative cashflow once you account for a leveraged mortgage payment."}},{"@type":"Question","name":"Does this include one-off costs like re-letting fees or redecoration?","acceptedAnswer":{"@type":"Answer","text":"No — this is an ongoing monthly view. If you want periodic costs like re-let fees or between-tenancy redecoration reflected, pro-rate them into a monthly figure and add them under Other Costs."}},{"@type":"Question","name":"What should I do if my net cashflow comes out negative?","acceptedAnswer":{"@type":"Answer","text":"Check your rent against comparable local listings with the Rental Yield Calculator, review whether refinancing could lower the mortgage payment, or reconsider whether the numbers work for that specific deal before proceeding."}}]}
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VGJC6YVK43"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VGJC6YVK43');</script>
 </head>
@@ -66,6 +72,22 @@
       <div class="notice mt-2">For full BTL analysis including Section 24 tax, 5-year projection and stress test, use our <a href="/buy-to-let-calculator/">Buy-to-Let Calculator</a>.</div>
     </div>
   </div>
+
+  <section class="guide-section" id="how-it-works">
+    <h2>How This Calculator Works</h2>
+    <p>Net monthly cashflow is what's actually left in your pocket each month after every cost — not a percentage measure like yield. The formula: <strong>Net Cashflow = Effective Rental Income − Total Expenses</strong>, where effective income is your monthly rent minus a void allowance (for the weeks the property may sit empty between tenants), and total expenses covers mortgage, letting agent fees, maintenance provision, insurance, ground rent, service charge and any other running costs.</p>
+    <div class="guide-callout"><strong>Worked example</strong> (the default figures pre-filled above): £950/month rent with a 4% void allowance — void deduction £38, effective income £912. Expenses: £600 mortgage + £95 letting agent + £40 maintenance + £45 insurance = £780/month. Net cashflow: £912 − £780 = <strong>£132/month</strong>, or £1,584/year.</div>
+  </section>
+
+  <section class="faq-section">
+    <h2>Cashflow Calculator FAQs</h2>
+    <div class="notice"><strong>PropertyBrain Editorial Team</strong> — methodology reflects standard UK BTL cashflow modelling conventions. Last verified: July 2026. This is not financial advice — always build your own numbers before committing to a purchase.</div>
+    <details class="faq-item"><summary>What's a realistic void allowance to use?</summary><div class="faq-body"><p>4–8% is typical for a standard AST let, depending on area and tenant demand. Short-term/SA lets usually carry higher effective void allowances because of turnover between bookings — model those separately with our <a href="/sa-airbnb-calculator/">SA/Airbnb Calculator</a>.</p></div></details>
+    <details class="faq-item"><summary>Should I use my mortgage's interest-only or repayment figure?</summary><div class="faq-body"><p>Enter whatever your actual monthly mortgage payment is, whether interest-only or capital repayment — the calculator just takes the figure you pay each month. Use the <a href="/mortgage-calculator/">Mortgage Calculator</a> first if you need to work that payment out.</p></div></details>
+    <details class="faq-item"><summary>What's the difference between cashflow and rental yield?</summary><div class="faq-body"><p>Yield measures rental income against the purchase price as a percentage. Cashflow is the actual pounds left in your pocket each month after every cost, mortgage included — a property can show a strong yield on paper but still have negative cashflow once you account for a leveraged mortgage payment.</p></div></details>
+    <details class="faq-item"><summary>Does this include one-off costs like re-letting fees or redecoration?</summary><div class="faq-body"><p>No — this is an ongoing monthly view. If you want periodic costs like re-let fees or between-tenancy redecoration reflected, pro-rate them into a monthly figure and add them under Other Costs.</p></div></details>
+    <details class="faq-item"><summary>What should I do if my net cashflow comes out negative?</summary><div class="faq-body"><p>Check your rent against comparable local listings with the <a href="/rental-yield-calculator/">Rental Yield Calculator</a>, review whether refinancing could lower the mortgage payment, or reconsider whether the numbers work for that specific deal before proceeding.</p></div></details>
+  </section>
 
   <div class="cta-box" style="background:var(--grey-100);border:1px solid var(--grey-200)">
     <h2 style="font-size:1.1rem">Related Exit Strategy Calculators</h2>
