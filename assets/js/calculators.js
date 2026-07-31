@@ -277,12 +277,28 @@ function calcROI(purchaseCosts, annualCashflow, currentValue, purchasePrice, yea
 }
 
 // ===== UI Helpers =====
+function updateConsent(granted) {
+  if (typeof gtag !== 'function') return;
+  var state = granted ? 'granted' : 'denied';
+  gtag('consent', 'update', {
+    'ad_storage': state,
+    'ad_user_data': state,
+    'ad_personalization': state,
+    'analytics_storage': state
+  });
+}
+
 function initCookieBanner() {
   var banner = document.getElementById('cookie-banner');
   if (!banner) return;
-  if (localStorage.getItem('pb_cookies')) { banner.style.display = 'none'; return; }
-  document.getElementById('cookie-accept').onclick = function() { localStorage.setItem('pb_cookies','1'); banner.style.display='none'; };
-  document.getElementById('cookie-decline').onclick = function() { localStorage.setItem('pb_cookies','0'); banner.style.display='none'; };
+  var stored = localStorage.getItem('pb_cookies');
+  if (stored) {
+    banner.style.display = 'none';
+    updateConsent(stored === '1');
+    return;
+  }
+  document.getElementById('cookie-accept').onclick = function() { localStorage.setItem('pb_cookies','1'); banner.style.display='none'; updateConsent(true); };
+  document.getElementById('cookie-decline').onclick = function() { localStorage.setItem('pb_cookies','0'); banner.style.display='none'; updateConsent(false); };
 }
 
 function initTabs() {

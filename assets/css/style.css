@@ -368,3 +368,4 @@ details.faq-item[open] summary { background: var(--grey-50); }
   .page-hero { padding: 2rem 0 1.75rem; }
   .main-content { padding: 1.5rem 0 2rem; }
 }
+.article-disclaimer { color: var(--grey-600); font-size: 0.85rem; margin: 1.5rem 0 0; border-top: 1px solid var(--grey-200); padding-top: 1rem; }
