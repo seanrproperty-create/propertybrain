@@ -9,7 +9,11 @@
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="preload" href="/assets/css/style.min.css?v=2" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=2"></noscript>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"UK SA / Airbnb Cashflow Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any (web browser)","url":"https://propertybrain.uk/sa-airbnb-calculator/","description":"Free calculator for UK serviced accommodation (SA) and Airbnb cashflow, modelling nightly rate, occupancy, platform fees, management fees and cleaning costs.","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
+</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is serviced accommodation more profitable than buy-to-let?","acceptedAnswer":{"@type":"Answer","text":"SA typically generates 1.5–3× more monthly income than BTL when well-managed. A property producing £800/month on a standard AST might yield £1,800–£2,500/month as SA. However SA has higher costs (20–30% management, cleaning, platform fees) and more management involvement. Profitability depends heavily on location, nightly rate and occupancy rate."}},{"@type":"Question","name":"What occupancy rate should I assume for Airbnb?","acceptedAnswer":{"@type":"Answer","text":"A realistic average UK Airbnb occupancy is 55–70% for well-positioned properties in good locations. Prime city-centre properties can achieve 75–85%. Rural or seasonal locations may be 40–55%. Use 60–65% as a conservative baseline for cashflow modelling."}},{"@type":"Question","name":"What are typical SA management fees?","acceptedAnswer":{"@type":"Answer","text":"Full-service SA management typically costs 20–30% of revenue, covering platform management, check-in/out, cleaning and maintenance. Airbnb platform fee is typically 3% (host) or 14–16% (service-only). Our calculator uses a configurable all-in management rate."}}]}</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9748936508682808" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VGJC6YVK43"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VGJC6YVK43');</script>
 </head>
@@ -83,7 +87,14 @@
     </div>
   </div>
 
+  <section class="guide-section" id="how-it-works">
+    <h2>How This Calculator Works</h2>
+    <p>SA income is modelled from nightly rate and occupancy rather than a fixed monthly rent: <strong>Annual Revenue = Nightly Rate × Occupancy % × 365</strong>. From that monthly figure, the calculator deducts platform fees (Airbnb/Booking.com), an all-in management fee, and cleaning costs (per stay × average stays per month) to reach gross monthly income, then subtracts your mortgage payment for net cashflow. Because SA income swings with occupancy, the sensitivity table below re-runs the same costs across a 40–90% occupancy range so you can see the downside case, not just your target scenario.</p>
+    <div class="guide-callout"><strong>Worked example</strong> (the default figures pre-filled above): £120/night at 65% occupancy — annual revenue £28,470, or £2,372.50/month. Costs: 3% platform fee (£71.18) + 20% management (£474.50) + cleaning at £60 × 8 stays/month (£480) = £1,025.68/month. Gross monthly: £1,346.83. After an £800 mortgage payment: net monthly cashflow <strong>£546.83</strong>.</div>
+  </section>
+
   <section class="faq-section"><h2>SA / Airbnb FAQs</h2>
+    <div class="notice"><strong>PropertyBrain Editorial Team</strong> — figures reflect typical UK SA market ranges, not guaranteed outcomes. Last verified: July 2026. Always check local Article 4 / planning restrictions before committing to an SA strategy. This is not financial advice.</div>
     <details class="faq-item"><summary>Is SA more profitable than standard buy-to-let?</summary><div class="faq-body"><p>SA typically generates 1.5–3× more monthly income than BTL at good occupancy. A property producing £800/month on AST might yield £1,800–£2,500/month as SA. However, SA carries higher costs (platform fees, management, cleaning) and more operational complexity. Article 4 Directions in some areas restrict SA — always check planning before committing.</p></div></details>
     <details class="faq-item"><summary>What occupancy should I assume for Airbnb?</summary><div class="faq-body"><p>A realistic UK baseline is 60–70% for well-positioned city properties. Prime locations (London, Edinburgh, Bath) can reach 75–85%. Seasonal or rural properties may be 40–55%. Use 60–65% for conservative cashflow modelling.</p></div></details>
     <details class="faq-item"><summary>What are typical SA management costs?</summary><div class="faq-body"><p>Full-service SA management runs 20–30% of revenue (platform + management + cleaning combined). Airbnb alone charges ~3% host fee; Booking.com ~15%. If you self-manage, your main cost is cleaning (£50–£100/stay). Our model lets you configure each cost separately.</p></div></details>

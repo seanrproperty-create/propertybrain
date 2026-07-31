@@ -11,8 +11,12 @@
 <link rel="preload" href="/assets/css/style.min.css?v=2" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=2"></noscript>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the monthly repayment on a £150,000 interest-only mortgage at 5%?","acceptedAnswer":{"@type":"Answer","text":"A £150,000 interest-only mortgage at 5% costs £625 per month (£150,000 × 5% ÷ 12). The capital balance remains at £150,000 throughout — you must repay the full amount at the end of the term."}},{"@type":"Question","name":"Is it better to have a repayment or interest-only mortgage for buy-to-let?","acceptedAnswer":{"@type":"Answer","text":"Interest-only gives lower monthly payments (improving cashflow) but the capital balance never reduces. Most BTL investors use interest-only to maximise monthly cashflow and plan to repay via property sale. Lenders typically require rental income to cover 125–145% of the interest-only payment."}},{"@type":"Question","name":"How is a mortgage monthly payment calculated?","acceptedAnswer":{"@type":"Answer","text":"For a repayment mortgage: monthly payment = P × (r × (1+r)^n) / ((1+r)^n - 1), where P is the loan, r is the monthly rate (annual rate ÷ 12), and n is the number of months. For interest-only: monthly = P × annual_rate ÷ 12."}}]}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"UK Mortgage Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any (web browser)","url":"https://propertybrain.uk/mortgage-calculator/","description":"Free UK mortgage calculator for monthly repayments, total interest and a year-by-year amortisation schedule, covering repayment and interest-only mortgages.","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the monthly repayment on a £150,000 interest-only mortgage at 5%?","acceptedAnswer":{"@type":"Answer","text":"A £150,000 interest-only mortgage at 5% costs £625 per month (£150,000 × 5% ÷ 12). The capital balance remains at £150,000 throughout — you must repay the full amount at the end of the term."}},{"@type":"Question","name":"Is it better to have a repayment or interest-only mortgage for buy-to-let?","acceptedAnswer":{"@type":"Answer","text":"Interest-only gives lower monthly payments (improving cashflow) but the capital balance never reduces. Most BTL investors use interest-only to maximise monthly cashflow and plan to repay via property sale. Lenders typically require rental income to cover 125–145% of the interest-only payment."}},{"@type":"Question","name":"How is a mortgage monthly payment calculated?","acceptedAnswer":{"@type":"Answer","text":"For a repayment mortgage: monthly payment = P × (r × (1+r)^n) / ((1+r)^n - 1), where P is the loan, r is the monthly rate (annual rate ÷ 12), and n is the number of months. For interest-only: monthly = P × annual_rate ÷ 12."}},{"@type":"Question","name":"What is ICR and why does it matter for BTL mortgages?","acceptedAnswer":{"@type":"Answer","text":"ICR (Interest Coverage Ratio) is the minimum rental income a BTL lender requires relative to your mortgage payment, typically 125-145%, calculated against either the pay rate or a higher stress-test rate. If your monthly payment is £876.89, a 125% ICR means the lender wants to see at least £1,096.11 per month in rent before approving the loan."}},{"@type":"Question","name":"How does the amortisation schedule work?","acceptedAnswer":{"@type":"Answer","text":"On a repayment mortgage, each monthly payment is split between interest and capital, but the split isn't even across the term. Early on, most of the payment goes to interest because the outstanding balance is largest; as the balance shrinks, more of each payment goes to capital."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9748936508682808" crossorigin="anonymous"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VGJC6YVK43"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VGJC6YVK43');</script>
 </head>
@@ -129,8 +133,15 @@
       </div>
     </div><!-- /tab-group -->
 
+    <section class="guide-section" id="how-it-works">
+      <h2>How This Calculator Works</h2>
+      <p>For a <strong>repayment mortgage</strong>, the monthly payment is calculated so that equal payments clear both interest and capital over the full term: <code>Monthly = P × (r × (1+r)ⁿ) ÷ ((1+r)ⁿ − 1)</code>, where P is the loan amount, r is the monthly interest rate (annual rate ÷ 12), and n is the number of months. Early in the term, most of each payment is interest; later payments are increasingly capital — the amortisation schedule tab shows this year by year. For an <strong>interest-only mortgage</strong>, the payment is simply <code>P × annual rate ÷ 12</code> — the balance never reduces, so this figure stays constant for the whole term.</p>
+      <div class="guide-callout"><strong>Worked example</strong> (the default figures pre-filled above): a £200,000 property with a 25% deposit gives a £150,000 loan at 5% over 25 years. Repayment mortgage: <strong>£876.89/month</strong>, total repaid £263,065.52, total interest £113,065.52 over the full term. The same loan interest-only: <strong>£625/month</strong>, but the full £150,000 capital is still owed at the end.</div>
+    </section>
+
     <section class="faq-section">
       <h2>Mortgage FAQs</h2>
+      <div class="notice"><strong>PropertyBrain Editorial Team</strong> — formulas are standard UK mortgage amortisation maths. Last verified: July 2026. This is not financial advice — always get a rate quote and affordability check from a lender or mortgage broker.</div>
       <details class="faq-item">
         <summary>What is the monthly payment on a £150,000 interest-only mortgage at 5%?</summary>
         <div class="faq-body"><p>£150,000 × 5% ÷ 12 = <strong>£625 per month</strong>. For interest-only, the capital remains unchanged throughout the term — you must repay the full £150,000 at the end.</p></div>
@@ -142,6 +153,14 @@
       <details class="faq-item">
         <summary>How does LTV affect mortgage rates?</summary>
         <div class="faq-body"><p>Lower LTV (higher deposit) typically means better mortgage rates. A 25% deposit (75% LTV) gives access to the widest range of BTL products. Many lenders cap BTL at 75–80% LTV. Rates typically improve significantly between 80%, 75% and 60% LTV thresholds.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>What is ICR and why does it matter for BTL mortgages?</summary>
+        <div class="faq-body"><p>ICR (Interest Coverage Ratio) is the minimum rental income a BTL lender requires relative to your mortgage payment — typically 125–145%, calculated against either the pay rate or a higher "stress test" rate. If your monthly payment is £876.89, a 125% ICR means the lender wants to see at least £1,096.11/month in rent before approving the loan. This calculator shows the 125% figure as a quick reference; check the exact stress-test rate with your specific lender.</p></div>
+      </details>
+      <details class="faq-item">
+        <summary>How does the amortisation schedule work?</summary>
+        <div class="faq-body"><p>On a repayment mortgage, each monthly payment is split between interest and capital, but the split isn't even across the term. Early on, most of the payment goes to interest because the outstanding balance is largest; as the balance shrinks, more of each payment goes to capital. The Amortisation Schedule tab above breaks this down year by year so you can see how much equity you'd build by any given point in the term.</p></div>
       </details>
     </section>
 
