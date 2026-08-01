@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'});</script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英国 SA/Airbnb 计算器——服务式住宿现金流 | PropertyBrain</title>
+<meta name="description" content="免费英国服务式住宿(SA)及 Airbnb 现金流计算器。建模每晚收入、入住率、管理成本，并比较 SA 与出租房的回报。">
+<link rel="canonical" href="https://propertybrain.uk/zh/sa-airbnb-calculator/">
+<link rel="alternate" hreflang="en-gb" href="https://propertybrain.uk/sa-airbnb-calculator/">
+<link rel="alternate" hreflang="zh" href="https://propertybrain.uk/zh/sa-airbnb-calculator/">
+<link rel="alternate" hreflang="ar" href="https://propertybrain.uk/ar/sa-airbnb-calculator/">
+<link rel="alternate" hreflang="hi" href="https://propertybrain.uk/hi/sa-airbnb-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://propertybrain.uk/sa-airbnb-calculator/">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="preload" href="/assets/css/style.min.css?v=2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=2"></noscript>
+<script type="application/ld+json">
+{"@context":"https://schema.org","inLanguage":"zh","@type":"SoftwareApplication","name":"UK SA / Airbnb Cashflow Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any (web browser)","url":"https://propertybrain.uk/zh/sa-airbnb-calculator/","description":"Free calculator for UK serviced accommodation (SA) and Airbnb cashflow, modelling nightly rate, occupancy, platform fees, management fees and cleaning costs.","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","inLanguage":"zh","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is serviced accommodation more profitable than buy-to-let?","acceptedAnswer":{"@type":"Answer","text":"SA typically generates 1.5–3× more monthly income than BTL when well-managed. A property producing £800/month on a standard AST might yield £1,800–£2,500/month as SA. However SA has higher costs (20–30% management, cleaning, platform fees) and more management involvement. Profitability depends heavily on location, nightly rate and occupancy rate."}},{"@type":"Question","name":"What occupancy rate should I assume for Airbnb?","acceptedAnswer":{"@type":"Answer","text":"A realistic average UK Airbnb occupancy is 55–70% for well-positioned properties in good locations. Prime city-centre properties can achieve 75–85%. Rural or seasonal locations may be 40–55%. Use 60–65% as a conservative baseline for cashflow modelling."}},{"@type":"Question","name":"What are typical SA management fees?","acceptedAnswer":{"@type":"Answer","text":"Full-service SA management typically costs 20–30% of revenue, covering platform management, check-in/out, cleaning and maintenance. Airbnb platform fee is typically 3% (host) or 14–16% (service-only). Our calculator uses a configurable all-in management rate."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9748936508682808" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VGJC6YVK43"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VGJC6YVK43');</script>
+</head>
+<body>
+<div id="cookie-banner"><p>我们使用 Cookie。<a href="/cookies/">了解更多</a>.</p><div class="cookie-btns"><button class="btn-cookie-accept" id="cookie-accept">接受</button><button class="btn-cookie-decline" id="cookie-decline">拒绝</button></div></div>
+<header class="site-header"><div class="container"><div class="site-header__inner"><a href="/" class="site-header__logo">Property<span>Brain</span></a><nav class="site-nav"><a href="/buy-to-let-calculator/">BTL 计算器</a><a href="/stamp-duty-calculator/">印花税</a><a href="/mortgage-calculator/">按揭</a><a href="/rental-yield-calculator/">收益率</a><a href="/sa-airbnb-calculator/">SA/Airbnb</a><a href="/bridging-finance-calculator/">过桥贷款</a><a href="/section-24-calculator/">Section 24</a><a href="/free-tools/">免费工具</a><a href="/guide/">指南</a><a href="/capital-gains-tax-calculator/">CGT</a></nav><div class="lang-switcher"><button type="button" class="lang-switcher__btn" aria-haspopup="true" aria-expanded="false" onclick="this.parentElement.classList.toggle('open')">中文 ▾</button><div class="lang-switcher__menu"><a href="https://propertybrain.uk/sa-airbnb-calculator/" hreflang="en-gb">English</a><a href="https://propertybrain.uk/zh/sa-airbnb-calculator/" hreflang="zh" class="active">中文</a><a href="https://propertybrain.uk/ar/sa-airbnb-calculator/" hreflang="ar">العربية</a><a href="https://propertybrain.uk/hi/sa-airbnb-calculator/" hreflang="hi">हिन्दी</a></div></div></div></div></header>
+
+<section class="page-hero"><div class="container">
+  <div class="breadcrumb"><a href="/">首页</a> › SA/Airbnb 计算器</div>
+  <h1>英国 SA/Airbnb 计算器</h1>
+  <p>结合入住率敏感度建模服务式住宿现金流——比较 SA 与出租房的回报。</p>
+</div></section>
+
+<main class="main-content"><div class="container">
+  <div class="calc-layout">
+    <div>
+      <div class="card">
+        <div class="card__header">房产与收入</div>
+        <div class="card__body">
+          <div class="form-group"><label>房产价格</label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="sa-price" value="200000" min="10000" oninput="runSA()"></div></div>
+          <div class="form-group"><label>平均每晚房价</label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="sa-nightly" value="120" min="10" oninput="runSA()"></div></div>
+          <div class="form-group"><label>目标入住率</label><div class="range-row"><input type="range" id="sa-occ" min="30" max="95" value="65" step="1" data-out="sa-occ-disp" data-suffix="%" oninput="runSA()"><span class="range-display" id="sa-occ-disp">65%</span></div></div>
+          <div class="form-group"><label>月均入住次数</label><div class="input-wrap"><input type="number" id="sa-stays" value="8" min="1" max="30" oninput="runSA()"></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__header">成本</div>
+        <div class="card__body">
+          <div class="form-group"><label>平台费 <span class="hint">(Airbnb/Booking.com，占营收百分比)</span></label><div class="range-row"><input type="range" id="sa-platform" min="0" max="20" value="3" step="0.5" data-out="sa-platform-disp" data-suffix="%" oninput="runSA()"><span class="range-display" id="sa-platform-disp">3%</span></div></div>
+          <div class="form-group"><label>管理费 <span class="hint">(占营收百分比)</span></label><div class="range-row"><input type="range" id="sa-mgmt" min="0" max="30" value="20" step="1" data-out="sa-mgmt-disp" data-suffix="%" oninput="runSA()"><span class="range-display" id="sa-mgmt-disp">20%</span></div></div>
+          <div class="form-group"><label>每次入住清洁费</label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="sa-cleaning" value="60" min="0" oninput="runSA()"></div></div>
+          <div class="form-group"><label>月度按揭还款</label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="sa-mortgage" value="800" min="0" oninput="runSA()"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="results-panel">
+        <div class="results-panel__header">🛎️ SA 结果</div>
+        <div class="results-panel__body">
+          <div class="result-hero">
+            <div class="result-hero__label">月度净现金流</div>
+            <div class="result-hero__value" id="r-sa-net">£0</div>
+            <div class="result-hero__sub" id="r-sa-net-sub">扣除所有成本及按揭后</div>
+          </div>
+          <div class="result-grid">
+            <div class="result-mini"><div class="result-mini__label">月营收</div><div class="result-mini__value" id="r-sa-rev">—</div></div>
+            <div class="result-mini"><div class="result-mini__label">年营收</div><div class="result-mini__value" id="r-sa-annual-rev">—</div></div>
+          </div>
+          <div class="result-row"><span class="result-row__label">平台费</span><span class="result-row__value" id="r-sa-platform">—</span></div>
+          <div class="result-row"><span class="result-row__label">管理费</span><span class="result-row__value" id="r-sa-mgmt">—</span></div>
+          <div class="result-row"><span class="result-row__label">清洁成本</span><span class="result-row__value" id="r-sa-cleaning">—</span></div>
+          <div class="result-row"><span class="result-row__label">月度总成本</span><span class="result-row__value" id="r-sa-costs">—</span></div>
+          <div class="result-row"><span class="result-row__label">月度毛收入(按揭前)</span><span class="result-row__value" id="r-sa-gross">—</span></div>
+          <div class="result-row"><span class="result-row__label">月度按揭</span><span class="result-row__value" id="r-sa-mortgage">—</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Occupancy sensitivity -->
+  <div class="card mt-2">
+    <div class="card__header">入住率敏感度</div>
+    <div class="card__body">
+      <div class="table-wrap">
+        <table class="data-table" aria-label="入住率、月营收、月度毛额、月度净额(扣除按揭后)参考表">
+          <thead><tr><th scope="col">入住率</th><th scope="col">月营收</th><th scope="col">月度毛额</th><th scope="col">月度净额(扣除按揭后)</th></tr></thead>
+          <tbody id="sa-sensitivity"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <section class="guide-section" id="how-it-works">
+    <h2>本计算器的工作原理</h2>
+    <p>SA 收入是根据每晚房价及入住率建模，而非固定月租：<strong>Annual Revenue = Nightly Rate × Occupancy % × 365</strong>。基于该月度数字，计算器会扣除平台费(Airbnb/Booking.com)、综合管理费及清洁成本(每次入住费用 × 月均入住次数)，得出月度毛收入，再扣除您的按揭还款以得出净现金流。由于 SA 收入会随入住率波动，下方的敏感度表会将相同成本在 40–90% 的入住率区间内重新计算，让您不仅能看到目标情景，也能看到最不利的情况。</p>
+    <div class="guide-callout"><strong>示例演算</strong>(以上方预填的默认数值为例)：每晚 £120，入住率 65%——年营收 £28,470，即 £2,372.50/月。成本：3% 平台费(£71.18)+ 20% 管理费(£474.50)+ 清洁费 £60 × 8 次/月(£480)= £1,025.68/月。月度毛额：£1,346.83。扣除 £800 按揭还款后：月度净现金流<strong>£546.83</strong>.</div>
+  </section>
+
+  <section class="faq-section"><h2>SA/Airbnb 常见问题</h2>
+    <div class="notice"><strong>PropertyBrain Editorial Team</strong> ——数据反映的是英国 SA 市场的典型区间，并非有保证的结果。最后核实时间：2026 年 7 月。在采用 SA 策略前，请务必查询当地的 Article 4/规划限制。这不构成财务建议。</div>
+    <details class="faq-item"><summary>SA 是否比标准出租房更赚钱？</summary><div class="faq-body"><p>在良好入住率下，SA 通常能产生比 BTL 高 1.5–3 倍的月收入。一套在 AST 下产生 £800/月的房产，作为 SA 可能产生 £1,800–£2,500/月。然而，SA 也伴随更高的成本(平台费、管理费、清洁费)及更高的运营复杂度。部分地区的 Article 4 指令会限制 SA——在采用前请务必查询规划要求。</p></div></details>
+    <details class="faq-item"><summary>Airbnb 应假设多少入住率？</summary><div class="faq-body"><p>对于位置良好的城市房产，英国的现实基准为 60–70%。核心地段(伦敦、爱丁堡、巴斯)可达 75–85%。季节性或乡村房产可能仅为 40–55%。若要进行保守的现金流建模，请使用 60–65%。</p></div></details>
+    <details class="faq-item"><summary>典型的 SA 管理成本是多少？</summary><div class="faq-body"><p>全套 SA 管理服务通常占营收的 20–30%(平台费+管理费+清洁费合计)。Airbnb 单独收取约 3% 的房东费；Booking.com 约 15%。若您自行管理，主要成本为清洁费(£50–£100/次入住)。我们的模型允许您单独配置每一项成本。</p></div></details>
+  </section>
+
+  <div class="cta-box" style="margin-bottom:1rem;">
+    <h2>免费 SA 工具</h2>
+    <p>含季节性预测的 SA 收入计算器，以及免费 SA 运营协议模板。</p>
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:0.75rem">
+      <a href="https://propertyalert.uk/shop/sa-income-calculator" class="btn btn--green" target="_blank" rel="noopener">🛎️ SA 收入计算器 →</a>
+      <a href="https://propertyalert.uk/shop/sa-operator-agreement" class="btn btn--green" target="_blank" rel="noopener">📄 SA 运营协议 →</a>
+    </div>
+  </div>
+  <div class="cta-box">
+    <h2>更喜欢实时分析？</h2>
+    <p>PropertyAlert.uk 可即时分析任何 Rightmove 或 Zoopla 房源——收益率、现金流、SA 预测及投资评分。试用期间还可获取全部 7 个免费房产工具。</p>
+    <a href="https://propertyalert.uk/register?plan=investor&source=pb_sa_airbnb_calculator_cta" class="btn btn--green" target="_blank" rel="noopener">开始免费试用——获取全部 7 个工具 →</a>
+  </div>
+    <div class="cta-box" style="background:#f0f9ff;border:1px solid #bae6fd">
+    <h2 style="font-size:1.1rem">需要 SA 家具套装？</h2>
+    <p>ReadySteadyBed 为英国各地的短租及服务式住宿房产提供完整家具套装。</p>
+    <a href="https://tidd.ly/4tQKwAg" class="btn btn--outline" target="_blank" rel="noopener sponsored">在 ReadySteadyBed 选购 SA 家具套装 →</a>
+  </div>
+<div class="ad-slot">广告</div>
+</div></main>
+
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="footer-brand__name">Property<span>Brain</span></div><p>免费英国房产投资计算器。不构成财务建议。</p></div>
+    <div class="footer-links"><h4>计算器</h4><ul><li><a href="/buy-to-let-calculator/">BTL(出租房)</a></li><li><a href="/stamp-duty-calculator/">印花税</a></li><li><a href="/mortgage-calculator/">按揭</a></li><li><a href="/rental-yield-calculator/">租金收益率</a></li><li><a href="/sa-airbnb-calculator/">SA / Airbnb</a></li><li><a href="/hmo-yield-calculator/">HMO 收益率</a></li><li><a href="/bridging-finance-calculator/">过桥贷款融资</a></li><li><a href="/section-24-calculator/">Section 24</a></li></ul></div>
+    <div class="footer-links"><h4>信息</h4><ul><li><a href="/guide/">指南</a></li><li><a href="/free-tools/">免费工具</a></li><li><a href="/about/">关于我们</a></li><li><a href="/privacy/">隐私</a></li><li><a href="/terms/">条款</a></li></ul></div>
+    <div class="footer-links"><h4>免费资源</h4><ul><li><a href="/free-tools/">所有免费工具</a></li><li><a href="/sa-operator-agreement/">SA 运营协议</a></li><li><a href="/r2r-hmo-agreement/">R2R HMO 协议</a></li><li><a href="/deal-packaging-agreement/">交易打包协议</a></li><li><a href="/refurbishment-cost-estimator/">翻新成本估算器</a></li><li><a href="/joint-venture-agreement/">合资协议(JV)</a></li><li><a href="/sa-compliance-checklist/">SA 合规清单</a></li><li><a href="/bridging-finance-calculator/">过桥贷款计算器</a></li><li><a href="/section-24-calculator/">Section 24 计算器</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>PropertyBrain.uk 由 EIGHTFINITY LTD 运营，该公司为英国注册公司。</span></div>
+</footer>
+<script src="/assets/js/calculators.min.js" defer></script>
+<script>
+function runSA() {
+  var nightly = parseFloat(document.getElementById('sa-nightly').value)||0;
+  var occ = parseFloat(document.getElementById('sa-occ').value)||65;
+  var stays = parseFloat(document.getElementById('sa-stays').value)||8;
+  var platformPct = parseFloat(document.getElementById('sa-platform').value)||3;
+  var mgmtPct = parseFloat(document.getElementById('sa-mgmt').value)||20;
+  var cleaning = parseFloat(document.getElementById('sa-cleaning').value)||60;
+  var mortgage = parseFloat(document.getElementById('sa-mortgage').value)||0;
+
+  var r = calcSA(nightly, occ, platformPct, mgmtPct, cleaning, stays, mortgage);
+
+  var netEl = document.getElementById('r-sa-net');
+  netEl.textContent = fmtSigned(r.netMo);
+  netEl.className = 'result-hero__value ' + colorClass(r.netMo);
+  setEl('r-sa-rev', fmt(r.monthlyRev)+'/mo');
+  setEl('r-sa-annual-rev', fmt(r.annualRev)+'/yr');
+  setEl('r-sa-platform', fmt(r.platform)+'/mo');
+  setEl('r-sa-mgmt', fmt(r.mgmt)+'/mo');
+  setEl('r-sa-cleaning', fmt(r.cleaning)+'/mo');
+  setEl('r-sa-costs', fmt(r.costs)+'/mo');
+  var grossEl = document.getElementById('r-sa-gross');
+  grossEl.textContent = fmtSigned(r.grossMo);
+  grossEl.className = 'result-row__value ' + colorClass(r.grossMo);
+  setEl('r-sa-mortgage', fmt(mortgage)+'/mo');
+
+  // Sensitivity table
+  var tbody = document.getElementById('sa-sensitivity');
+  if (tbody) {
+    tbody.innerHTML = r.sensitivity.map(function(row) {
+      var nc = colorClass(row.net);
+      return '<tr><td>' + row.occ + '%</td><td>' + fmt(row.gross + mortgage) + '/mo</td><td>' + fmt(row.gross) + '/mo</td><td class="'+nc+'">' + fmtSigned(row.net) + '/mo</td></tr>';
+    }).join('');
+  }
+  gtag('event','calculator_used',{calc:'sa',nightly:nightly,occ:occ});
+}
+document.addEventListener('DOMContentLoaded', function(){ runSA(); });
+</script>
+</body></html>
+

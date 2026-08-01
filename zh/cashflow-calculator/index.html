@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'});</script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英国房产现金流计算器——月度收入与支出 | PropertyBrain</title>
+<meta name="description" content="免费英国房产现金流计算器。一目了然地查看月度收入与支出对比——按揭、管理、维护、保险、地租及空置。">
+<link rel="canonical" href="https://propertybrain.uk/zh/cashflow-calculator/">
+<link rel="alternate" hreflang="en-gb" href="https://propertybrain.uk/cashflow-calculator/">
+<link rel="alternate" hreflang="zh" href="https://propertybrain.uk/zh/cashflow-calculator/">
+<link rel="alternate" hreflang="ar" href="https://propertybrain.uk/ar/cashflow-calculator/">
+<link rel="alternate" hreflang="hi" href="https://propertybrain.uk/hi/cashflow-calculator/">
+<link rel="alternate" hreflang="x-default" href="https://propertybrain.uk/cashflow-calculator/">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="preload" href="/assets/css/style.min.css?v=2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/css/style.min.css?v=2"></noscript>
+<script type="application/ld+json">
+{"@context":"https://schema.org","inLanguage":"zh","@type":"SoftwareApplication","name":"UK Property Cashflow Calculator","applicationCategory":"FinanceApplication","operatingSystem":"Any (web browser)","url":"https://propertybrain.uk/zh/cashflow-calculator/","description":"Free calculator for UK rental property monthly cashflow — rent, voids, mortgage, letting agent fees, maintenance, insurance, ground rent and service charge.","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","inLanguage":"zh","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What's a realistic void allowance to use?","acceptedAnswer":{"@type":"Answer","text":"4-8% is typical for a standard AST let, depending on area and tenant demand. Short-term/SA lets usually carry higher effective void allowances because of turnover between bookings — model those separately with our SA/Airbnb Calculator."}},{"@type":"Question","name":"Should I use my mortgage's interest-only or repayment figure?","acceptedAnswer":{"@type":"Answer","text":"Enter whatever your actual monthly mortgage payment is, whether interest-only or capital repayment — the calculator just takes the figure you pay each month. Use the Mortgage Calculator first if you need to work that payment out."}},{"@type":"Question","name":"What's the difference between cashflow and rental yield?","acceptedAnswer":{"@type":"Answer","text":"Yield measures rental income against the purchase price as a percentage. Cashflow is the actual pounds left in your pocket each month after every cost, mortgage included — a property can show a strong yield on paper but still have negative cashflow once you account for a leveraged mortgage payment."}},{"@type":"Question","name":"Does this include one-off costs like re-letting fees or redecoration?","acceptedAnswer":{"@type":"Answer","text":"No — this is an ongoing monthly view. If you want periodic costs like re-let fees or between-tenancy redecoration reflected, pro-rate them into a monthly figure and add them under Other Costs."}},{"@type":"Question","name":"What should I do if my net cashflow comes out negative?","acceptedAnswer":{"@type":"Answer","text":"Check your rent against comparable local listings with the Rental Yield Calculator, review whether refinancing could lower the mortgage payment, or reconsider whether the numbers work for that specific deal before proceeding."}}]}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9748936508682808" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VGJC6YVK43"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VGJC6YVK43');</script>
+</head>
+<body>
+<div id="cookie-banner"><p>我们使用 Cookie。<a href="/cookies/">了解更多</a>.</p><div class="cookie-btns"><button class="btn-cookie-accept" id="cookie-accept">接受</button><button class="btn-cookie-decline" id="cookie-decline">拒绝</button></div></div>
+<header class="site-header"><div class="container"><div class="site-header__inner"><a href="/" class="site-header__logo">Property<span>Brain</span></a><nav class="site-nav"><a href="/buy-to-let-calculator/">BTL 计算器</a><a href="/stamp-duty-calculator/">印花税</a><a href="/mortgage-calculator/">按揭</a><a href="/rental-yield-calculator/">收益率</a><a href="/sa-airbnb-calculator/">SA/Airbnb</a><a href="/bridging-finance-calculator/">过桥贷款</a><a href="/section-24-calculator/">Section 24</a><a href="/free-tools/">免费工具</a><a href="/guide/">指南</a><a href="/capital-gains-tax-calculator/">CGT</a></nav><div class="lang-switcher"><button type="button" class="lang-switcher__btn" aria-haspopup="true" aria-expanded="false" onclick="this.parentElement.classList.toggle('open')">中文 ▾</button><div class="lang-switcher__menu"><a href="https://propertybrain.uk/cashflow-calculator/" hreflang="en-gb">English</a><a href="https://propertybrain.uk/zh/cashflow-calculator/" hreflang="zh" class="active">中文</a><a href="https://propertybrain.uk/ar/cashflow-calculator/" hreflang="ar">العربية</a><a href="https://propertybrain.uk/hi/cashflow-calculator/" hreflang="hi">हिन्दी</a></div></div></div></div></header>
+<section class="page-hero"><div class="container">
+  <div class="breadcrumb"><a href="/">首页</a> › 现金流计算器</div>
+  <h1>英国房产现金流计算器</h1>
+  <p>为任意英国出租房产快速核对月度收入与支出。</p>
+</div></section>
+<main class="main-content"><div class="container">
+  <div class="calc-layout">
+    <div>
+      <div class="card">
+        <div class="card__header">月度收入</div>
+        <div class="card__body">
+          <div class="form-group"><label>月租金</label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="cf-rent" value="950" min="0" oninput="runCF()"></div></div>
+          <div class="form-group"><label>空置备用金</label><div class="range-row"><input type="range" id="cf-void" min="0" max="15" value="4" step="0.5" data-out="cf-void-disp" data-suffix="%" oninput="runCF()"><span class="range-display" id="cf-void-disp">4%</span></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__header">月度支出</div>
+        <div class="card__body">
+          <div class="form-group"><label>按揭还款</label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="cf-mortgage" value="600" min="0" oninput="runCF()"></div></div>
+          <div class="form-group"><label>租赁中介费</label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="cf-mgmt" value="95" min="0" oninput="runCF()"></div></div>
+          <div class="form-group"><label>维护准备金</label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="cf-maint" value="40" min="0" oninput="runCF()"></div></div>
+          <div class="form-group"><label>保险 <span class="hint">(建筑保险，按月)</span></label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="cf-insurance" value="45" min="0" oninput="runCF()"></div></div>
+          <div class="form-group"><label>地租 <span class="hint">(租赁产权，按月)</span></label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="cf-gr" value="0" min="0" oninput="runCF()"></div></div>
+          <div class="form-group"><label>服务费 <span class="hint">(租赁产权，按月)</span></label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="cf-sc" value="0" min="0" oninput="runCF()"></div></div>
+          <div class="form-group"><label>其他成本</label><div class="input-wrap has-prefix"><span class="input-prefix">£</span><input type="number" id="cf-other" value="0" min="0" oninput="runCF()"></div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="results-panel">
+        <div class="results-panel__header">💷 现金流摘要</div>
+        <div class="results-panel__body">
+          <div class="result-hero">
+            <div class="result-hero__label">月度净现金流</div>
+            <div class="result-hero__value" id="r-cf-net">£0</div>
+          </div>
+          <div class="result-grid">
+            <div class="result-mini"><div class="result-mini__label">年度净额</div><div class="result-mini__value" id="r-cf-annual">—</div></div>
+            <div class="result-mini"><div class="result-mini__label">空置扣减</div><div class="result-mini__value" id="r-cf-void">—</div></div>
+          </div>
+          <div class="result-row"><span class="result-row__label">月租金</span><span class="result-row__value" id="r-cf-rent">—</span></div>
+          <div class="result-row"><span class="result-row__label">实际收入</span><span class="result-row__value" id="r-cf-eff">—</span></div>
+          <div class="result-divider"></div>
+          <div class="result-row"><span class="result-row__label">按揭</span><span class="result-row__value" id="r-cf-mortgage">—</span></div>
+          <div class="result-row"><span class="result-row__label">中介与维护</span><span class="result-row__value" id="r-cf-opex">—</span></div>
+          <div class="result-row"><span class="result-row__label">保险与其他</span><span class="result-row__value" id="r-cf-other">—</span></div>
+          <div class="result-row"><span class="result-row__label">总支出</span><span class="result-row__value" id="r-cf-total-exp">—</span></div>
+        </div>
+      </div>
+      <div class="notice mt-2">如需包含 Section 24 税务、5 年预测及压力测试在内的完整 BTL 分析，请使用我们的<a href="/buy-to-let-calculator/">BTL(出租房)计算器</a>.</div>
+    </div>
+  </div>
+
+  <section class="guide-section" id="how-it-works">
+    <h2>本计算器的工作原理</h2>
+    <p>月度净现金流是指扣除所有成本后，每月实际留在您口袋里的金额——它不像收益率那样是一个百分比指标。计算公式：<strong>Net Cashflow = Effective Rental Income − Total Expenses</strong>，其中实际收入是您的月租金扣除空置备用金(用于租客更替之间房产可能空置的周数)，而总支出涵盖按揭、租赁中介费、维护准备金、保险、地租、服务费及其他任何运营成本。</p>
+    <div class="guide-callout"><strong>示例演算</strong>(以上方预填的默认数值为例)：月租 £950，4% 空置备用金——空置扣减 £38，实际收入 £912。支出：£600 按揭 + £95 中介费 + £40 维护 + £45 保险 = £780/月。净现金流：£912 − £780 = <strong>£132/月</strong>，即 £1,584/年。</div>
+  </section>
+
+  <section class="faq-section">
+    <h2>现金流计算器常见问题</h2>
+    <div class="notice"><strong>PropertyBrain Editorial Team</strong> ——计算方法遵循英国 BTL 现金流建模的标准惯例。最后核实时间：2026 年 7 月。这不构成财务建议——在做出购买决定前，请务必自行核算详细数字。</div>
+    <details class="faq-item"><summary>使用多少空置备用金比较合理？</summary><div class="faq-body"><p>对于标准 AST 租约，4–8% 属于典型水平，具体取决于地区和租客需求。短租/SA 出租由于预订之间的周转，通常需要更高的实际空置备用金——请使用我们的<a href="/sa-airbnb-calculator/">SA/Airbnb 计算器</a>.</p></div></details>
+    <details class="faq-item"><summary>我应该使用按揭的纯利息还款额还是还本付息还款额？</summary><div class="faq-body"><p>请输入您实际的月度按揭还款额，无论是纯利息还是本金还款——计算器只需您每月实际支付的数字。请使用<a href="/mortgage-calculator/">按揭计算器</a>，如果您需要先算出该还款额。</p></div></details>
+    <details class="faq-item"><summary>现金流与租金收益率有什么区别？</summary><div class="faq-body"><p>收益率以百分比衡量租金收入相对于购买价格的比例。而现金流则是扣除所有成本(包括按揭)后，每月实际留在您口袋里的英镑数——一套房产账面收益率可能很高，但一旦计入杠杆按揭还款，实际现金流仍可能为负。</p></div></details>
+    <details class="faq-item"><summary>这是否包含一次性成本，例如重新出租费或翻新装修费？</summary><div class="faq-body"><p>不包含——这是一个持续性的月度视图。如果您想反映定期性成本(如重新出租费或租客更替间的翻新装修)，请将其按比例折算为月度数字，并计入“其他成本”。</p></div></details>
+    <details class="faq-item"><summary>如果我的净现金流为负数，我应该怎么做？</summary><div class="faq-body"><p>使用以下工具，将您的租金与当地可比房源进行核对：<a href="/rental-yield-calculator/">租金收益率计算器</a>，评估再融资是否能降低按揭还款，或在推进之前重新考虑该笔交易的数字是否合理。</p></div></details>
+  </section>
+
+  <div class="cta-box" style="background:var(--grey-100);border:1px solid var(--grey-200)">
+    <h2 style="font-size:1.1rem">相关退出策略计算器</h2>
+    <p>在您计划出售时，模拟税务及权益方面的影响。</p>
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:0.75rem">
+      <a href="/capital-gains-tax-calculator/" class="btn btn--outline">CGT 计算器？</a>
+      <a href="/portfolio-disposal-calculator/" class="btn btn--outline">资产组合处置？</a>
+    </div>
+  </div>
+
+  <div class="cta-box" style="margin-bottom:1rem;">
+    <h2>免费 BTL 现金流追踪表</h2>
+    <p>使用我们免费的 12 个月 BTL 损益电子表格，将您的现金流分析带到线下。</p>
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;margin-top:0.75rem">
+      <a href="https://propertyalert.uk/shop/btl-cashflow-tracker" class="btn btn--green" target="_blank" rel="noopener">📊 BTL 现金流追踪表 →</a>
+    </div>
+  </div>
+  <div class="cta-box">
+    <h2>更喜欢实时分析？</h2>
+    <p>PropertyAlert.uk 可即时分析任何 Rightmove 或 Zoopla 房源——收益率、现金流、SA 预测及投资评分。试用期间还可获取全部 7 个免费房产工具。</p>
+    <a href="https://propertyalert.uk/register?plan=investor&source=pb_cashflow_calculator_cta" class="btn btn--green" target="_blank" rel="noopener">开始免费试用——获取全部 7 个工具 →</a>
+  </div>
+    <!-- AFFILIATE TODO: Provestor CTA -->
+<div class="ad-slot">广告</div>
+</div></main>
+<footer class="site-footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="footer-brand__name">Property<span>Brain</span></div><p>免费英国房产投资计算器。不构成财务建议。</p></div>
+    <div class="footer-links"><h4>计算器</h4><ul><li><a href="/buy-to-let-calculator/">BTL(出租房)</a></li><li><a href="/stamp-duty-calculator/">印花税</a></li><li><a href="/mortgage-calculator/">按揭</a></li><li><a href="/rental-yield-calculator/">租金收益率</a></li><li><a href="/sa-airbnb-calculator/">SA / Airbnb</a></li><li><a href="/hmo-yield-calculator/">HMO 收益率</a></li><li><a href="/bridging-finance-calculator/">过桥贷款融资</a></li><li><a href="/section-24-calculator/">Section 24</a></li></ul></div>
+    <div class="footer-links"><h4>信息</h4><ul><li><a href="/guide/">指南</a></li><li><a href="/free-tools/">免费工具</a></li><li><a href="/about/">关于我们</a></li><li><a href="/privacy/">隐私</a></li><li><a href="/terms/">条款</a></li></ul></div>
+    <div class="footer-links"><h4>免费资源</h4><ul><li><a href="/free-tools/">所有免费工具</a></li><li><a href="/sa-operator-agreement/">SA 运营协议</a></li><li><a href="/r2r-hmo-agreement/">R2R HMO 协议</a></li><li><a href="/deal-packaging-agreement/">交易打包协议</a></li><li><a href="/refurbishment-cost-estimator/">翻新成本估算器</a></li><li><a href="/joint-venture-agreement/">合资协议(JV)</a></li><li><a href="/sa-compliance-checklist/">SA 合规清单</a></li><li><a href="/bridging-finance-calculator/">过桥贷款计算器</a></li><li><a href="/section-24-calculator/">Section 24 计算器</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>PropertyBrain.uk 由 EIGHTFINITY LTD 运营，该公司为英国注册公司。</span></div>
+</footer>
+<script src="/assets/js/calculators.min.js" defer></script>
+<script>
+function runCF() {
+  var rent = parseFloat(document.getElementById('cf-rent').value)||0;
+  var voidPct = parseFloat(document.getElementById('cf-void').value)||4;
+  var mortgage = parseFloat(document.getElementById('cf-mortgage').value)||0;
+  var mgmt = parseFloat(document.getElementById('cf-mgmt').value)||0;
+  var maint = parseFloat(document.getElementById('cf-maint').value)||0;
+  var insurance = parseFloat(document.getElementById('cf-insurance').value)||0;
+  var gr = parseFloat(document.getElementById('cf-gr').value)||0;
+  var sc = parseFloat(document.getElementById('cf-sc').value)||0;
+  var other = parseFloat(document.getElementById('cf-other').value)||0;
+
+  var r = calcCashflow(rent, mortgage, mgmt, maint, insurance, gr, sc, other, voidPct);
+
+  var netEl = document.getElementById('r-cf-net');
+  netEl.textContent = fmtSigned(r.net); netEl.className = 'result-hero__value ' + colorClass(r.net);
+  var annEl = document.getElementById('r-cf-annual');
+  annEl.textContent = fmtSigned(r.net*12); annEl.className = 'result-mini__value ' + colorClass(r.net);
+  setEl('r-cf-void', fmt(r.voidAmt)+'/mo');
+  setEl('r-cf-rent', fmt(rent)+'/mo');
+  setEl('r-cf-eff', fmt(r.effective)+'/mo');
+  setEl('r-cf-mortgage', fmt(mortgage)+'/mo');
+  setEl('r-cf-opex', fmt(mgmt+maint)+'/mo');
+  setEl('r-cf-other', fmt(insurance+gr+sc+other)+'/mo');
+  setEl('r-cf-total-exp', fmt(r.expenses)+'/mo');
+  gtag('event','calculator_used',{calc:'cashflow',net:Math.round(r.net)});
+}
+document.addEventListener('DOMContentLoaded', function(){ runCF(); });
+</script>
+</body></html>
+
