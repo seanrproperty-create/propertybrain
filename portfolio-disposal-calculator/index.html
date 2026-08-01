@@ -67,17 +67,17 @@
       <div class="card__header">Properties — Enter up to 5</div>
       <div class="card__body">
         <div class="table-wrap">
-          <table class="data-table">
+          <table class="data-table" aria-label="Property, Purchase (£), Costs (£), Sale Price (£), Tax Year, CGT Rate, Gain (£) reference table">
             <thead>
               <tr>
-                <th>Property</th>
-                <th>Purchase (£)</th>
-                <th>Costs (£)</th>
-                <th>Sale Price (£)</th>
-                <th>Tax Year</th>
-                <th>CGT Rate</th>
-                <th>Gain (£)</th>
-                <th></th>
+                <th scope="col">Property</th>
+                <th scope="col">Purchase (£)</th>
+                <th scope="col">Costs (£)</th>
+                <th scope="col">Sale Price (£)</th>
+                <th scope="col">Tax Year</th>
+                <th scope="col">CGT Rate</th>
+                <th scope="col">Gain (£)</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody id="portfolio-rows"></tbody>
@@ -96,15 +96,15 @@
           <div class="card__header">CGT by Tax Year</div>
           <div class="card__body" style="padding:0">
             <div class="table-wrap" style="border:none">
-              <table class="data-table">
+              <table class="data-table" aria-label="Tax Year, Properties, Total Gain, Exempt Amount, Taxable Gain, CGT Due reference table">
                 <thead>
                   <tr>
-                    <th>Tax Year</th>
-                    <th>Properties</th>
-                    <th>Total Gain</th>
-                    <th>Exempt Amount</th>
-                    <th>Taxable Gain</th>
-                    <th>CGT Due</th>
+                    <th scope="col">Tax Year</th>
+                    <th scope="col">Properties</th>
+                    <th scope="col">Total Gain</th>
+                    <th scope="col">Exempt Amount</th>
+                    <th scope="col">Taxable Gain</th>
+                    <th scope="col">CGT Due</th>
                   </tr>
                 </thead>
                 <tbody id="year-summary">
