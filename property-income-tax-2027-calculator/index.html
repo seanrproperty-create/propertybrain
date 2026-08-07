@@ -156,9 +156,11 @@
 <script>
 (function () {
   var PA = 12570, BASIC_LIMIT = 50270, HIGHER_LIMIT = 125140;
+  var RATE_BASIC = 20, RATE_HIGHER = 40, RATE_ADDITIONAL = 45;
+  var RATE_BASIC_2027 = 22, RATE_HIGHER_2027 = 42, RATE_ADDITIONAL_2027 = 47;
   function sliceTax(start, end, rBasic, rHigher, rAdd) {
     var bounds = [0, PA, BASIC_LIMIT, HIGHER_LIMIT, Infinity];
-    var rates = [0, rBasic, rHigher, rAdd];
+    var rates = [0, rBasic / 100, rHigher / 100, rAdd / 100];
     var tax = 0;
     for (var i = 0; i < 4; i++) {
       var segStart = Math.max(start, bounds[i]);
@@ -173,13 +175,13 @@
     var otherIncome = parseFloat(document.getElementById('other_income').value) || 0;
     var propertyProfit = parseFloat(document.getElementById('property_profit').value) || 0;
 
-    var totalToday = sliceTax(0, otherIncome + propertyProfit, 0.20, 0.40, 0.45);
-    var otherAlone = sliceTax(0, otherIncome, 0.20, 0.40, 0.45);
+    var totalToday = sliceTax(0, otherIncome + propertyProfit, RATE_BASIC, RATE_HIGHER, RATE_ADDITIONAL);
+    var otherAlone = sliceTax(0, otherIncome, RATE_BASIC, RATE_HIGHER, RATE_ADDITIONAL);
     var propTaxToday = totalToday - otherAlone;
     var netToday = propertyProfit - propTaxToday;
 
-    var otherTax2027 = sliceTax(0, otherIncome, 0.20, 0.40, 0.45);
-    var propTax2027 = sliceTax(otherIncome, otherIncome + propertyProfit, 0.22, 0.42, 0.47);
+    var otherTax2027 = sliceTax(0, otherIncome, RATE_BASIC, RATE_HIGHER, RATE_ADDITIONAL);
+    var propTax2027 = sliceTax(otherIncome, otherIncome + propertyProfit, RATE_BASIC_2027, RATE_HIGHER_2027, RATE_ADDITIONAL_2027);
     var total2027 = otherTax2027 + propTax2027;
     var net2027 = propertyProfit - propTax2027;
 

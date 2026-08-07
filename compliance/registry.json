@@ -2,29 +2,166 @@
   "constants": [
     {
       "id": "income_tax_personal_allowance",
-      "description": "UK income tax Personal Allowance (feeds both Section 24 and 2027 tax calculators)",
+      "description": "UK income tax Personal Allowance",
       "current_value": 12570,
       "unit": "gbp",
-      "source_url": null,
-      "extract_pattern": null,
-      "plausible_min": null,
-      "plausible_max": null,
-      "files": [],
-      "last_verified": "7 August 2026",
-      "notes": "MANUAL CHECK NEEDED: a verified gov.uk source URL + tested extraction pattern for this and the basic/higher rate band limits (currently frozen at \u00a312,570 / \u00a350,270 / \u00a3125,140 since 2021) still needs to be found -- not attempted during initial setup due to time. These bands rarely change (frozen multi-year), so this is lower urgency than the employment-law constants, but should be sourced before the site is fully covered."
+      "source_url": "https://www.gov.uk/income-tax-rates",
+      "extract_pattern": "standard Personal Allowance is \u00a3([\\d,]+)",
+      "plausible_min": 8000,
+      "plausible_max": 20000,
+      "files": [
+        {
+          "path": "property-income-tax-2027-calculator/index.html",
+          "pattern": "var PA = \\d+,",
+          "replace_template": "var PA = {value},"
+        }
+      ],
+      "last_verified": "7 August 2026"
     },
     {
-      "id": "property_income_tax_rates_2027",
-      "description": "New isolated property income tax rates (22/42/47%) from Finance Bill 2025-26, effective 6 April 2027",
-      "current_value": null,
+      "id": "income_tax_basic_rate_limit",
+      "description": "UK income tax basic rate upper threshold",
+      "current_value": 50270,
+      "unit": "gbp",
+      "source_url": "https://www.gov.uk/income-tax-rates",
+      "extract_pattern": "Basic rate</th>[\\s\\S]{0,60}?to \u00a3([\\d,]+)",
+      "plausible_min": 30000,
+      "plausible_max": 80000,
+      "files": [
+        {
+          "path": "property-income-tax-2027-calculator/index.html",
+          "pattern": "BASIC_LIMIT = \\d+,",
+          "replace_template": "BASIC_LIMIT = {value},"
+        }
+      ],
+      "last_verified": "7 August 2026"
+    },
+    {
+      "id": "income_tax_higher_rate_limit",
+      "description": "UK income tax higher rate upper threshold (additional rate starts above this)",
+      "current_value": 125140,
+      "unit": "gbp",
+      "source_url": "https://www.gov.uk/income-tax-rates",
+      "extract_pattern": "Additional rate</th>[\\s\\S]{0,60}?over \u00a3([\\d,]+)",
+      "plausible_min": 80000,
+      "plausible_max": 250000,
+      "files": [
+        {
+          "path": "property-income-tax-2027-calculator/index.html",
+          "pattern": "HIGHER_LIMIT = \\d+;",
+          "replace_template": "HIGHER_LIMIT = {value};"
+        }
+      ],
+      "last_verified": "7 August 2026"
+    },
+    {
+      "id": "income_tax_rate_basic",
+      "description": "UK income tax basic rate (current, pre-2027 property reform)",
+      "current_value": 20,
       "unit": "percent",
-      "source_url": null,
-      "extract_pattern": null,
-      "plausible_min": null,
-      "plausible_max": null,
-      "files": [],
+      "source_url": "https://www.gov.uk/income-tax-rates",
+      "extract_pattern": "Basic rate</th>[\\s\\S]{0,60}?<td>(\\d+)%",
+      "plausible_min": 10,
+      "plausible_max": 35,
+      "files": [
+        {
+          "path": "property-income-tax-2027-calculator/index.html",
+          "pattern": "RATE_BASIC = \\d+,",
+          "replace_template": "RATE_BASIC = {value},"
+        }
+      ],
+      "last_verified": "7 August 2026"
+    },
+    {
+      "id": "income_tax_rate_higher",
+      "description": "UK income tax higher rate (current, pre-2027 property reform)",
+      "current_value": 40,
+      "unit": "percent",
+      "source_url": "https://www.gov.uk/income-tax-rates",
+      "extract_pattern": "Higher rate</th>[\\s\\S]{0,60}?<td>(\\d+)%",
+      "plausible_min": 25,
+      "plausible_max": 55,
+      "files": [
+        {
+          "path": "property-income-tax-2027-calculator/index.html",
+          "pattern": "RATE_HIGHER = \\d+,",
+          "replace_template": "RATE_HIGHER = {value},"
+        }
+      ],
+      "last_verified": "7 August 2026"
+    },
+    {
+      "id": "income_tax_rate_additional",
+      "description": "UK income tax additional rate (current, pre-2027 property reform)",
+      "current_value": 45,
+      "unit": "percent",
+      "source_url": "https://www.gov.uk/income-tax-rates",
+      "extract_pattern": "Additional rate</th>[\\s\\S]{0,60}?<td>(\\d+)%",
+      "plausible_min": 30,
+      "plausible_max": 60,
+      "files": [
+        {
+          "path": "property-income-tax-2027-calculator/index.html",
+          "pattern": "RATE_ADDITIONAL = \\d+;",
+          "replace_template": "RATE_ADDITIONAL = {value};"
+        }
+      ],
+      "last_verified": "7 August 2026"
+    },
+    {
+      "id": "property_tax_rate_basic_2027",
+      "description": "New isolated property income tax basic rate from 6 April 2027 (Finance Act 2026)",
+      "current_value": 22,
+      "unit": "percent",
+      "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-dividend-income/changes-to-tax-rates-for-property-savings-dividend-income",
+      "extract_pattern": "property basic rate will be (\\d+)%",
+      "plausible_min": 15,
+      "plausible_max": 35,
+      "files": [
+        {
+          "path": "property-income-tax-2027-calculator/index.html",
+          "pattern": "RATE_BASIC_2027 = \\d+,",
+          "replace_template": "RATE_BASIC_2027 = {value},"
+        }
+      ],
       "last_verified": "7 August 2026",
-      "notes": "MANUAL CHECK NEEDED: these rates are from a bill that has not yet received Royal Assent as of August 2026 -- they could change during the legislative process. Needs a source (likely legislation.gov.uk once the Act is passed, or gov.uk policy paper in the meantime) and periodic manual review until the Act is in force, at which point a real source URL can be wired up."
+      "notes": "The old registry note calling this 'not yet Royal Assent' was stale -- Finance Act 2026 received Royal Assent 18 March 2026, and this gov.uk policy paper documents the enacted rates directly. Also refactored the calculator's JS from raw decimal literals (0.22) to whole-number percent constants (22) so the stored value's units match what gov.uk actually publishes -- the old decimal form couldn't have been safely auto-patched by this script without a silent 100x unit error."
+    },
+    {
+      "id": "property_tax_rate_higher_2027",
+      "description": "New isolated property income tax higher rate from 6 April 2027 (Finance Act 2026)",
+      "current_value": 42,
+      "unit": "percent",
+      "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-dividend-income/changes-to-tax-rates-for-property-savings-dividend-income",
+      "extract_pattern": "property higher rate will be (\\d+)%",
+      "plausible_min": 25,
+      "plausible_max": 55,
+      "files": [
+        {
+          "path": "property-income-tax-2027-calculator/index.html",
+          "pattern": "RATE_HIGHER_2027 = \\d+,",
+          "replace_template": "RATE_HIGHER_2027 = {value},"
+        }
+      ],
+      "last_verified": "7 August 2026"
+    },
+    {
+      "id": "property_tax_rate_additional_2027",
+      "description": "New isolated property income tax additional rate from 6 April 2027 (Finance Act 2026)",
+      "current_value": 47,
+      "unit": "percent",
+      "source_url": "https://www.gov.uk/government/publications/changes-to-tax-rates-for-property-savings-dividend-income/changes-to-tax-rates-for-property-savings-dividend-income",
+      "extract_pattern": "property additional rate will be (\\d+)%",
+      "plausible_min": 30,
+      "plausible_max": 60,
+      "files": [
+        {
+          "path": "property-income-tax-2027-calculator/index.html",
+          "pattern": "RATE_ADDITIONAL_2027 = \\d+;",
+          "replace_template": "RATE_ADDITIONAL_2027 = {value};"
+        }
+      ],
+      "last_verified": "7 August 2026"
     },
     {
       "id": "corporation_tax_rates",
