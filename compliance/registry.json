@@ -1,0 +1,43 @@
+{
+  "constants": [
+    {
+      "id": "income_tax_personal_allowance",
+      "description": "UK income tax Personal Allowance (feeds both Section 24 and 2027 tax calculators)",
+      "current_value": 12570,
+      "unit": "gbp",
+      "source_url": null,
+      "extract_pattern": null,
+      "plausible_min": null,
+      "plausible_max": null,
+      "files": [],
+      "last_verified": "7 August 2026",
+      "notes": "MANUAL CHECK NEEDED: a verified gov.uk source URL + tested extraction pattern for this and the basic/higher rate band limits (currently frozen at \u00a312,570 / \u00a350,270 / \u00a3125,140 since 2021) still needs to be found -- not attempted during initial setup due to time. These bands rarely change (frozen multi-year), so this is lower urgency than the employment-law constants, but should be sourced before the site is fully covered."
+    },
+    {
+      "id": "property_income_tax_rates_2027",
+      "description": "New isolated property income tax rates (22/42/47%) from Finance Bill 2025-26, effective 6 April 2027",
+      "current_value": null,
+      "unit": "percent",
+      "source_url": null,
+      "extract_pattern": null,
+      "plausible_min": null,
+      "plausible_max": null,
+      "files": [],
+      "last_verified": "7 August 2026",
+      "notes": "MANUAL CHECK NEEDED: these rates are from a bill that has not yet received Royal Assent as of August 2026 -- they could change during the legislative process. Needs a source (likely legislation.gov.uk once the Act is passed, or gov.uk policy paper in the meantime) and periodic manual review until the Act is in force, at which point a real source URL can be wired up."
+    },
+    {
+      "id": "corporation_tax_rates",
+      "description": "UK corporation tax rates and thresholds (19% small profits / 25% main rate / \u00a350k-\u00a3250k marginal band)",
+      "current_value": null,
+      "unit": "percent",
+      "source_url": null,
+      "extract_pattern": null,
+      "plausible_min": null,
+      "plausible_max": null,
+      "files": [],
+      "last_verified": "7 August 2026",
+      "notes": "MANUAL CHECK NEEDED: mentioned in section-24-calculator's 'limited company' content section but not used in the actual JS calculation, so lower priority to automate -- flagging for completeness."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+name: Weekly compliance sweep
+
+on:
+  schedule:
+    - cron: '0 3 * * 0'   # Every Sunday 03:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  check_and_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run compliance check and apply any drift
+        id: check
+        run: python compliance/check_and_update.py
+
+      - name: Commit and push (Cloudflare Pages auto-deploys on push to main)
+        if: success() && steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "EIGHTFINITY compliance bot"
+          git config user.email "bot@eightfinity.net"
+          git add -A
+          git commit -m "chore(compliance): weekly registry sweep — ${{ steps.check.outputs.summary }}"
+          git push origin HEAD:main
