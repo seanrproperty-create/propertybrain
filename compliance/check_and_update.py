@@ -49,7 +49,7 @@ def stamp_timestamp(path):
     with open(path, "r", encoding="utf-8") as f:
         content = f.read()
     new_content, n = re.subn(r"Last Verified: [^<]*", "Last Verified: " + TODAY, content)
-    if n:
+    if n and new_content != content:
         with open(path, "w", encoding="utf-8") as f:
             f.write(new_content)
         return True
