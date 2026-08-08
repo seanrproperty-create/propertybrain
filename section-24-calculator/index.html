@@ -68,7 +68,7 @@
       <strong>Not tax advice.</strong> This calculator provides illustrative figures only. Consult a qualified accountant or tax adviser for your personal position.
     </div>
 
-    <div class="compliance-badge"><span class="verification-dot">●</span> <span class="timestamp-text">Last Verified: 7 August 2026</span></div>
+    <div class="compliance-badge"><span class="verification-dot">●</span> <span class="timestamp-text">Last Verified: 8 August 2026</span></div>
 
     <div class="calc-layout">
       <div>
@@ -261,13 +261,17 @@ function calc() {
   const rent = parseFloat(document.getElementById('rent').value) || 0;
   const interest = parseFloat(document.getElementById('mortgage_interest').value) || 0;
   const expenses = parseFloat(document.getElementById('other_expenses').value) || 0;
+  const RATE_BASIC = 20;
+  const RATE_HIGHER = 40;
+  const RATE_ADDITIONAL = 45;
+  const S24_RELIEF_CREDIT_RATE = 20;
   const band = document.getElementById('tax_band').value;
-  const rate = band === '20' ? 0.20 : band === '40' ? 0.40 : 0.45;
+  const rate = (band === '20' ? RATE_BASIC : band === '40' ? RATE_HIGHER : RATE_ADDITIONAL) / 100;
   const profit_pre = rent - interest - expenses;
   const tax_pre = Math.max(profit_pre, 0) * rate;
   const net_pre = rent - interest - expenses - tax_pre;
   const profit_post = rent - expenses;
-  const tax_credit = interest * 0.20;
+  const tax_credit = interest * (S24_RELIEF_CREDIT_RATE / 100);
   const tax_post = Math.max(profit_post * rate - tax_credit, 0);
   const net_post = rent - interest - expenses - tax_post;
   const extra_tax = tax_post - tax_pre;

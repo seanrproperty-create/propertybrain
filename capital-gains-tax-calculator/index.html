@@ -115,8 +115,8 @@
             <div class="form-group">
               <label>Tax Band</label>
               <div class="toggle-group" id="grp-cgt-band" data-calc="runCGT">
-                <label class="toggle-pill"><input type="radio" name="cgt-band" value="0.18"> Basic rate (18%)</label>
-                <label class="toggle-pill active"><input type="radio" name="cgt-band" value="0.24" checked> Higher rate (24%)</label>
+                <label class="toggle-pill"><input type="radio" name="cgt-band" value="18"> Basic rate (18%)</label>
+                <label class="toggle-pill active"><input type="radio" name="cgt-band" value="24" checked> Higher rate (24%)</label>
               </div>
             </div>
             <div class="form-group" style="margin-top:1rem">
@@ -259,7 +259,7 @@
   <div class="footer-bottom"><span>PropertyBrain.uk is operated by EIGHTFINITY LTD, a registered company in the United Kingdom.</span></div>
 </footer>
 
-<script src="/assets/js/calculators.min.js?v=2" defer></script>
+<script src="/assets/js/calculators.min.js?v=3" defer></script>
 <script>
 function runCGT() {
   var purchase   = parseFloat(document.getElementById('cgt-purchase').value) || 0;
@@ -269,8 +269,10 @@ function runCGT() {
   var sale       = parseFloat(document.getElementById('cgt-sale').value) || 0;
   var agent      = parseFloat(document.getElementById('cgt-agent').value) || 0;
   var legalSale  = parseFloat(document.getElementById('cgt-legal-sale').value) || 0;
+  var CGT_RATE_HIGHER = 24;
+  var CGT_ANNUAL_EXEMPT_AMOUNT = 3000;
   var bandEl     = document.querySelector('input[name="cgt-band"]:checked');
-  var rate       = bandEl ? parseFloat(bandEl.value) : 0.24;
+  var rate       = (bandEl ? parseFloat(bandEl.value) : CGT_RATE_HIGHER) / 100;
   var ppr        = document.getElementById('cgt-ppr').checked;
   var exemptUsed = document.getElementById('cgt-exempt-used').checked;
 
@@ -281,7 +283,7 @@ function runCGT() {
   var sellCosts     = agent + legalSale;
   var totalAllowable= buyCosts + sellCosts;
   var grossGain     = sale - totalAllowable;
-  var exemptAmt     = (!ppr && !exemptUsed) ? 3000 : 0;
+  var exemptAmt     = (!ppr && !exemptUsed) ? CGT_ANNUAL_EXEMPT_AMOUNT : 0;
   var taxable       = ppr ? 0 : Math.max(0, grossGain - exemptAmt);
   var cgtDue        = ppr ? 0 : taxable * rate;
   var netProceeds   = sale - sellCosts - cgtDue;
