@@ -83,17 +83,18 @@ function calcSDLT(price, type, country) {
     }
   } else {
     // England / NI — SDLT
-    if (type === 'firsttime' && price <= 625000) {
-      breakdown.push({ band: '£0 – £425,000 (FTB relief)', rate: '0%', amount: 0 });
-      if (price > 425000) {
-        var tax = (Math.min(price, 625000) - 425000) * 0.05;
-        breakdown.push({ band: '£425,001 – £625,000', rate: '5%', amount: tax });
+    if (type === 'firsttime' && price <= 500000) {
+      breakdown.push({ band: '£0 – £300,000 (FTB relief)', rate: '0%', amount: 0 });
+      if (price > 300000) {
+        var tax = (Math.min(price, 500000) - 300000) * 0.05;
+        breakdown.push({ band: '£300,001 – £500,000', rate: '5%', amount: tax });
         total += tax;
       }
     } else {
       var sur = type === 'additional' ? 0.05 : 0;
       var bands = [
-        [0, 250000, 0 + sur],
+        [0, 125000, 0 + sur],
+        [125000, 250000, 0.02 + sur],
         [250000, 925000, 0.05 + sur],
         [925000, 1500000, 0.10 + sur],
         [1500000, Infinity, 0.12 + sur]
