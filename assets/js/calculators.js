@@ -54,6 +54,7 @@ function calcSDLT(price, type, country) {
   type = type || 'standard';
 
   if (country === 'scotland') {
+    var SDLT_SCOT_ADS_RATE = 8;
     var bands = [[0,145000,0],[145000,250000,0.02],[250000,325000,0.05],[325000,750000,0.10],[750000,Infinity,0.12]];
     bands.forEach(function(b) {
       if (price <= b[0]) return;
@@ -63,12 +64,17 @@ function calcSDLT(price, type, country) {
       total += tax;
     });
     if (type === 'additional') {
-      var addl = price * 0.06;
-      breakdown.push({ band: 'Additional Dwelling Supplement (6%)', rate: '6%', amount: addl });
+      var addl = price * (SDLT_SCOT_ADS_RATE / 100);
+      breakdown.push({ band: 'Additional Dwelling Supplement (' + fmtPct(SDLT_SCOT_ADS_RATE,0) + ')', rate: fmtPct(SDLT_SCOT_ADS_RATE,0), amount: addl });
       total += addl;
     }
   } else if (country === 'wales') {
-    var bands = [[0,225000,0],[225000,400000,0.06],[400000,750000,0.075],[750000,1500000,0.10],[1500000,Infinity,0.12]];
+    // Higher residential rates (additional property) are NOT a flat surcharge on the
+    // standard bands -- since 11 Dec 2024 they are their own separate band table with
+    // different thresholds (gov.wales/land-transaction-tax-rates-and-bands).
+    var bands = (type === 'additional')
+      ? [[0,180000,0.05],[180000,250000,0.085],[250000,400000,0.10],[400000,750000,0.125],[750000,1500000,0.15],[1500000,Infinity,0.17]]
+      : [[0,225000,0],[225000,400000,0.06],[400000,750000,0.075],[750000,1500000,0.10],[1500000,Infinity,0.12]];
     bands.forEach(function(b) {
       if (price <= b[0]) return;
       var taxable = Math.min(price, b[1]) - b[0];
@@ -76,27 +82,28 @@ function calcSDLT(price, type, country) {
       breakdown.push({ band: (b[1]===Infinity ? fmt(b[0])+' and above' : fmt(b[0])+' – '+fmt(b[1])), rate: fmtPct(b[2]*100,1), amount: tax });
       total += tax;
     });
-    if (type === 'additional') {
-      var addl = price * 0.04;
-      breakdown.push({ band: 'Higher Rate Surcharge (4%)', rate: '4%', amount: addl });
-      total += addl;
-    }
   } else {
     // England / NI — SDLT
-    if (type === 'firsttime' && price <= 500000) {
-      breakdown.push({ band: '£0 – £300,000 (FTB relief)', rate: '0%', amount: 0 });
-      if (price > 300000) {
-        var tax = (Math.min(price, 500000) - 300000) * 0.05;
-        breakdown.push({ band: '£300,001 – £500,000', rate: '5%', amount: tax });
+    var SDLT_ENG_FTB_NIL_RATE = 300000;
+    var SDLT_ENG_FTB_CUTOFF = 500000;
+    var SDLT_ENG_ADDITIONAL_SURCHARGE = 5;
+    if (type === 'firsttime' && price <= SDLT_ENG_FTB_CUTOFF) {
+      breakdown.push({ band: '£0 – ' + fmt(SDLT_ENG_FTB_NIL_RATE) + ' (FTB relief)', rate: '0%', amount: 0 });
+      if (price > SDLT_ENG_FTB_NIL_RATE) {
+        var tax = (Math.min(price, SDLT_ENG_FTB_CUTOFF) - SDLT_ENG_FTB_NIL_RATE) * 0.05;
+        breakdown.push({ band: fmt(SDLT_ENG_FTB_NIL_RATE+1) + ' – ' + fmt(SDLT_ENG_FTB_CUTOFF), rate: '5%', amount: tax });
         total += tax;
       }
     } else {
-      var sur = type === 'additional' ? 0.05 : 0;
+      var sur = type === 'additional' ? SDLT_ENG_ADDITIONAL_SURCHARGE / 100 : 0;
+      var SDLT_ENG_NIL_RATE_THRESHOLD = 125000;
+      var SDLT_ENG_BAND2_CEILING = 250000;
+      var SDLT_ENG_BAND3_CEILING = 925000;
       var bands = [
-        [0, 125000, 0 + sur],
-        [125000, 250000, 0.02 + sur],
-        [250000, 925000, 0.05 + sur],
-        [925000, 1500000, 0.10 + sur],
+        [0, SDLT_ENG_NIL_RATE_THRESHOLD, 0 + sur],
+        [SDLT_ENG_NIL_RATE_THRESHOLD, SDLT_ENG_BAND2_CEILING, 0.02 + sur],
+        [SDLT_ENG_BAND2_CEILING, SDLT_ENG_BAND3_CEILING, 0.05 + sur],
+        [SDLT_ENG_BAND3_CEILING, 1500000, 0.10 + sur],
         [1500000, Infinity, 0.12 + sur]
       ];
       bands.forEach(function(b) {
@@ -171,14 +178,16 @@ function calcBTL(p) {
   var totalOpex = mgmtCost + maintCost + (p.insurance || 0);
   var grossProfit = annualRent - totalOpex;
 
+  var BTL_LTD_CORP_TAX_RATE = 19; // small profits rate up to £50k -- see section-24-calculator's S24_RELIEF_CREDIT_RATE for the mortgage-interest relief constant this file also uses
+  var S24_RELIEF_CREDIT_RATE = 20;
   var taxable, taxPayable;
   if (p.isLtdCo) {
     taxable = Math.max(0, grossProfit - annInterest);
-    taxPayable = taxable * 0.19;
+    taxPayable = taxable * (BTL_LTD_CORP_TAX_RATE / 100);
   } else {
     taxable = Math.max(0, grossProfit);
     var grossTax = taxable * ((p.taxBand || 20) / 100);
-    var s24Relief = annInterest * 0.20;
+    var s24Relief = annInterest * (S24_RELIEF_CREDIT_RATE / 100);
     taxPayable = Math.max(0, grossTax - s24Relief);
   }
 
