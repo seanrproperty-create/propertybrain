@@ -16,7 +16,7 @@
           "replace_template": "var PA = {value},"
         }
       ],
-      "last_verified": "16 August 2026"
+      "last_verified": "23 August 2026"
     },
     {
       "id": "income_tax_basic_rate_limit",
@@ -34,7 +34,7 @@
           "replace_template": "BASIC_LIMIT = {value},"
         }
       ],
-      "last_verified": "16 August 2026"
+      "last_verified": "23 August 2026"
     },
     {
       "id": "income_tax_higher_rate_limit",
@@ -52,7 +52,7 @@
           "replace_template": "HIGHER_LIMIT = {value};"
         }
       ],
-      "last_verified": "16 August 2026"
+      "last_verified": "23 August 2026"
     },
     {
       "id": "income_tax_rate_basic",
@@ -70,7 +70,7 @@
           "replace_template": "RATE_BASIC = {value},"
         }
       ],
-      "last_verified": "16 August 2026"
+      "last_verified": "23 August 2026"
     },
     {
       "id": "income_tax_rate_higher",
@@ -88,7 +88,7 @@
           "replace_template": "RATE_HIGHER = {value},"
         }
       ],
-      "last_verified": "16 August 2026"
+      "last_verified": "23 August 2026"
     },
     {
       "id": "income_tax_rate_additional",
@@ -106,7 +106,7 @@
           "replace_template": "RATE_ADDITIONAL = {value};"
         }
       ],
-      "last_verified": "16 August 2026"
+      "last_verified": "23 August 2026"
     },
     {
       "id": "property_tax_rate_basic_2027",
@@ -124,7 +124,7 @@
           "replace_template": "RATE_BASIC_2027 = {value},"
         }
       ],
-      "last_verified": "16 August 2026",
+      "last_verified": "23 August 2026",
       "notes": "The old registry note calling this 'not yet Royal Assent' was stale -- Finance Act 2026 received Royal Assent 18 March 2026, and this gov.uk policy paper documents the enacted rates directly. Also refactored the calculator's JS from raw decimal literals (0.22) to whole-number percent constants (22) so the stored value's units match what gov.uk actually publishes -- the old decimal form couldn't have been safely auto-patched by this script without a silent 100x unit error."
     },
     {
@@ -143,7 +143,7 @@
           "replace_template": "RATE_HIGHER_2027 = {value},"
         }
       ],
-      "last_verified": "16 August 2026"
+      "last_verified": "23 August 2026"
     },
     {
       "id": "property_tax_rate_additional_2027",
@@ -161,7 +161,7 @@
           "replace_template": "RATE_ADDITIONAL_2027 = {value};"
         }
       ],
-      "last_verified": "16 August 2026"
+      "last_verified": "23 August 2026"
     },
     {
       "id": "sdlt_eng_standard_nil_rate_threshold",
@@ -184,7 +184,7 @@
           "replace_template": "var SDLT_ENG_NIL_RATE_THRESHOLD={value};"
         }
       ],
-      "last_verified": "16 August 2026"
+      "last_verified": "23 August 2026"
     },
     {
       "id": "sdlt_eng_band2_ceiling",
@@ -207,7 +207,7 @@
           "replace_template": "var SDLT_ENG_BAND2_CEILING={value};"
         }
       ],
-      "last_verified": "16 August 2026"
+      "last_verified": "23 August 2026"
     },
     {
       "id": "sdlt_eng_band3_ceiling",
@@ -230,7 +230,7 @@
           "replace_template": "var SDLT_ENG_BAND3_CEILING={value};"
         }
       ],
-      "last_verified": "16 August 2026"
+      "last_verified": "23 August 2026"
     },
     {
       "id": "sdlt_eng_ftb_nil_rate",
@@ -253,7 +253,7 @@
           "replace_template": "var SDLT_ENG_FTB_NIL_RATE={value};"
         }
       ],
-      "last_verified": "16 August 2026",
+      "last_verified": "23 August 2026",
       "notes": "This was the exact figure found 16+ months stale (was \u00a3425,000, the expired mini-budget threshold) and hotfixed same-day as this registry entry was written -- see Brief 1023 Context."
     },
     {
@@ -277,7 +277,7 @@
           "replace_template": "var SDLT_ENG_FTB_CUTOFF={value};"
         }
       ],
-      "last_verified": "16 August 2026",
+      "last_verified": "23 August 2026",
       "notes": "Also found 16+ months stale (was \u00a3625,000) and hotfixed same-day -- see Brief 1023 Context."
     },
     {
@@ -301,7 +301,7 @@
           "replace_template": "var SDLT_ENG_ADDITIONAL_SURCHARGE={value};"
         }
       ],
-      "last_verified": "16 August 2026",
+      "last_verified": "23 August 2026",
       "notes": "Stored as whole percent (5, not 0.05) -- gov.uk publishes this as a percentage and the JS divides by 100 internally at the point of use, matching this session's established unit convention (see property_tax_rate_basic_2027 notes) to avoid a silent 100x error."
     },
     {
@@ -325,7 +325,7 @@
           "replace_template": "var SDLT_SCOT_ADS_RATE={value};"
         }
       ],
-      "last_verified": "16 August 2026",
+      "last_verified": "23 August 2026",
       "notes": "Found stale during Brief 1023's scoping (was 6%, raised to 8% on 5 December 2024 -- over a year before this was caught) and fixed in the same pass as the England hotfix, before shipping. Whole percent, same convention as sdlt_eng_additional_surcharge."
     },
     {
@@ -357,7 +357,7 @@
           "replace_template": "name=\"cgt-band\" value=\"{value}\"> Basic rate"
         }
       ],
-      "last_verified": "16 August 2026"
+      "last_verified": "23 August 2026"
     },
     {
       "id": "cgt_rate_higher",
@@ -380,7 +380,7 @@
           "replace_template": "var CGT_RATE_HIGHER = {value};"
         }
       ],
-      "last_verified": "16 August 2026",
+      "last_verified": "23 August 2026",
       "notes": "The JS constant is only a fallback default for the (practically never-hit) case where no radio button is checked -- the HTML value attribute is the real source of truth for the calculation. Both are patched together so they can't silently drift apart."
     },
     {
@@ -399,7 +399,7 @@
           "replace_template": "var CGT_ANNUAL_EXEMPT_AMOUNT = {value};"
         }
       ],
-      "last_verified": "16 August 2026",
+      "last_verified": "23 August 2026",
       "notes": "The static '\u00a33,000' span in the results markup (id=r-cgt-exempt) is overwritten by JS on every calculation and isn't itself a source of truth -- not separately patched."
     },
     {
@@ -418,7 +418,7 @@
           "replace_template": "const RATE_BASIC = {value};"
         }
       ],
-      "last_verified": "16 August 2026"
+      "last_verified": "23 August 2026"
     },
     {
       "id": "section24_rate_higher",
@@ -436,7 +436,7 @@
           "replace_template": "const RATE_HIGHER = {value};"
         }
       ],
-      "last_verified": "16 August 2026"
+      "last_verified": "23 August 2026"
     },
     {
       "id": "section24_rate_additional",
@@ -454,7 +454,7 @@
           "replace_template": "const RATE_ADDITIONAL = {value};"
         }
       ],
-      "last_verified": "16 August 2026"
+      "last_verified": "23 August 2026"
     },
     {
       "id": "section24_relief_credit_rate",
