@@ -1,0 +1,37 @@
+# PropertyBrain
+
+> Free UK property investment calculators — instant, no signup, no paywall. Covers buy-to-let yield, stamp duty (SDLT/LBTT/LTT), mortgage repayments, rental yield, serviced accommodation (Airbnb), HMO yield, capital gains tax, property flips, refinancing and portfolio disposal, all built for UK tax rules (including Section 24).
+
+PropertyBrain.uk is operated by EIGHTFINITY LTD (company no. 15528515, England and Wales), which also operates [PropertyAlert.uk](https://propertyalert.uk/) — a live UK property deal-sourcing platform with 46,000+ listings, yield analysis and planning alerts.
+
+## Calculators
+
+- [Buy-to-Let Calculator](https://propertybrain.uk/buy-to-let-calculator/): Gross yield, net yield, monthly cashflow, Section 24 tax impact and 5-year projections for a UK rental property, with a personal vs limited company comparison.
+- [Stamp Duty Calculator](https://propertybrain.uk/stamp-duty-calculator/): SDLT (England), LBTT (Scotland) and LTT (Wales) — standard, additional-property and first-time-buyer rates, kept current against 2026 bands.
+- [Mortgage Calculator](https://propertybrain.uk/mortgage-calculator/): Monthly repayments, total interest cost and full amortisation schedule for repayment or interest-only mortgages.
+- [Rental Yield Calculator](https://propertybrain.uk/rental-yield-calculator/): Gross and net rental yield plus monthly income after management, maintenance and void allowance.
+- [SA / Airbnb Calculator](https://propertybrain.uk/sa-airbnb-calculator/): Serviced accommodation cashflow with occupancy sensitivity, comparing SA returns against standard buy-to-let.
+- [HMO Yield Calculator](https://propertybrain.uk/hmo-yield-calculator/): House in Multiple Occupation gross yield, net yield and monthly cashflow across multiple let rooms.
+- [Property ROI Calculator](https://propertybrain.uk/property-roi-calculator/): Total return, annualised ROI and cash-on-cash return combining cashflow and capital appreciation.
+- [Cashflow Calculator](https://propertybrain.uk/cashflow-calculator/): Simple monthly income vs expenses breakdown for a quick property cashflow sense-check.
+- [Capital Gains Tax Calculator](https://propertybrain.uk/capital-gains-tax-calculator/): UK CGT liability on a property sale at 18% or 24%, with annual exempt amount and Private Residence Relief.
+- [Property Flip Calculator](https://propertybrain.uk/property-flip-calculator/): Net profit on a buy-refurbish-sell project including stamp duty, bridging finance, CGT and selling costs.
+- [Refinance vs Sell Calculator](https://propertybrain.uk/refinance-vs-sell-calculator/): Compares net cash from remortgaging to release equity against selling the property outright.
+- [Portfolio Disposal Calculator](https://propertybrain.uk/portfolio-disposal-calculator/): Plans CGT-efficient disposal of up to 5 properties across tax years to maximise annual exempt amounts.
+- [Bridging Finance Calculator](https://propertybrain.uk/bridging-finance-calculator/): Models bridging loan cost, interest and exit for short-term property finance.
+- [Section 24 Calculator](https://propertybrain.uk/section-24-calculator/): Compares personal vs limited-company tax treatment of buy-to-let mortgage interest under Section 24.
+- [Refurbishment Cost Estimator](https://propertybrain.uk/refurbishment-cost-estimator/): Estimates refurbishment budget for a buy-refurb-sell or buy-refurb-refinance project.
+- [2027 Landlord Property Income Tax Calculator](https://propertybrain.uk/property-income-tax-2027-calculator/): Models the incoming 2027 changes to UK landlord property income tax.
+
+## Free downloads
+
+- [Free Excel Downloads](https://propertybrain.uk/free-tools/): BTL cashflow tracker, property deal analyser, portfolio tracker and SA income calculator spreadsheets.
+
+## Templates and guides
+
+- [Investor Guide](https://propertybrain.uk/guide/): How to use PropertyBrain's calculators for UK property investment decisions.
+- [Deal Packaging Agreement](https://propertybrain.uk/deal-packaging-agreement/), [JV Agreement](https://propertybrain.uk/joint-venture-agreement/), [R2R HMO Agreement](https://propertybrain.uk/r2r-hmo-agreement/), [SA Operator Agreement](https://propertybrain.uk/sa-operator-agreement/), [SA Compliance Checklist](https://propertybrain.uk/sa-compliance-checklist/), [Scope of Works Template](https://propertybrain.uk/scope-of-works-template/), [Landlord Accounts Template](https://propertybrain.uk/landlord-accounts-template/): free UK property investment templates and checklists.
+
+## Other languages
+
+Every calculator is also available in Chinese (`/zh/`), Arabic (`/ar/`), and Hindi (`/hi/`).
